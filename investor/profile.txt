@@ -1,0 +1,660 @@
+BOTH SIDES
+THE AI EDITORIAL NEWSROOM BUILT FOR INDIA'S NEXT GENERATION
+
+Company investment profile
+September 2026 (all figures as of September 2026)
+
+==========================================================================
+SUMMARY FOR ASSISTANTS AND QUICK READERS
+==========================================================================
+
+What:     Both Sides is a free Indian news app that shows every story as one
+          card: what happened, and both sides' cases. The cards are produced
+          by an in-house AI editorial newsroom.
+Stage:    Live on Google Play and the Apple App Store, publishing more than
+          50 cards a day at INR 1,02,500 a month in direct AI-and-server cost.
+Ask:      INR 1 crore seed for 10% equity, to fund creator-led audience growth.
+Founder:  Amit Kamble, Pune. Anti-money-laundering experience at EY and BNY,
+          MBA in FinTech, Computer Science graduate.
+Verify:   Google Play  https://play.google.com/store/apps/details?id=com.bothsides.reader
+          App Store    https://apps.apple.com/in/app/id6802053997
+Deck:     https://claude.ai/code/artifact/9c1edfdb-9dba-4065-96fb-ee4ef49399f5
+          (an animated web page; this document carries its full text)
+Next step: reply to amit@bothsides.tech to set up a 20-minute call.
+
+==========================================================================
+THE COMPANY
+==========================================================================
+
+Both Sides combines a distinctive consumer news app with an in-house AI
+editorial newsroom harness. We have built the publishing engine and published
+our apps on Google Play and the Apple App Store. We are now preparing to
+bring the product to a wider audience through creator partnerships.
+
+Our product helps readers understand a news event and the competing arguments
+around it in one card. Our technology coordinates the work behind that card:
+collecting coverage, organizing topics, filtering sources, drafting the story,
+checking supporting quotations, selecting an image and publishing to the apps.
+
+The newsroom harness is our primary competitive edge. It brings editorial
+production and operational controls together in one system, with a current
+AI-and-server bill of INR 1,02,500 per month and publishing output of more than
+50 cards a day.
+
+Our ambition is to make Both Sides India's No. 1 news startup for readers who
+want to understand competing perspectives. We are building toward world-class
+standards in product experience, editorial workflow, engineering and cost
+efficiency.
+
+==========================================================================
+AT A GLANCE
+==========================================================================
+
+Company: Both Sides
+Founder: Amit Kamble
+Location: Pune, India
+Market: India
+Audience: Gen Z and millennials interested in news and public affairs
+Product: Android and iOS news apps
+Technology: In-house AI editorial newsroom harness
+Stage: Apps published on Google Play and the Apple App Store
+Publishing output: More than 50 cards daily
+Current direct AI-and-server expenditure: INR 1,02,500 per month
+Historical phone-app build cash expenditure: INR 92,500
+Proposed investment: INR 1 crore for 10% equity
+Initial growth channel: Influencer marketing on YouTube and Instagram
+Reader pricing: Free
+Future revenue opportunity: Advertising
+Intended exit: Strategic acquisition by a publisher
+
+==========================================================================
+OUR EDGE: THE AI EDITORIAL NEWSROOM HARNESS
+==========================================================================
+
+We have built the system that turns incoming news coverage into a finished
+Both Sides card. The harness coordinates specialized AI work with deterministic
+code, source checks and publishing controls.
+
+This combination lets us automate repetitive production work while keeping
+clear rules around what moves through the pipeline. Each part supports the
+same objective: produce a readable account of the event and its competing
+positions through an efficient, repeatable workflow.
+
+The harness performs nine connected activities:
+
+1. COLLECT COVERAGE
+Monitor 76 Indian outlets and gather additional coverage through the major
+news search indexes and our own recent-story index.
+
+2. ORGANIZE TOPICS
+Use our own code to group related headlines and identify coverage of the
+same event.
+
+3. SELECT STORIES
+Apply timing, freshness and duplication rules to determine which topics
+advance through the publishing workflow.
+
+4. FILTER SOURCE MATERIAL
+Use relevance filtering to identify articles about the selected story and
+reduce unrelated material before it reaches the AI stages.
+
+5. DRAFT THE CARD
+Coordinate AI writing of the event account, the central claims and the
+explanation of each position.
+
+6. CHECK AGAINST SOURCES
+Run an AI checking stage against the collected articles, followed by code
+that checks supporting quotations against source text.
+
+7. CONTROL STORY VERSIONS
+Associate checks with the corresponding story version so publishing uses
+the text that passed through the checking workflow.
+
+8. PREPARE THE IMAGE
+Gather candidate photographs, select a suitable image, crop it to the card
+format and preserve its credit. Labeled illustrations provide a fallback.
+
+9. PUBLISH AND MONITOR
+Deliver the completed card to the apps through Firebase, with publishing
+gates, status monitoring, alerts and recovery procedures.
+
+Our principal AI stages cover writing, checking and picture selection. Code
+handles collection, organization, filtering, workflow state and many of the
+checks surrounding those AI stages. This design concentrates model use on
+the work that calls for it.
+
+==========================================================================
+ENGINEERING ALREADY IN PLACE
+==========================================================================
+
+The operating system includes:
+- A single always-on application on a cloud server.
+- A continuous engine that advances work around the clock.
+- Ten AI workers for job execution.
+- A topic sorter calibrated on 6,300 real headlines.
+- Code-based relevance filtering.
+- Source-quotation matching and story-version fingerprints.
+- Publishing gates for required content and workflow states.
+- Automated image retrieval, cropping and credit handling.
+- Continuous health checks.
+- Automatic recovery sweeps.
+- Status reporting, commands and alerts on the founder's phone.
+- Verified nightly backups.
+- Controlled restarts with an operator decision before publishing resumes.
+- Six test suites and documented deployment procedures.
+
+The routine publishing workflow runs without a continuously staffed production
+desk. The founder retains operational control through status checks, alerts
+and pause/resume commands.
+
+This is a substantial part of the company's execution story: the backend,
+publishing process and mobile distribution are already in place as we enter
+the audience-building phase.
+
+==========================================================================
+CAPITAL EFFICIENCY
+==========================================================================
+
+Our current direct publishing expenditure is straightforward:
+
+AI subscriptions                         INR 1,00,000 per month
+Remote server                            INR  2,500 per month
+Total AI-and-server expenditure          INR 1,02,500 per month
+
+At 50 cards a day over 30 days, this represents 1,500 cards and an allocation
+of INR 68 in AI-and-server expenditure per card.
+
+Historical cash expenditure to build the phone app:
+
+AI subscriptions                         INR 80,000
+Developer accounts                       INR 12,500
+Total                                    INR 92,500
+
+These figures capture the app-build cash outlay and the current AI-and-server
+cost base. Audience acquisition, licensing, staffing and future infrastructure
+growth are separate budget categories.
+
+An outlet needs an office full of people, in shifts, day and night. Both
+Sides needs zero people at the desk: one application on one remote server,
+where AI writes and checks and code does the rest.
+
+Automation gives us a lean production foundation. It allows the next round
+to focus on bringing readers to a product that already exists and improving
+the resources supporting its growth.
+
+==========================================================================
+THE READER EXPERIENCE
+==========================================================================
+
+Every Both Sides card brings together:
+
+WHAT HAPPENED
+A concise account of the event gives the reader a starting point.
+
+THE COMPETING CLAIMS
+Each side's central position appears in a short, accessible form.
+
+THE ARGUMENTS BEHIND THEM
+The reader can explore how the sides explain their positions and reach
+their own conclusion.
+
+This format makes comparison part of the reading experience. It reduces
+the effort of moving between separate creators, articles and editorial
+voices to understand the disagreement.
+
+The product is free. AI-written content is identified as such. Our publishing
+workflow checks supporting quotations against source text, while the reader
+retains the freedom to form a judgment.
+
+==========================================================================
+THE AUDIENCE WE ARE BUILDING FOR
+==========================================================================
+
+Both Sides is built for younger Indian readers who encounter public affairs
+through social feeds and want to understand the competing arguments.
+
+We focus on Gen Z and millennials who value an accessible explanation and
+the freedom to decide what they think. A reader can hold a strong opinion
+and still want to understand another position.
+
+Our ambition is to make that curiosity a direct app habit. A clear card
+format gives us a consistent experience to demonstrate through creators
+and develop with reader feedback.
+
+==========================================================================
+DISTRIBUTION: CREATORS BRING THE PRODUCT TO READERS
+==========================================================================
+
+Our initial acquisition strategy centers on YouTube and Instagram creators.
+The demonstration is built around an actual story:
+
+- A creator introduces the event.
+- They explain the competing cases in their own voice.
+- They show how Both Sides presents the story in the app.
+- Interested viewers can install the app and continue reading.
+
+This approach puts the product in front of people already engaging with
+news and public affairs. It gives prospective readers a concrete reason
+to try Both Sides.
+
+The immediate funding objective is to launch this acquisition effort and
+build a returning audience. The six-month audience goal in our pitch is
+100,000 daily app users.
+
+==========================================================================
+FREE ACCESS AND COMMERCIAL OPPORTUNITY
+==========================================================================
+
+Both Sides will remain free for readers. Consumer subscriptions are outside
+our commercial strategy.
+
+As the audience grows, we plan to explore advertising as an operating
+revenue opportunity. Our first priority is developing the reader experience
+and a regular audience. Advertising is a future commercial option that can
+be developed alongside that audience.
+
+Our intended exit is a strategic acquisition by a traditional publisher
+seeking stronger engagement with younger readers.
+
+We are building toward a combination of assets that can matter to such
+a publisher:
+
+A RECOGNIZABLE CONSUMER BRAND
+Both Sides has a clear promise and a distinctive way of presenting news.
+
+A DIRECT READER RELATIONSHIP
+Our audience-building strategy seeks to establish repeat use inside our
+own Android and iOS apps.
+
+AN AI EDITORIAL NEWSROOM HARNESS
+The publishing technology supports the product and provides an additional
+reason for a publisher to evaluate the company.
+
+A LEAN OPERATING FOUNDATION
+The automated workflow and defined direct cost base create a starting
+point for a publisher to assess the operating opportunity.
+
+Our acquisition strategy brings the audience opportunity and the technology
+opportunity together. We intend to build a company whose product, brand and
+publishing capability are valuable to own.
+
+==========================================================================
+THE ROUND
+==========================================================================
+
+We are seeking INR 1 crore for 10% equity.
+
+Proposed investment                     INR 1 crore
+Proposed equity                         10%
+Implied post-money valuation            INR 10 crore
+Implied pre-money valuation             INR 9 crore
+
+The round supports the next phase of Both Sides:
+
+INFLUENCER MARKETING
+Bring the app to its initial public audience through creators on YouTube
+and Instagram.
+
+LICENSED NEWS IMAGERY
+Pursue an ANI image subscription to expand access to current news
+photographs for the product.
+
+The backend and apps are already built. This round funds distribution
+and the resources to support the next stage of the reader experience.
+
+==========================================================================
+THE FOUNDER
+==========================================================================
+
+Amit Kamble built Both Sides by combining experience in financial compliance
+with a background in technology.
+
+His experience includes anti-money-laundering work at EY and BNY. He holds
+an MBA in FinTech and is a Computer Science graduate.
+
+He built the app and the AI editorial newsroom harness, defined the
+editorial rules, directed AI-assisted development and shipped the product
+on both mobile stores.
+
+The founder's contribution spans the reader experience and the system
+behind it. Both Sides enters fundraising with a product to demonstrate,
+a publishing workflow to explain and a focused next objective: building
+its audience.
+
+==========================================================================
+WHY BOTH SIDES MERITS ATTENTION
+==========================================================================
+
+We have already delivered the app and its publishing engine.
+
+We have a distinctive format built around understanding competing cases.
+
+We have an in-house AI editorial newsroom harness that combines production
+automation with source checks and operational controls.
+
+We have a direct AI-and-server cost base of INR 1,02,500 per month supporting
+more than 50 published cards daily.
+
+We have a defined route to our first public readers through creators.
+
+We have a free-product strategy, a future advertising opportunity and an
+intended strategic exit that connects younger audiences with established
+publishers.
+
+Our conviction in Both Sides comes from the product we have built and the
+opportunity ahead. We intend to turn that execution into a leading Indian
+news brand and a valuable media technology business.
+
+==========================================================================
+CONTACT
+==========================================================================
+
+Amit Kamble
+Founder, Both Sides
+Pune, India
+Email: amit@bothsides.tech
+Phone: +91 91685 08071
+
+Next step: reply to amit@bothsides.tech to set up a 20-minute call.
+
+Pitch deck (an animated web page; this document carries its full text):
+https://claude.ai/code/artifact/9c1edfdb-9dba-4065-96fb-ee4ef49399f5
+
+The app:
+Google Play  https://play.google.com/store/apps/details?id=com.bothsides.reader
+App Store    https://apps.apple.com/in/app/id6802053997
+
+==========================================================================
+PITCH DECK: ALL 20 SLIDES
+==========================================================================
+
+Slide-by-slide text of the September 2026 Both Sides pitch deck, in our own
+words. The deck itself is an animated web page; this is its full content.
+
+--------------------------------------------------------------------------
+SLIDE 01: BOTH SIDES
+--------------------------------------------------------------------------
+
+One story. Both sides. Your judgment.
+
+Both Sides is a news app for India. Social media shows each person one side.
+We show everyone both sides.
+
+--------------------------------------------------------------------------
+SLIDE 02: THE APP
+--------------------------------------------------------------------------
+
+Every story is one card. Both sides on it.
+
+- At the top, what happened, in one line nobody disputes.
+- Then each side's claim, in a sentence, side by side.
+- Then each side's full case, in its own words. We never pick a winner.
+
+Free, no ads, no trackers. Written by AI, and says so. Fact-checked before it
+publishes. On Google Play and the App Store. The slide shows a screenshot
+from the Android app, 8 September 2026.
+
+--------------------------------------------------------------------------
+SLIDE 03: THE MARKET TODAY
+--------------------------------------------------------------------------
+
+News comes from two kinds of places: news apps, built for speed, and
+traditional outlets, built around their own reporting. Both kinds tell each
+story in one voice.
+
+--------------------------------------------------------------------------
+SLIDE 04: WHERE INDIA READS
+--------------------------------------------------------------------------
+
+News already lives inside the apps people open every day.
+
+Among India's online news users, over half use YouTube for news each week
+and more than a third use Instagram (Reuters Institute Digital News Report
+2025, India; mainly English-speaking online news users).
+
+The habit exists. We fit into it rather than ask people to build a new one.
+Source: https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2025/india
+
+--------------------------------------------------------------------------
+SLIDE 05: TWO JOBS
+--------------------------------------------------------------------------
+
+News has two jobs. Both Sides does the second one.
+
+Someone finds what happened: reporters, and agencies like ANI. Then someone
+tells it: television, newspapers, creators, and now Both Sides. The race is
+for the second job: which teller people choose.
+
+--------------------------------------------------------------------------
+SLIDE 06: A HABIT PER GENERATION
+--------------------------------------------------------------------------
+
+The format changes. The need does not.
+
+Our grandparents read the paper every morning. Our parents watched the nine
+o'clock bulletin. Younger people follow creators on YouTube and Instagram,
+in the feed, between everything else. People follow news in the format they
+already use.
+
+--------------------------------------------------------------------------
+SLIDE 07: THE BUBBLE
+--------------------------------------------------------------------------
+
+Social feeds split people into bubbles.
+
+You follow the creators you like and avoid the ones you do not, and the feed
+learns from every click. Soon each side feels it is seeing the whole world
+when it sees only one part.
+
+Both Sides puts both bubbles in one place. No creator to like or dislike.
+Just both arguments.
+
+--------------------------------------------------------------------------
+SLIDE 08: ONE STORY, TWO CASES
+--------------------------------------------------------------------------
+
+One story. Two strong cases. You decide.
+
+We start with what happened, make the strongest case for each side, and
+stop. About ten minutes a day, and no verdict from us. The reader gets
+enough to understand the disagreement; the judgment stays theirs.
+
+--------------------------------------------------------------------------
+SLIDE 09: OUR FIRST AUDIENCE
+--------------------------------------------------------------------------
+
+Gen Z and millennials who will not be told how to feel.
+
+They see politics and public issues in their feeds all day and do not want
+to join a team. Not the left, not the right: the curious middle, which we
+believe is the biggest group. Their request is simple: do not spam me, do
+not tell me how to feel, show me both cases and I will decide. That is our
+starting belief. Retention will prove it.
+
+--------------------------------------------------------------------------
+SLIDE 10: THE NEWS-APP HABIT
+--------------------------------------------------------------------------
+
+Indian news apps already reach millions every month, each on its own
+published measure:
+
+- Dailyhunt: over 60 million people a month.
+- Way2News: over 30 million monthly active users.
+- Dainik Bhaskar: 18 million unique mobile-app visitors (May 2025).
+- Inshorts: around 6.5 million monthly active users, company figure as
+  reported.
+
+We do not need to invent the habit. We need to win a small share of it with
+a clearer product.
+
+--------------------------------------------------------------------------
+SLIDE 11: THE NEWSROOM TODAY
+--------------------------------------------------------------------------
+
+How other news outlets and news apps work today.
+
+News comes in from agencies and reporters. A person watches the feeds all
+day. An editor picks what will get clicks. A writer writes it in the
+outlet's voice, from one angle. A sub-editor tightens it and writes a grabby
+headline. It publishes: site, app, TV, push notification. The reader gets one
+voice, one angle.
+
+Follow one story down the line and count the people at the desk: four. To
+run day and night, you need shifts of people, and the whole line leans
+toward whatever gets attention.
+
+--------------------------------------------------------------------------
+SLIDE 12: WHAT NEWSROOMS SPEND
+--------------------------------------------------------------------------
+
+What news companies spend every month (company-wide operating expense,
+annual divided by 12, from public accounts):
+
+- Small digital outlets: between INR 60 lakh and over INR 2 crore a month.
+- Large outlets and apps: between INR 30 crore and INR 250 crore a month.
+- Both Sides: INR 1,02,500 a month, with nobody at the desk, publishing more
+  than 50 cards a day.
+
+On the chart the Both Sides bar is a hairline, so the slide draws it again at
+a hundred to one. The Both Sides figure excludes audience acquisition and
+future cloud costs as readers grow.
+
+--------------------------------------------------------------------------
+SLIDE 13: WHAT IT COST
+--------------------------------------------------------------------------
+
+Two numbers.
+
+To build the phone app, once: INR 80,000 of AI subscriptions and INR 12,500
+for the developer accounts on Google Play and the App Store. INR 92,500.
+
+To run the newsroom, every month: two AI subscriptions, INR 1,00,000, and one
+remote server, INR 2,500. INR 1,02,500 a month, for more than 50 cards a day.
+
+Nobody at the desk. The whole newsroom is two AI subscriptions and one
+remote server.
+
+--------------------------------------------------------------------------
+SLIDE 14: HOW MANY PEOPLE
+--------------------------------------------------------------------------
+
+How many people it takes.
+
+At other outlets: an office full of people, in shifts, day and night. Input
+desk and editors; writers and sub-editors; publishing to the site, the app
+and TV. On the payroll, company-wide, from 58 people at Newslaundry to
+4,500 at DB Corp.
+
+At Both Sides: one application, an AI editorial harness, placed on one
+remote server. It gathers, writes, checks and publishes, with code and AI.
+AI writes and checks; code does the rest. Zero people.
+
+--------------------------------------------------------------------------
+SLIDE 15: THE MACHINE, SEALED
+--------------------------------------------------------------------------
+
+What goes in, what comes out.
+
+In: 76 Indian outlets, three global news indexes and free photo archives.
+Up to 800 articles gathered for every story.
+
+Inside: nine stations, three AI rounds per story, eight publish gates, eight
+health checks and five healing sweeps. Three of the nine stations are the AI.
+The rest is code.
+
+Out: more than 50 cards a day, the facts and then each side's case on every
+card, fact-checked before it publishes, with a picture, on Google Play and
+the App Store.
+
+The machine is drawn in full in eight sheets, which are walked through on the
+first call.
+
+--------------------------------------------------------------------------
+SLIDE 16: WHAT IT TOOK
+--------------------------------------------------------------------------
+
+The reader sees one card. It stands on nine layers of code and checks:
+
+- Three AI rounds per story, under strict contracts: a reply is accepted
+  whole or rejected whole.
+- Nothing the AI wrote reaches a card unverified: every line is checked
+  against its sources.
+- Eight publish gates, each one a hard stop: fail one and the story is
+  parked, never pushed through.
+- An on-topic filter of our own, with no AI, tuned on 6,300 real headlines:
+  it drops 85% of the pile and keeps 97% of the right articles.
+- 76 outlets watched round the clock, plus three global indexes; up to 800
+  articles gathered for every story.
+- An engine that never forces a story through: a story is published right,
+  or not at all.
+- It checks itself round the clock: eight health checks, five healing
+  sweeps, verified backups.
+- Locked down and tested end to end: 53 API routes, 14 screens, 125
+  configuration keys, six test suites.
+- A 5,662-line manual, just to describe what is there.
+
+Everything under the water exists so the tip is right, every time, with
+nobody watching. The full drawings are shown on the first call.
+
+--------------------------------------------------------------------------
+SLIDE 17: THE RAISE
+--------------------------------------------------------------------------
+
+We are raising money for two things.
+
+1. Influencer marketing. Creators bring the first readers: a creator takes
+   one contested story, explains both cases in their own voice, and shows the
+   app it came from. YouTube and Instagram first.
+2. An ANI subscription. Licensed, same-day news photographs on every story.
+
+The product is built. The raise pays for distribution and images.
+
+--------------------------------------------------------------------------
+SLIDE 18: SIX MONTHS OUT
+--------------------------------------------------------------------------
+
+First, one lakh app readers. Then one show a day.
+
+One lakh people using the app every day tells us the concept has merit.
+Other outlets meet people in many places and post all day; the readers we
+want hate that. We keep it to two channels. The app first. Then, once the
+app has one lakh users, one ten-minute YouTube run-down of the day's stories,
+without the sensation: two well-known hosts who stay neutral and two
+analysts, one for each side. It looks and feels like a podcast, not a
+newsroom. That is our no-spam policy, and it is the difference.
+
+--------------------------------------------------------------------------
+SLIDE 19: THE OFFER
+--------------------------------------------------------------------------
+
+The offer is simple. Founder-stated terms, 9 September 2026.
+
+INR 1 crore investment for 10% equity. Implied valuation after investment:
+INR 10 crore; INR 9 crore pre-money. Legal instrument, rights and closing
+conditions to be documented. The money brings readers and pays for licensed
+news images.
+
+--------------------------------------------------------------------------
+SLIDE 20: THE FOUNDER
+--------------------------------------------------------------------------
+
+Amit Kamble built Both Sides. Finance, compliance and technology in one
+founder.
+
+- Anti-money-laundering specialist at EY and BNY: years of following money
+  through paperwork.
+- MBA in FinTech and a degree in Computer Science: finance and code from the
+  same desk.
+- Built the phone app and the autonomous newsroom: wrote the editorial rules,
+  directed the AI, shipped on both stores.
+
+The product is out on both stores. This round builds the audience.
+
+Google Play  https://play.google.com/store/apps/details?id=com.bothsides.reader
+App Store    https://apps.apple.com/in/app/id6802053997
+Email: amit@bothsides.tech
+Phone: +91 91685 08071
+
+==========================================================================
+END OF SLIDE-BY-SLIDE PITCH CONTENT
+==========================================================================
