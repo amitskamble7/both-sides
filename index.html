@@ -1,34 +1,699 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Both Sides</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Both Sides · AI workflows for articles and social media</title>
+<meta name="description" content="Both Sides builds custom AI workflows for enterprises. One AI editorial desk finds the material, writes it in your voice, checks every line against its sources and publishes it on your website and on LinkedIn, Instagram, Facebook and X.">
+<link rel="canonical" href="https://bothsides.tech/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Both Sides">
+<meta property="og:url" content="https://bothsides.tech/">
+<meta property="og:title" content="Both Sides · AI workflows for articles and social media">
+<meta property="og:description" content="One AI editorial desk that finds, writes, checks and publishes, on your website and every social handle. Customised for your business.">
+<meta property="og:image" content="https://bothsides.tech/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Both Sides: we automate the work behind your articles and social media.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0F1A2B">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3CclipPath id='c'%3E%3Ccircle cx='10' cy='16' r='8'/%3E%3C/clipPath%3E%3Ccircle cx='10' cy='16' r='8' fill='%233D5A6C'/%3E%3Ccircle cx='16' cy='10' r='8' fill='%23C05A2E'/%3E%3Ccircle cx='16' cy='10' r='8' fill='%232B1D12' clip-path='url(%23c)'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;700&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Both Sides","url":"https://bothsides.tech/","email":"amit@bothsides.tech","telephone":"+91-91685-08071","founder":{"@type":"Person","name":"Amit Kamble"},"address":{"@type":"PostalAddress","addressLocality":"Pune","addressRegion":"Maharashtra","addressCountry":"IN"},"description":"Custom AI workflows for enterprises: an AI editorial desk that finds, writes, checks and publishes articles and social media posts."}
+</script>
+<style>
+:root{--ink:#0F1A2B;--text:#253041;--muted:#5D6877;--rule:#D5DBE3;--soft:#F3F5F8;--accent:#1B4F8C;--accent-soft:#E8EFF7;--gut:24px}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:#fff;color:var(--text);font:400 17px/1.6 Inter,"Noto Sans Devanagari","Nirmala UI",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+h1,h2,h3{margin:0;font-weight:600;color:var(--ink)}
+svg{display:block}
+a{color:var(--accent)}
+button{font:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+.skip{position:absolute;left:-9999px;top:10px;z-index:50;background:var(--ink);color:#fff;padding:10px 14px}
+.skip:focus{left:16px}
+.wrap{max-width:1208px;margin:0 auto;padding:0 var(--gut)}
+.lab{margin:0;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.lab .no{color:var(--ink);margin-right:14px}
+section[id]{scroll-margin-top:76px}
+
+/* header */
+.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);-webkit-backdrop-filter:saturate(1.5) blur(10px);backdrop-filter:saturate(1.5) blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
+.top.scrolled{border-bottom-color:var(--rule)}
+.bar{display:flex;align-items:center;gap:36px;height:68px}
+.brand{display:inline-flex;align-items:center;gap:11px;color:var(--ink);text-decoration:none;font-weight:700;font-size:13px;letter-spacing:.18em;white-space:nowrap}
+.brand svg{width:24px;height:24px;flex:none}
+.bar nav{display:flex;gap:30px;margin-left:auto}
+.bar nav a{color:var(--text);text-decoration:none;font-size:14.5px;font-weight:500}
+.bar nav a:hover{color:var(--accent)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:#fff;border:1px solid var(--ink);text-decoration:none;font-weight:600;font-size:15.5px;line-height:1.2;padding:15px 24px;transition:background-color .15s,border-color .15s,color .15s}
+.btn:hover{background:var(--accent);border-color:var(--accent)}
+.btn.sm{font-size:14px;padding:10px 16px}
+.tlink{color:var(--ink);font-weight:600;font-size:15.5px;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:3px}
+.tlink:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.ctas{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px}
+
+/* hero */
+.hero{padding-top:80px}
+.hero h1{margin-top:22px;font-size:clamp(40px,6vw,78px);line-height:1.02;letter-spacing:-.035em;text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero-row{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px 48px;margin-top:34px}
+.lede{margin:0;max-width:600px;font-size:clamp(17px,1.5vw,19.5px);line-height:1.6;color:var(--muted)}
+.fine{display:flex;align-items:flex-start;gap:12px;margin:30px 0 0;font-size:14px;line-height:1.5;color:var(--muted)}
+.fine::before{content:"";flex:none;width:28px;height:1px;margin-top:.75em;background:var(--ink)}
+
+/* the illustration: the desk at work */
+.stage{margin:56px 0 0;background:var(--soft);border:1px solid var(--rule);padding:20px 22px 18px}
+.run{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:end;gap:10px 24px;padding-bottom:18px;margin-bottom:22px;border-bottom:1px solid var(--rule)}
+.who{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);padding-bottom:1px}
+.who i{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.working .who i{animation:pulse 1s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.2}}
+.run ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0 6px}
+.run li{font-size:12.5px;font-weight:500;color:#8A94A3;padding-top:9px;border-top:2px solid var(--rule);transition:color .3s,border-color .3s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.run li span{font-size:11px;font-weight:600;margin-right:6px}
+.run li.on{color:var(--ink);border-top-color:var(--accent)}
+.run li.on span{color:var(--accent)}
+.state{font-size:12.5px;color:var(--muted);white-space:nowrap}
+.scene{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:20px;align-items:start}
+.js .stage [data-out]{transition:opacity .55s ease,transform .55s ease}
+.js .stage.pre [data-out]:not(.in){opacity:0;transform:translateY(12px)}
+.stage figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-top:18px;font-size:12.5px;line-height:1.5;color:var(--muted)}
+.replay{display:none;flex:none;border:0;border-bottom:1px solid var(--ink);background:none;padding:0;color:var(--ink);font-size:12.5px;font-weight:600;cursor:pointer}
+.js .replay{display:inline-block}
+
+/* mock-ups: a website and three social posts */
+.browser,.post{background:#fff;border:1px solid #C9D0D9;box-shadow:0 1px 2px rgba(15,26,43,.05),0 16px 32px -20px rgba(15,26,43,.3)}
+.browser{border-radius:8px;overflow:hidden}
+.chrome{display:flex;align-items:center;gap:6px;height:32px;padding:0 12px;background:#EEF1F4;border-bottom:1px solid #D9DEE4}
+.chrome i{flex:none;width:9px;height:9px;border-radius:50%;background:#C5CCD5}
+.url{flex:1;min-width:0;margin-left:10px;background:#fff;border-radius:4px;padding:3px 10px;font-size:11.5px;color:#6B7684;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.site{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:11px 20px;border-bottom:1px solid #E6E9EE}
+.yb{display:inline-block;background:var(--ink);color:#fff;font-size:11.5px;font-weight:800;letter-spacing:.12em;line-height:1;padding:6px 8px;white-space:nowrap}
+.site nav{display:flex;gap:16px;font-size:11.5px;font-weight:500;color:#475163;white-space:nowrap;overflow:hidden}
+.article{padding:16px 22px 22px}
+.langs{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+.langs button{border:1px solid #C9D0D9;background:#fff;color:#475163;font-size:12px;font-weight:500;line-height:1.3;padding:5px 11px;cursor:pointer}
+.langs button:hover{border-color:var(--ink)}
+.langs button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.cat{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.hl{margin:6px 0;font-size:25px;line-height:1.2;letter-spacing:-.015em;font-weight:700;color:#111827}
+.article:lang(hi) .hl,.article:lang(mr) .hl{letter-spacing:0;line-height:1.4}
+.article:lang(hi) .cat,.article:lang(mr) .cat{letter-spacing:.02em}
+.meta{margin:0 0 14px;font-size:11.5px;color:#6B7684}
+.img{position:relative;overflow:hidden;background:#DCE6F1}
+.img svg{position:absolute;inset:0;width:100%;height:100%}
+.r2{aspect-ratio:1.6/1}
+.r3{aspect-ratio:3.4/1}
+.pcap{margin:7px 0 12px;font-size:11.5px;font-style:italic;color:#6B7684}
+.first{margin:0;font-size:14.5px;line-height:1.65;color:#2B3443}
+.marks{display:flex;flex-wrap:wrap;gap:8px 20px;margin:14px 2px 0;font-size:12px;color:var(--muted)}
+.marks span{display:inline-flex;align-items:center;gap:8px}
+.marks span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.posts{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start}
+.post{position:relative;border-radius:10px;overflow:hidden}
+.post.li{grid-column:1/-1}
+.pf{position:absolute;top:12px;right:13px;font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8A94A3}
+.ph{display:flex;align-items:center;gap:9px;padding:11px 72px 9px 13px}
+.post.x .ph{padding-right:30px}
+.av{flex:none;display:grid;place-items:center;width:32px;height:32px;background:var(--ink);color:#fff;font-size:11px;font-weight:700;letter-spacing:.04em}
+.av.o{border-radius:50%}
+.ph b{display:block;font-size:12.5px;line-height:1.25;color:#111827}
+.ph small{display:block;font-size:11px;line-height:1.3;color:#6B7684}
+.cap{margin:0;padding:0 13px 12px;font-size:12.5px;line-height:1.5;color:#1F2937}
+.cap .lk,.cap .tg{color:var(--accent)}
+.lcard{border-top:1px solid #E6E9EE}
+.lcard .t{padding:9px 13px 11px;background:#F3F4F6}
+.lcard .t b{display:block;font-size:12.5px;line-height:1.35;color:#111827}
+.lcard .t small{font-size:11px;color:#6B7684}
+.igcard{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--ink)}
+.igcard .img{position:absolute;left:0;right:0;top:0;height:63%}
+.igcard .yb{position:absolute;top:9px;left:9px;font-size:8.5px;padding:4px 6px;box-shadow:0 0 0 1px rgba(255,255,255,.6)}
+.band{position:absolute;left:0;right:0;bottom:0;height:37%;display:flex;flex-direction:column;justify-content:space-between;padding:11px 13px 12px;background:var(--ink);color:#fff}
+.band b{font-size:14.5px;line-height:1.15;font-weight:800;text-transform:uppercase}
+.band em{align-self:flex-start;font-style:normal;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:#fff;color:var(--ink);padding:4px 7px}
+.post.ig .cap{padding-top:10px}
+.post.x .cap{font-size:13.5px}
+
+/* rule grids: columns split by hairlines, text flush with the page edge */
+.rgw{overflow:hidden}
+.rg{--c:4;--pl:24px;--pr:24px;--pt:26px;--pb:26px;display:grid;grid-template-columns:repeat(var(--c),minmax(0,1fr));margin:-1px calc(-1 * var(--pr)) 0 calc(-1 * (var(--pl) + 1px));padding:0;list-style:none}
+.rg > *{margin:0;border-left:1px solid var(--rule);border-top:1px solid var(--rule);padding:var(--pt) var(--pr) var(--pb) var(--pl)}
+
+/* facts */
+.facts{margin-top:56px;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)}
+.facts .rg{--pt:24px;--pb:28px}
+.facts b{display:block;margin-bottom:12px;font-size:clamp(32px,3.2vw,44px);line-height:1;font-weight:600;letter-spacing:-.03em;color:var(--ink)}
+.facts span{display:block;font-size:14.5px;line-height:1.55;color:var(--muted)}
+
+/* sections */
+.sec{padding-top:120px}
+.head{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:20px 64px;align-items:end;margin-bottom:52px;padding-top:22px;border-top:1px solid var(--ink)}
+.head .lab{grid-column:1/-1;margin-bottom:6px}
+.head h2{font-size:clamp(30px,3.7vw,48px);line-height:1.06;letter-spacing:-.028em;text-wrap:balance}
+.head p:not(.lab){margin:0;max-width:480px;font-size:17.5px;line-height:1.6;color:var(--muted)}
+
+/* 01 the desk */
+.lane{--c:6;--pl:16px;--pr:16px;--pt:0;--pb:9px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.lane.rg > *{border-top:0;border-left-color:transparent}
+.lane span{grid-column:span 5;color:var(--accent);border-bottom:3px solid var(--accent)!important}
+.lane em{font-style:normal;color:var(--ink);border-bottom:3px solid var(--ink)!important;margin-left:6px}
+.steps{--c:6;--pl:16px;--pr:16px;--pt:22px;--pb:4px}
+.steps .n{font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--accent)}
+.steps li:last-child .n{color:var(--ink)}
+.steps h3{margin:8px 0 10px;font-size:19px;line-height:1.25;letter-spacing:-.012em}
+.steps p{margin:0;font-size:14.5px;line-height:1.6;color:var(--muted)}
+.steps .tag{display:none;margin-left:10px;font-style:normal;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.also{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3.2fr);gap:20px 64px;margin-top:64px;padding-top:26px;border-top:1px solid var(--rule)}
+.also h3{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.also .rg{--c:3;--pl:20px;--pr:20px;--pt:0;--pb:30px}
+.also .rg > *{border-top:0}
+.also dt{margin:0 0 6px;font-size:16px;font-weight:600;color:var(--ink)}
+.also dd{margin:0;font-size:15px;line-height:1.6;color:var(--muted)}
+
+/* 02 where it publishes */
+.outs{--pt:2px;--pb:8px}
+.outs .lab{margin-bottom:14px}
+.outs h3{margin:0 0 10px;font-size:20px;line-height:1.25;letter-spacing:-.012em}
+.outs p:not(.lab){margin:0;font-size:15px;line-height:1.6;color:var(--muted)}
+
+/* 03 who it's for */
+.whot{width:100%;border-collapse:collapse}
+.whot th{text-align:left;padding:0 24px 12px 0;border-bottom:1px solid var(--ink);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.whot td{vertical-align:top;padding:22px 24px 22px 0;border-bottom:1px solid var(--rule);font-size:16.5px;line-height:1.6;color:var(--text)}
+.whot td:first-child{width:36%;font-size:19px;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
+
+/* 04 customised */
+.kv{margin:0;border-top:1px solid var(--rule)}
+.kv > div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.9fr);gap:8px 64px;padding:22px 0;border-bottom:1px solid var(--rule)}
+.kv dt{font-size:19px;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
+.kv dd{margin:0;max-width:660px;font-size:16.5px;line-height:1.6}
+
+/* 05 safeguards */
+.guards{--c:3;--pl:28px;--pr:28px}
+.guards h3{margin:0 0 8px;font-size:18px;line-height:1.3;letter-spacing:-.01em}
+.guards p{margin:0;font-size:15px;line-height:1.6;color:var(--muted)}
+
+/* 06 how we work */
+.how{--pt:24px;--pb:4px}
+.how .n{display:block;font-size:44px;line-height:1;font-weight:600;letter-spacing:-.03em;color:var(--ink)}
+.how h3{margin:18px 0 8px;font-size:19px;line-height:1.25;letter-spacing:-.012em}
+.how p{margin:0;font-size:15px;line-height:1.6;color:var(--muted)}
+.charge{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:baseline;gap:8px 32px;margin-top:48px;padding:22px 26px;border:1px solid var(--ink)}
+.charge p{margin:0}
+.charge p+p{font-size:16.5px;line-height:1.6;color:var(--text)}
+
+/* contact */
+.cta{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:40px 72px;padding:64px;background:var(--ink);color:#C9D2DE}
+.cta .lab{color:#8FB0DA}
+.cta h2{margin:16px 0 18px;font-size:clamp(30px,3.7vw,48px);line-height:1.06;letter-spacing:-.028em;color:#fff}
+.cta > div > p:not(.lab){margin:0;max-width:520px;font-size:18px;line-height:1.6;color:#C9D2DE}
+.cta .ctas{margin-top:34px;gap:12px}
+.cta .btn{background:#fff;border-color:#fff;color:var(--ink)}
+.cta .btn:hover{background:var(--accent-soft);border-color:var(--accent-soft)}
+.cta .btn.line{background:transparent;border-color:rgba(255,255,255,.45);color:#fff}
+.cta .btn.line:hover{background:rgba(255,255,255,.08);border-color:#fff}
+.reach{align-self:end;margin:0}
+.reach > div{display:grid;grid-template-columns:92px minmax(0,1fr);gap:16px;padding:14px 0;border-top:1px solid rgba(255,255,255,.16)}
+.reach dt{padding-top:3px;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#8A9BB2}
+.reach dd{margin:0;font-size:16px;color:#fff}
+.reach a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35)}
+.reach a:hover{border-bottom-color:#fff}
+
+/* footer */
+.foot{margin-top:64px;padding:28px 0 44px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--muted)}
+.foot .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:14px 32px}
+.foot .brand{font-size:12px}
+.foot nav{display:flex;flex-wrap:wrap;gap:8px 22px;margin-left:auto}
+.foot a{color:var(--muted);text-decoration:none}
+.foot a:hover{color:var(--ink)}
+
+@media (max-width:1080px){
+  .lane{display:none}
+  .steps{--c:3}
+  .steps .tag{display:inline}
+  .steps li:nth-child(n+4){--pt:26px}
+  .also .rg{--c:2}
+  .outs{--c:2;--pb:30px}
+  .outs > *:nth-child(n+3){--pt:28px}
+}
+@media (max-width:900px){
+  .bar nav{display:none}
+  .bar .btn{margin-left:auto}
+  .scene{grid-template-columns:minmax(0,1fr)}
+  .posts{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .post.li{grid-column:auto}
+  .r3{aspect-ratio:1.9/1}
+  .head{grid-template-columns:minmax(0,1fr)}
+  .also{grid-template-columns:minmax(0,1fr)}
+  .facts .rg{--c:2}
+  .guards{--c:2}
+  .how{--c:2;--pb:28px}
+  .cta{grid-template-columns:minmax(0,1fr);padding:48px 40px}
+}
+@media (max-width:640px){
+  :root{--gut:16px}
+  body{font-size:16px}
+  .bar{height:60px;gap:16px}
+  .bar .btn.sm{font-size:13px;padding:9px 12px}
+  .hero{padding-top:44px}
+  .hero h1{font-size:clamp(34px,10.4vw,46px);line-height:1.04}
+  .hero-row{margin-top:24px}
+  .ctas{gap:14px 22px}
+  .stage{margin-top:36px;padding:14px 14px 12px}
+  .run{grid-template-columns:minmax(0,1fr) auto;gap:12px 12px}
+  .run ol{grid-column:1/-1;grid-row:2;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 6px}
+  .site nav{display:none}
+  .article{padding:14px 16px 18px}
+  .hl{font-size:20px}
+  .posts{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -14px;padding:2px 14px 10px;scrollbar-width:none}
+  .posts::-webkit-scrollbar{display:none}
+  .post{flex:0 0 84%;scroll-snap-align:center}
+  .stage figcaption{flex-direction:column;gap:8px}
+  .facts .rg,.steps,.also .rg,.outs,.guards,.how{--c:1}
+  .facts .rg > *{--pt:20px;--pb:22px}
+  .steps li,.steps li:nth-child(n+4){--pt:20px;--pb:20px}
+  .also .rg > *{--pb:24px}
+  .outs > *,.outs > *:nth-child(n+3){--pt:22px;--pb:22px}
+  .guards > *{--pt:22px;--pb:22px}
+  .how > *{--pt:22px;--pb:22px}
+  .how .n{font-size:34px}
+  .sec{padding-top:84px}
+  .head{margin-bottom:36px}
+  .head p:not(.lab){font-size:16.5px}
+  .whot thead{display:none}
+  .whot tr{display:block;padding:18px 0;border-bottom:1px solid var(--rule)}
+  .whot tr:first-child{border-top:1px solid var(--ink)}
+  .whot td{display:block;width:auto!important;padding:0;border:0}
+  .whot td:first-child{margin-bottom:6px;font-size:18px}
+  .kv > div{grid-template-columns:minmax(0,1fr);gap:4px}
+  .charge{grid-template-columns:minmax(0,1fr);padding:20px}
+  .cta{margin:0 calc(-1 * var(--gut));padding:44px var(--gut) 40px}
+  .cta .btn{width:100%}
+  .reach > div{grid-template-columns:minmax(0,1fr);gap:2px}
+  .foot nav{margin-left:0}
+}
+</style>
 </head>
 <body>
-  <main>
-    <h1>Both Sides</h1>
-    <p class="tagline">A blog written by AI. It summarises the material published
-    about a subject across the internet — one story at a time, one thing per
-    page: first what actually happened, then every side's case in its own
-    words, uncut.</p>
+<a class="skip" href="#main">Skip to content</a>
 
-    <p>Both Sides is an app for Android and iPhone, made by an independent
-    developer.</p>
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <clipPath id="mark-clip"><circle cx="10" cy="16" r="8"/></clipPath>
+    <linearGradient id="pic-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D3DFEC"/><stop offset="1" stop-color="#EDF2F7"/></linearGradient>
+    <pattern id="pic-rib" width="7" height="10" patternUnits="userSpaceOnUse"><rect width="1.6" height="10" fill="#0F1A2B" opacity=".16"/></pattern>
+  </defs>
+  <symbol id="mark" viewBox="0 0 26 26"><circle cx="10" cy="16" r="8" fill="#3D5A6C"/><circle cx="16" cy="10" r="8" fill="#C05A2E"/><circle cx="16" cy="10" r="8" fill="#2B1D12" clip-path="url(#mark-clip)"/></symbol>
+  <symbol id="box" viewBox="0 0 86 30" preserveAspectRatio="none"><rect width="86" height="30" fill="currentColor"/><rect width="86" height="30" fill="url(#pic-rib)"/><rect width="86" height="2" fill="#fff" opacity=".22"/><rect width="3" height="30" fill="#0F1A2B" opacity=".2"/><rect x="83" width="3" height="30" fill="#0F1A2B" opacity=".2"/></symbol>
+  <symbol id="pic" viewBox="0 0 600 300" preserveAspectRatio="xMidYMid slice">
+    <rect width="600" height="300" fill="url(#pic-sky)"/>
+    <circle cx="118" cy="74" r="30" fill="#F1DEC6"/>
+    <path d="M0 214 60 204 118 209 186 197 252 206 318 198 386 207 452 195 520 203 600 197V232H0Z" fill="#C2CFDD"/>
+    <g fill="#0F1A2B">
+      <rect x="396" y="60" width="9" height="172"/>
+      <rect x="523" y="60" width="9" height="172"/>
+      <rect x="372" y="52" width="214" height="11"/>
+      <rect x="405" y="156" width="118" height="6"/>
+      <rect x="452" y="63" width="30" height="9"/>
+      <rect x="461" y="72" width="2" height="40"/>
+      <rect x="471" y="72" width="2" height="40"/>
+    </g>
+    <use href="#box" x="430" y="112" width="74" height="26" color="#C05A2E"/>
+    <rect y="232" width="600" height="68" fill="#A3B3C4"/>
+    <rect y="232" width="600" height="4" fill="#8296AB"/>
+    <use href="#box" x="22" y="202" width="86" height="30" color="#1B4F8C"/>
+    <use href="#box" x="110" y="202" width="86" height="30" color="#3D5A6C"/>
+    <use href="#box" x="198" y="202" width="86" height="30" color="#C05A2E"/>
+    <use href="#box" x="286" y="202" width="86" height="30" color="#0F1A2B"/>
+    <use href="#box" x="22" y="170" width="86" height="30" color="#C9A063"/>
+    <use href="#box" x="110" y="170" width="86" height="30" color="#1B4F8C"/>
+    <use href="#box" x="198" y="170" width="86" height="30" color="#7A8CA0"/>
+    <use href="#box" x="66" y="138" width="86" height="30" color="#3D5A6C"/>
+    <use href="#box" x="154" y="138" width="86" height="30" color="#0F1A2B"/>
+    <use href="#box" x="414" y="202" width="86" height="30" color="#7A8CA0"/>
+    <use href="#box" x="540" y="202" width="86" height="30" color="#1B4F8C"/>
+    <use href="#box" x="540" y="170" width="86" height="30" color="#C9A063"/>
+  </symbol>
+</svg>
 
-    <h2>Legal</h2>
-    <ul>
-      <li><a href="privacy.html">Privacy policy</a></li>
-      <li><a href="delete-account.html">Delete your account</a></li>
-    </ul>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="#main" aria-label="Both Sides, top of the page"><svg viewBox="0 0 26 26" aria-hidden="true"><use href="#mark" width="26" height="26"/></svg><span>BOTH SIDES</span></a>
+    <nav aria-label="Sections">
+      <a href="#desk">The desk</a>
+      <a href="#publish">Where it publishes</a>
+      <a href="#who">Who it’s for</a>
+      <a href="#how">How we work</a>
+    </nav>
+    <a class="btn sm" href="#contact">Book a walkthrough</a>
+  </div>
+</header>
 
-    <h2>Contact</h2>
-    <p>Questions or feedback:
-    <a href="mailto:amit@bothsides.tech">amit@bothsides.tech</a></p>
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <p class="lab">AI workflows for enterprises</p>
+    <h1>We automate the work behind your <em>articles and social media.</em></h1>
+    <div class="hero-row">
+      <p class="lede">Both Sides builds custom AI workflows for enterprises. One AI editorial desk finds the material, writes it in your voice and your language, checks every line against its sources, and publishes it on your website and on LinkedIn, Instagram, Facebook and X.</p>
+      <div class="ctas">
+        <a class="btn" href="#contact">Book a 30-minute walkthrough</a>
+        <a class="tlink" href="#desk">See the desk, part by part</a>
+      </div>
+    </div>
+    <p class="fine">An end-to-end working model, built and working today, customised for each business.</p>
 
-    <hr>
-    <footer>© 2026 Both Sides</footer>
-  </main>
+    <figure class="stage" id="stage">
+      <div class="run" aria-hidden="true">
+        <span class="who"><i></i>The desk</span>
+        <ol>
+          <li class="on"><span>01</span>Gather</li>
+          <li class="on"><span>02</span>Rank</li>
+          <li class="on"><span>03</span>Write</li>
+          <li class="on"><span>04</span>Fact check</li>
+          <li class="on"><span>05</span>Translate</li>
+          <li class="on"><span>06</span>Publish</li>
+        </ol>
+        <span class="state">Published: 1 website, 3 handles</span>
+      </div>
+
+      <div class="scene">
+        <div>
+          <div class="browser" data-out>
+            <div class="chrome"><i></i><i></i><i></i><span class="url" id="url">yourbrand.com/news/five-changes-for-exporters</span></div>
+            <div class="site"><span class="yb">YOUR BRAND</span><nav aria-hidden="true"><span>News</span><span>Markets</span><span>Policy</span><span>Companies</span><span>Opinion</span></nav></div>
+            <div class="article" id="article" lang="en">
+              <div class="langs" role="group" aria-label="Language of the article">
+                <button type="button" data-lang="en" aria-pressed="true">English</button>
+                <button type="button" data-lang="hi" aria-pressed="false" lang="hi">हिन्दी</button>
+                <button type="button" data-lang="mr" aria-pressed="false" lang="mr">मराठी</button>
+              </div>
+              <span class="cat" data-k="cat">Policy</span>
+              <p class="hl" data-k="h">Five changes for exporters this month</p>
+              <p class="meta" data-k="m">Published today, 9:40 am · Author: Your Brand</p>
+              <div class="img r2"><svg aria-hidden="true"><use href="#pic" width="100%" height="100%"/></svg></div>
+              <p class="pcap" data-k="c">Containers stacked at a port, ready for loading.</p>
+              <p class="first" data-k="p">Five rules changed for exporters this month. Here is what each one means for a small manufacturer, what it costs, and what to do before the deadline.</p>
+            </div>
+          </div>
+          <div class="marks" data-out><span>Checked against its sources</span><span>SEO title, description and tags</span><span>Picture drawn and described</span></div>
+        </div>
+
+        <div class="posts">
+          <article class="post li" data-out aria-label="LinkedIn post">
+            <span class="pf">LinkedIn</span>
+            <div class="ph"><span class="av">YB</span><div><b>Your Brand</b><small>Company page · Now</small></div></div>
+            <p class="cap">Five rules changed for exporters this month. Here is what each one means for a small manufacturer, and what to do before the deadline.<br><br>Read more: <span class="lk">yourbrand.com/news/five-changes…</span><br><span class="tg">#Exports #Trade #SmallBusiness</span></p>
+            <div class="lcard">
+              <div class="img r3"><svg aria-hidden="true"><use href="#pic" width="100%" height="100%"/></svg></div>
+              <div class="t"><b>Five changes for exporters this month</b><small>yourbrand.com</small></div>
+            </div>
+          </article>
+
+          <article class="post ig" data-out aria-label="Instagram post">
+            <span class="pf">Instagram</span>
+            <div class="ph"><span class="av o">YB</span><div><b>yourbrand</b><small>Now</small></div></div>
+            <div class="igcard">
+              <div class="img"><svg aria-hidden="true"><use href="#pic" width="100%" height="100%"/></svg></div>
+              <span class="yb">YOUR BRAND</span>
+              <div class="band"><b>5 changes for exporters this month</b><em>Read more</em></div>
+            </div>
+            <p class="cap"><b>yourbrand</b> Five rule changes, in one minute. Link in bio. <span class="tg">#Exports</span></p>
+          </article>
+
+          <article class="post x" data-out aria-label="Post on X">
+            <span class="pf">X</span>
+            <div class="ph"><span class="av o">YB</span><div><b>Your Brand</b><small>@yourbrand · now</small></div></div>
+            <p class="cap">Five rules changed for exporters this month: what each one means, and what to do before the deadline.<br><span class="lk">yourbrand.com/news/five-changes…</span> <span class="tg">#Exports</span></p>
+          </article>
+        </div>
+      </div>
+
+      <figcaption><span>Illustration: one article from the desk, on a website in three languages and on three social handles. The brand, the story and the picture are examples.</span><button class="replay" type="button">Replay</button></figcaption>
+    </figure>
+
+    <div class="facts rgw">
+      <div class="rg">
+        <div><b>24/7</b><span>The desk works day and night, on a server in your own account.</span></div>
+        <div><b>1</b><span>One desk for every website and social handle you run.</span></div>
+        <div><b>8</b><span>Indian languages besides English. Each translation gets its own check.</span></div>
+        <div><b>4</b><span>Social platforms: LinkedIn, Instagram, Facebook and X.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="desk">
+  <div class="wrap">
+    <div class="head">
+      <p class="lab"><span class="no">01</span>The desk, part by part</p>
+      <h2>Six parts, from the first source to the published post.</h2>
+      <p>Each part takes one routine job off your team. Your approval rules decide where a person steps in.</p>
+    </div>
+    <div class="rgw">
+      <div class="lane rg" aria-hidden="true"><span>Automated</span><em>Your rules</em></div>
+      <ol class="steps rg">
+        <li><span class="n">01</span><i class="tag">Automated</i><h3>Gather</h3><p>Watches the sources you choose, all day: websites, feeds, posts on X, press releases and your own documents. Groups them into stories.</p></li>
+        <li><span class="n">02</span><i class="tag">Automated</i><h3>Rank</h3><p>Scores every story for your readers, learned from what you already publish, with a short brief on why it matters.</p></li>
+        <li><span class="n">03</span><i class="tag">Automated</i><h3>Write</h3><p>Drafts the article from the gathered reports, in your voice, your format and your language.</p></li>
+        <li><span class="n">04</span><i class="tag">Automated</i><h3>Fact check</h3><p>An independent check of every line against the sources. What they do not support is corrected, or held with the reason.</p></li>
+        <li><span class="n">05</span><i class="tag">Automated</i><h3>Translate</h3><p>Eight Indian languages and English. Each translation gets its own check.</p></li>
+        <li><span class="n">06</span><i class="tag">Your rules</i><h3>Approve and publish</h3><p>An editor’s yes on each piece, or straight to your website and handles. You set the rule.</p></li>
+      </ol>
+    </div>
+    <div class="also">
+      <h3>Also in the desk</h3>
+      <div class="rgw">
+        <dl class="rg">
+          <div><dt>Pictures</dt><dd>The source’s own released picture, a licensed and credited one, or one drawn for the story. Every picture is described.</dd></div>
+          <div><dt>Search details</dt><dd>An SEO title, a description and tags for every article.</dd></div>
+          <div><dt>Sections</dt><dd>One section for each brand, city or region, each with its own sources and language.</dd></div>
+          <div><dt>Duplicate guard</dt><dd>Flags a story you have already published, or one that is already with an editor.</dd></div>
+          <div><dt>Media reading</dt><dd>Reads a picture or video post and reports what it says.</dd></div>
+          <div><dt>Daily report</dt><dd>What went out, what was held and why, on your phone every evening. An alert only when something needs a person.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="publish">
+  <div class="wrap">
+    <div class="head">
+      <p class="lab"><span class="no">02</span>Where it publishes</p>
+      <h2>Your website, your handles, your app.</h2>
+      <p>The desk publishes the way your team does today, each piece in the format of the place it goes.</p>
+    </div>
+    <div class="rgw">
+      <div class="outs rg">
+        <div><p class="lab">Website</p><h3>Articles on your site</h3><p>Published as a staff writer would: your design, your categories, your author line, with a picture and its description. WordPress and other site systems.</p></div>
+        <div><p class="lab">Social media</p><h3>Posts on every handle</h3><p>The moment an article goes up, the desk posts it on every handle of that brand: a picture card in your own post design and a caption written for each platform.</p></div>
+        <div><p class="lab">App</p><h3>An app, if you want one</h3><p>No app yet? We build one for Android and iPhone, published on Google Play and the App Store and fed by the same desk.</p></div>
+        <div><p class="lab">Your team</p><h3>One screen for your editors</h3><p>Anything that needs a person arrives on one screen with its sources and its fact check, to approve or reject.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="who">
+  <div class="wrap">
+    <div class="head">
+      <p class="lab"><span class="no">03</span>Who it’s for</p>
+      <h2>For teams that publish every day.</h2>
+      <p>We build each desk around the business it serves. These are the teams we build for.</p>
+    </div>
+    <table class="whot">
+      <thead><tr><th scope="col">Your business</th><th scope="col">What the desk does</th></tr></thead>
+      <tbody>
+        <tr><td>News and digital media</td><td>Watches every outlet and X through the day, drafts in your style and language, checks each line, and leaves the final word to your editor.</td></tr>
+        <tr><td>Trade and industry publications</td><td>Finds your industry’s news and publishes it on each brand’s website and social handles, in that brand’s voice.</td></tr>
+        <tr><td>Companies and brands</td><td>Turns your announcements, reports and updates into articles, LinkedIn posts and social cards, written in your voice.</td></tr>
+        <tr><td>Creators and social-first pages</td><td>Captions and picture cards for your handles, and a website or an app behind them, from the stories you choose.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="sec" id="safeguards">
+  <div class="wrap">
+    <div class="head">
+      <p class="lab"><span class="no">04</span>Safeguards</p>
+      <h2>Safe to leave running.</h2>
+      <p>The desk is built to hold back rather than guess.</p>
+    </div>
+    <div class="rgw">
+      <div class="guards rg">
+        <div><h3>Checked before it goes out</h3><p>Every line is matched against its sources before anything is published.</p></div>
+        <div><h3>Held, with the reason</h3><p>A line the sources do not support is corrected or held for a person, with the reason. It never goes out as written.</p></div>
+        <div><h3>Credited pictures</h3><p>Every picture carries its credit, or is drawn for the story and described.</p></div>
+        <div><h3>A cap on every bill</h3><p>The AI service and X each take a monthly cap, so a bill never runs past it.</p></div>
+        <div><h3>Your data stays yours</h3><p>Your accounts, your server and your archive.</p></div>
+        <div><h3>Your AI policy</h3><p>Whether and how AI is labelled on your pieces follows your own policy.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="custom">
+  <div class="wrap">
+    <div class="head">
+      <p class="lab"><span class="no">05</span>Customised for you</p>
+      <h2>Nothing about your product changes. The work behind it does.</h2>
+      <p>Every desk is set up for one business: its sources, its voice, its rules and its accounts.</p>
+    </div>
+    <dl class="kv">
+      <div><dt>Your sources</dt><dd>The outlets, feeds, accounts and documents your team follows today.</dd></div>
+      <div><dt>Your voice and language</dt><dd>Learned from your published work: your style, your words, your languages.</dd></div>
+      <div><dt>Your formats and rules</dt><dd>Articles, captions and cards in the forms you use, published under your approval rules.</dd></div>
+      <div><dt>Your accounts</dt><dd>The desk runs on a server in your own account. You pay the AI service and the server directly, each with a monthly spending cap.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="sec" id="how">
+  <div class="wrap">
+    <div class="head">
+      <p class="lab"><span class="no">06</span>How we work</p>
+      <h2>From a 30-minute call to a desk that runs on its own.</h2>
+      <p>You see the working model first. You decide after.</p>
+    </div>
+    <div class="rgw">
+      <ol class="how rg">
+        <li><span class="n">1</span><h3>Walkthrough</h3><p>Thirty minutes on Google Meet. We show you the working model on content like yours.</p></li>
+        <li><span class="n">2</span><h3>Proposal</h3><p>A short written proposal: one price for the build, and the running costs at the volume you publish today.</p></li>
+        <li><span class="n">3</span><h3>Build</h3><p>We connect the desk to your website and handles, in your own accounts, and tune it to your voice.</p></li>
+        <li><span class="n">4</span><h3>Live</h3><p>The desk works day and night. A report reaches you every evening, and we stay on hand for support.</p></li>
+      </ol>
+    </div>
+    <div class="charge">
+      <p class="lab">How we charge</p>
+      <p>One fixed price for the build. Running costs go straight to the providers, from your own accounts: the AI service, the server, and per-post charges such as X’s.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="cta">
+      <div>
+        <p class="lab">Get in touch</p>
+        <h2>Tell us the one task that eats your team’s day.</h2>
+        <p>We reply within two working days with a one-page plan for automating it, at no charge.</p>
+        <div class="ctas">
+          <a class="btn" href="mailto:amit@bothsides.tech?subject=A%2030-minute%20walkthrough">Book a 30-minute walkthrough</a>
+          <a class="btn line" href="https://wa.me/919168508071">Message us on WhatsApp</a>
+        </div>
+      </div>
+      <dl class="reach">
+        <div><dt>Email</dt><dd><a href="mailto:amit@bothsides.tech">amit@bothsides.tech</a></dd></div>
+        <div><dt>Phone</dt><dd><a href="tel:+919168508071">+91 91685 08071</a> · WhatsApp or call</dd></div>
+        <div><dt>Founder</dt><dd>Amit Kamble</dd></div>
+        <div><dt>Based in</dt><dd>Pune, India</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="brand" href="#main"><svg viewBox="0 0 26 26" aria-hidden="true"><use href="#mark" width="26" height="26"/></svg><span>BOTH SIDES</span></a>
+    <span>AI workflows for enterprises · Pune, India</span>
+    <nav aria-label="Legal"><a href="privacy.html">Privacy policy</a><a href="delete-account.html">Account deletion</a><span>© 2026 Both Sides</span></nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var d = document;
+  d.documentElement.classList.add('js');
+
+  var top = d.querySelector('.top');
+  function scrolled() { top.classList.toggle('scrolled', (window.scrollY || 0) > 4); }
+  addEventListener('scroll', scrolled, { passive: true });
+  scrolled();
+
+  // the sample article in three languages
+  var T = {
+    en: { url: 'yourbrand.com/news/five-changes-for-exporters', cat: 'Policy', h: 'Five changes for exporters this month', m: 'Published today, 9:40 am · Author: Your Brand', c: 'Containers stacked at a port, ready for loading.', p: 'Five rules changed for exporters this month. Here is what each one means for a small manufacturer, what it costs, and what to do before the deadline.' },
+    hi: { url: 'yourbrand.com/hi/news/five-changes-for-exporters', cat: 'नीति', h: 'निर्यातकों के लिए इस महीने के पाँच बड़े बदलाव', m: 'आज सुबह 9:40 बजे प्रकाशित · लेखक: Your Brand', c: 'बंदरगाह पर लदान के लिए तैयार रखे कंटेनर।', p: 'इस महीने निर्यातकों के लिए पाँच नियम बदले। हर बदलाव का एक छोटे निर्माता के लिए क्या मतलब है, उसकी लागत क्या है, और समय सीमा से पहले क्या करना है, यहाँ जानिए।' },
+    mr: { url: 'yourbrand.com/mr/news/five-changes-for-exporters', cat: 'धोरण', h: 'निर्यातदारांसाठी या महिन्यातील पाच मोठे बदल', m: 'आज सकाळी 9:40 वाजता प्रकाशित · लेखक: Your Brand', c: 'बंदरात जहाजावर चढवण्यासाठी तयार ठेवलेले कंटेनर.', p: 'या महिन्यात निर्यातदारांसाठी पाच नियम बदलले. प्रत्येक बदलाचा लहान उत्पादकासाठी काय अर्थ आहे, त्याचा खर्च किती आहे आणि मुदतीपूर्वी काय करायचे, ते इथे वाचा.' }
+  };
+  var article = d.getElementById('article'), url = d.getElementById('url');
+  var langs = [].slice.call(article.querySelectorAll('.langs button'));
+  function setLang(k) {
+    var t = T[k];
+    langs.forEach(function (x) { x.setAttribute('aria-pressed', String(x.getAttribute('data-lang') === k)); });
+    article.setAttribute('lang', k);
+    url.textContent = t.url;
+    [].forEach.call(article.querySelectorAll('[data-k]'), function (el) { el.textContent = t[el.getAttribute('data-k')]; });
+  }
+  langs.forEach(function (b) {
+    b.addEventListener('click', function () {
+      if (stage.classList.contains('working')) finish();
+      setLang(b.getAttribute('data-lang'));
+    });
+  });
+
+  // the desk at work: each step lights up as its result appears
+  var stage = d.getElementById('stage');
+  var steps = [].slice.call(stage.querySelectorAll('.run li'));
+  var outs = [].slice.call(stage.querySelectorAll('[data-out]'));
+  var posts = [].slice.call(stage.querySelectorAll('.post'));
+  var state = stage.querySelector('.state'), done = state.textContent;
+  var still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var timers = [], started = false;
+  function later(ms, fn) { timers.push(setTimeout(fn, ms)); }
+  function stop() { timers.forEach(clearTimeout); timers = []; }
+  function step(i) { return function () { steps[i].classList.add('on'); }; }
+  function show(el) { return function () { el.classList.add('in'); }; }
+  function lang(k) { return function () { setLang(k); }; }
+  function finish() {
+    stop();
+    steps.forEach(function (s) { s.classList.add('on'); });
+    outs.forEach(function (o) { o.classList.add('in'); });
+    stage.classList.remove('working');
+    state.textContent = done;
+  }
+  function play() {
+    stop();
+    started = true;
+    stage.classList.add('pre', 'working');
+    steps.forEach(function (s) { s.classList.remove('on'); });
+    outs.forEach(function (o) { o.classList.remove('in'); });
+    setLang('en');
+    state.textContent = 'Working';
+    later(200, step(0));                                        // gather
+    later(600, step(1));                                        // rank
+    later(1000, step(2)); later(1100, show(stage.querySelector('.browser')));  // write: the article
+    later(1500, step(3)); later(1600, show(stage.querySelector('.marks')));    // fact check
+    later(2000, step(4)); later(2100, lang('hi')); later(2700, lang('mr'));    // translate
+    later(3300, lang('en')); later(3300, step(5));              // publish: the posts
+    posts.forEach(function (p, i) { later(3450 + i * 330, show(p)); });
+    later(3450 + posts.length * 330 + 200, finish);
+  }
+  stage.querySelector('.replay').addEventListener('click', function () { if (still) finish(); else play(); });
+
+  // the run starts when the picture comes into view; a page that is not being looked at shows it finished
+  if (!still && !d.hidden && 'IntersectionObserver' in window) {
+    stage.classList.add('pre');
+    steps.forEach(function (s) { s.classList.remove('on'); });
+    var io = new IntersectionObserver(function (es) {
+      if (es[0].isIntersecting && !started) { io.disconnect(); play(); }
+    }, { threshold: 0.15 });
+    io.observe(stage);
+    later(4000, function () { if (!started && d.hidden) { io.disconnect(); finish(); } });
+  }
+})();
+</script>
 </body>
 </html>
