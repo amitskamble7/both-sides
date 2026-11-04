@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DeshGujarat: three new design options (preview by Both Sides)</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+:root{--bg:#eceae6;--panel:#fff;--ink:#17171a;--muted:#62626a;--line:#d9d6d0;--acc:#FFC317}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17171a;--panel:#222227;--ink:#ececf0;--muted:#a0a0aa;--line:#34343b}}
+:root[data-theme="dark"]{--bg:#17171a;--panel:#222227;--ink:#ececf0;--muted:#a0a0aa;--line:#34343b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 "Segoe UI",system-ui,-apple-system,sans-serif}
+.bar{position:sticky;top:0;z-index:10;background:var(--panel);border-bottom:1px solid var(--line);padding:10px 16px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;margin-right:auto}
+.brand img{width:28px;height:28px;border-radius:4px}
+.brand small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px;background:var(--bg)}
+.seg button{border:0;background:transparent;color:var(--ink);font:600 13px/1 inherit;padding:8px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--panel)}
+.seg.opt button[aria-pressed="true"]{background:var(--acc);color:#111}
+.info{max-width:1320px;margin:18px auto 0;padding:0 16px;display:grid;grid-template-columns:1fr auto;gap:8px 24px;align-items:start}
+.info h1{margin:0;font-size:22px}
+.info p{margin:4px 0 0;color:var(--muted);max-width:820px}
+.info .keep{font-size:13px;color:var(--muted);border-left:3px solid var(--acc);padding:2px 0 2px 10px;max-width:360px}
+.stage{padding:18px 16px 40px}
+.desk{max-width:1320px;margin:0 auto;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.12)}
+.chrome{display:flex;align-items:center;gap:8px;padding:9px 14px;border-bottom:1px solid var(--line);font-size:12px;color:var(--muted)}
+.chrome i{width:11px;height:11px;border-radius:50%;background:var(--line);display:inline-block}
+.chrome span{margin-left:10px;background:var(--bg);border-radius:999px;padding:4px 14px}
+.desk iframe{display:block;width:100%;height:900px;border:0;background:#fff}
+.phone{width:414px;margin:0 auto;background:#0d0d0f;border-radius:52px;padding:12px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.phone iframe{display:block;width:390px;height:800px;border:0;border-radius:40px;background:#fff}
+.note{max-width:1320px;margin:0 auto;padding:0 16px 40px;color:var(--muted);font-size:13px}
+.note b{color:var(--ink)}
+@media (max-width:700px){.info{grid-template-columns:1fr}.phone{width:100%;max-width:414px}.phone iframe{width:100%}}
+</style>
+</head>
+<body>
+<div class="bar">
+  <div class="brand"><img alt="" src="data:image/png;base64,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"><div>DeshGujarat: new front-end, three options<small id="when"></small></div></div>
+  <div class="seg opt" id="opt"></div>
+  <div class="seg" id="view"><button data-v="home">Home page</button><button data-v="story">Story page</button></div>
+  <div class="seg" id="width"><button data-w="desk">Computer</button><button data-w="phone">Phone</button></div>
+  <div class="seg" id="theme" title="Option 1 has a dark and a light mode"><button data-t="dark">Dark</button><button data-t="light">Light</button></div>
+  <div class="seg" id="ads" title="What the advert spaces show"><button data-a="house">Your own banners</button><button data-a="google">Google advert spaces</button></div>
+</div>
+<div class="info"><div><h1 id="oname"></h1><p id="oidea"></p></div>
+<div class="keep"><b>Design preview by Both Sides, not the live website.</b> Only the design changes. Your WordPress, editor, stories, web addresses, Rank Math and AdSense stay as they are; the option you choose becomes a new WordPress theme.</div></div>
+<div class="stage" id="stage"></div>
+<div class="note"><b>Advert spaces.</b> Every space has a fixed size, so the page never jumps when an advert arrives. When Google has an advert, it covers the space; when Google has none (AdSense marks the space "unfilled"), your own banner underneath shows instead of an empty box. Switch "Google advert spaces" above to see the sizes.
+<b>Pictures.</b> Every picture box has its size set before the picture arrives; X pictures load as X's small copy on cards and the medium copy on the lead and story picture. Click any story to open it in the Story page view.</div>
+
+<script>
+const D = {"day": "2026-11-04", "dateLong": "Wednesday, 4 November 2026", "fetched": "2026-11-04T20:56:50+05:30", "lead": 363326, "story": 363314, "stories": [{"id": 363390, "date": "2026-11-04T20:41:10", "time": "8:41 PM", "link": "https://deshgujarat.com/2026/11/04/hdfc-bank-gets-govt-nod-to-offer-deposits-under-capital-gains-accounts-scheme/", "title": "HDFC Bank Gets Govt Nod to Offer Deposits Under Capital Gains Accounts Scheme", "excerpt": "Ahmedabad: HDFC Bank has received authorisation from the government to offer deposits under the Capital Gains Accounts Scheme (CGAS), 1988. CGAS provides a facility for", "categories": ["Business"], "og_image": "", "img_small": "", "img_medium": "", "body": ["Ahmedabad : HDFC Bank has received authorisation from the government to offer deposits under the Capital Gains Accounts Scheme (CGAS), 1988. CGAS provides a facility for taxpayers to hold their unused capital gains for a maximum of three years in a bank account, a press release said.", "With CGAS, taxpayers who are unable to finalise their re-investment before the income tax filing deadline can open savings accounts (A) and fixed deposits (B) with the Bank across all urban and semi-urban branches (excluding rural branches). According to the applicable section of the Income-Tax Act, they will not only be able to avail tax exemption but also earn interest on their deposits for a maximum period of three years.", "Sunali Rohra, Head – Government & Institutional Liabilities, New Economy Group and Alternate Banking Channels & Partnership , HDFC Bank said , “We are grateful to the Government of India for reposing faith in us as a reliable partner for implementing the CGAS. With this offering, customers can both earn interest and avail tax exemption on their unutilised capital gains. We invite customers to leverage our extensive branch network and digital prowess to securely park their unutilised capital gains.”", "As of now, all resident Indians can avail the deposit facility with the Bank under CGAS. The facility applies to capital gains arising from the transfer of the following assets:"]}, {"id": 363385, "date": "2026-11-04T20:23:58", "time": "8:23 PM", "link": "https://deshgujarat.com/2026/11/04/gsssb-announces-recruitment-for-1237-class-3-posts-applications-open-on-november-5/", "title": "GSSSB Announces Recruitment for 1,237 Class-3 Posts; Applications Open on November 5", "excerpt": "Gandhinagar: The Gujarat Subordinate Services Selection Board (GSSSB) has announced a recruitment drive for 1,237 Class-3 posts under Group-A and Group-B through a combined competitive", "categories": ["Gujarat"], "og_image": "https://pbs.twimg.com/media/GC-s0EdWYAAP85B.jpg", "img_small": "https://pbs.twimg.com/media/GC-s0EdWYAAP85B?format=jpg&name=small", "img_medium": "https://pbs.twimg.com/media/GC-s0EdWYAAP85B?format=jpg&name=medium", "body": ["Gandhinagar: The Gujarat Subordinate Services Selection Board (GSSSB) has announced a recruitment drive for 1,237 Class-3 posts under Group-A and Group-B through a combined competitive examination. The recruitment will include 243 vacancies under Group-A and 994 vacancies under Group-B, offering an opportunity for candidates seeking government jobs in Gujarat.", "The board has invited online applications through the Gujarat government’s OJAS portal. The application process will begin on November 5, 2026, at 2 pm and remain open until November 30, 2026, at 11:59 pm.", "Candidates are advised to carefully read the detailed recruitment notification and application instructions before submitting their online applications to avoid errors that could lead to rejection.", "Applicants must enter details regarding their educational qualifications, age, category, and other eligibility criteria based on their original certificates and supporting documents. Candidates are required to keep their relevant certificates ready while filling out the application form.", "The board will publish recruitment-related updates and examination instructions on its official website. Candidates may also receive important examination-related notifications through SMS. Applicants are therefore advised to provide a valid mobile number in their application form and keep it active throughout the recruitment process.", "Candidates can apply online through OJAS Gujarat . Further recruitment updates will be available on the GSSSB official website . DeshGujarat"]}, {"id": 363380, "date": "2026-11-04T20:15:22", "time": "8:15 PM", "link": "https://deshgujarat.com/2026/11/04/amc-to-hike-parking-fees-proposed-new-rates-here/", "title": "AMC to Hike Parking Fees; Proposed New Rates Here", "excerpt": "Ahmedabad: The Amdavad Municipal Corporation (AMC) has proposed an increase in parking charges at its pay-and-park facilities, including on-street, off-street and multi-level parking locations. The", "categories": ["Ahmedabad", "Gujarat"], "og_image": "https://deshgujarat.com/wp-content/uploads/2012/04/AMC.jpg", "img_small": "https://deshgujarat.com/wp-content/uploads/2012/04/AMC.jpg", "img_medium": "https://deshgujarat.com/wp-content/uploads/2012/04/AMC.jpg", "body": ["Ahmedabad: The Amdavad Municipal Corporation (AMC) has proposed an increase in parking charges at its pay-and-park facilities, including on-street, off-street and multi-level parking locations. The revised rates, approved by the Town Planning Committee, will come into effect after receiving approval from the Standing Committee and the General Board.", "Under the revised rates, two-wheeler parking charges will be ₹10 for the first hour, ₹15 for one to three hours, ₹25 for three to six hours, ₹40 for six to 12 hours and ₹55 for 12 to 24 hours. The revised charges are lower than those initially proposed by the Municipal Commissioner for longer parking durations.", "For four-wheelers, the proposed parking charges will be ₹20 for the first hour, ₹40 for one to three hours, ₹80 for three to six hours, ₹120 for six to 12 hours and ₹170 for 12 to 24 hours.", "Town Planning Committee Chairman Bhagyesh Patel said the proposal to revise parking charges at municipal parking facilities was approved at the committee meeting held on Wednesday. The revised rates will apply to parking facilities operated by the civic body across the city.", "The AMC has proposed the increase amid concerns over traffic congestion caused by vehicles parked along roads. The Municipal Commissioner has also directed officials to identify vacant plots that can be made available for parking, with some such spaces being opened to the public free of charge.", "The proposed increase in charges at designated pay-and-park facilities could, however, add to the parking costs for motorists using municipal parking infrastructure. The revision comes after a gap of 10 years, during which parking charges in Ahmedabad remained unchanged. DeshGujarat"]}, {"id": 363376, "date": "2026-11-04T19:14:40", "time": "7:14 PM", "link": "https://deshgujarat.com/2026/11/04/mumbai-mayor-ritu-tawde-meets-gujarat-cm-bhupendra-patel/", "title": "Mumbai Mayor Ritu Tawde Meets Gujarat CM Bhupendra Patel", "excerpt": "Gandhinagar: Mumbai Mayor Ritu Rajesh Tawde, who is on a one-day visit to Gujarat, paid a courtesy visit to Chief Minister Bhupendra Patel in Gandhinagar,", "categories": ["Gujarat"], "og_image": "https://pbs.twimg.com/media/HWSRXPdbUAAkrhR.jpg", "img_small": "https://pbs.twimg.com/media/HWSRXPdbUAAkrhR?format=jpg&name=small", "img_medium": "https://pbs.twimg.com/media/HWSRXPdbUAAkrhR?format=jpg&name=medium", "body": ["Gandhinagar: Mumbai Mayor Ritu Rajesh Tawde, who is on a one-day visit to Gujarat, paid a courtesy visit to Chief Minister Bhupendra Patel in Gandhinagar, a press release said.", "During the meeting, they discussed wildlife exchange between Mumbai’s Veermata Jijabai Bhosale Botanical Garden and Zoo and Junagadh’s Sakkarbaug Zoological Park.", "Tawde also expressed appreciation for GIFT City. Chief Minister’s Principal Secretary Sanjeev Kumar was also present during the meeting."]}, {"id": 363372, "date": "2026-11-04T18:58:28", "time": "6:58 PM", "link": "https://deshgujarat.com/2026/11/04/holiday-inn-resort-to-come-up-in-sasan-gir/", "title": "Holiday Inn Resort to Come Up in Sasan Gir", "excerpt": "Gujarat: IHG Hotels & Resorts has signed a management agreement with Paix Hospitality LLP to develop Holiday Inn Resort Sasan Gir in Gujarat. Scheduled to", "categories": ["Business", "Gujarat", "Saurastra"], "og_image": "https://www.venue.events/public/upload/hotelgallery/609/Holiday_Inn_Resort_Goa-Cavelossim_South_Goa-02.jpg", "img_small": "https://www.venue.events/public/upload/hotelgallery/609/Holiday_Inn_Resort_Goa-Cavelossim_South_Goa-02.jpg", "img_medium": "https://www.venue.events/public/upload/hotelgallery/609/Holiday_Inn_Resort_Goa-Cavelossim_South_Goa-02.jpg", "body": ["Gujarat: IHG Hotels & Resorts has signed a management agreement with Paix Hospitality LLP to develop Holiday Inn Resort Sasan Gir in Gujarat. Scheduled to open in the first quarter of 2031, the 92-room resort will strengthen IHG’s presence in Gujarat’s leisure tourism market and introduce branded hospitality to one of India’s prominent wildlife destinations.", "Located in Gujarat’s Gir Somnath district, Sasan Gir is renowned as the natural habitat of the Asiatic lion and attracts wildlife enthusiasts, leisure travellers and tourists seeking experiential travel opportunities.", "The upcoming Holiday Inn Resort Sasan Gir will offer 92 rooms, including 11 suites, alongside five food and beverage outlets. The property will feature 1,366 sq. m. of meeting and event space across four venues, including a 1,170 sq. m. ballroom.", "Additional amenities will include a swimming pool, fitness centre, spa and retail facilities. The resort is being designed to accommodate leisure travellers as well as weddings, social gatherings and celebrations.", "Sudeep Jain, Managing Director, South West Asia, IHG Hotels & Resorts, said Sasan Gir offers an opportunity for the company to expand into a distinctive leisure market in Gujarat, supported by the destination’s natural attractions and growing demand for experiential travel.", "Kuldipsinh Ghoghubha Jadeja of Paix Hospitality LLP said the partnership marks the company’s entry into the hospitality sector and presents an opportunity to develop a resort aligned with Sasan Gir’s growing tourism potential."]}, {"id": 363370, "date": "2026-11-04T17:50:27", "time": "5:50 PM", "link": "https://deshgujarat.com/2026/11/04/lemon-tree-hotels-opens-new-resort-in-pavagadh/", "title": "Lemon Tree Hotels Opens New Resort in Pavagadh", "excerpt": "Pavagadh: Lemon Tree Hotels Limited has expanded its hospitality footprint in Gujarat with the opening of Lemon Tree Resort, Pavagadh, a 44-room property managed by", "categories": ["Business", "Central Gujarat", "Gujarat"], "og_image": "https://pbs.twimg.com/media/HWSLn9vaYAEGyBg.jpg", "img_small": "https://pbs.twimg.com/media/HWSLn9vaYAEGyBg?format=jpg&name=small", "img_medium": "https://pbs.twimg.com/media/HWSLn9vaYAEGyBg?format=jpg&name=medium", "body": ["Pavagadh: Lemon Tree Hotels Limited has expanded its hospitality footprint in Gujarat with the opening of Lemon Tree Resort, Pavagadh, a 44-room property managed by its wholly owned subsidiary, Carnation Hotels Private Limited.", "Located on Pavagadh-Halol Road in Panchmahal district, the resort features five accommodation categories: Heritage Tents, Heritage Cottages, Bunga Huts, Heritage Suites and Royal Tents. Its facilities include Citrus Café, a multi-cuisine restaurant with a seating capacity of around 100 guests, a banquet hall, two boardrooms and an outdoor lawn.", "The property also offers a swimming pool, spa, fitness centre, children’s zone and recreational activities. Its location provides access to prominent attractions, including Champaner-Pavagadh Archaeological Park, a UNESCO World Heritage Site, Kalika Mata Temple, Hathni Mata Waterfall and Jambughoda Wildlife Sanctuary. Vadodara Airport is approximately 37 km away.", "The opening marks Lemon Tree Hotels’ 11th operational resort. The company now operates 14 hotels across Gujarat, with another 18 properties in the pipeline.", "Vishvapreet Singh Cheema, president of Lemon Tree Hotels Limited, said Gujarat’s hospitality potential and the company’s expanding presence in the state reflect its confidence in the market. DeshGujarat"]}, {"id": 363367, "date": "2026-11-04T17:43:38", "time": "5:43 PM", "link": "https://deshgujarat.com/2026/11/04/vadodara-woman-offers-%e2%82%b91-lakh-reward-to-find-missing-pet-parrot-laddu/", "title": "Vadodara Woman Offers ₹1 Lakh Reward to Find Missing Pet Parrot ‘Laddu’", "excerpt": "Vadodara: A ₹1 lakh reward for her missing parrot has brought numerous calls for Jessica Parekh, but many callers have misunderstood her appeal. While some", "categories": ["Gujarat", "Vadodara"], "og_image": "https://pbs.twimg.com/media/HWR8N9GbQAAESHD.jpg", "img_small": "https://pbs.twimg.com/media/HWR8N9GbQAAESHD?format=jpg&name=small", "img_medium": "https://pbs.twimg.com/media/HWR8N9GbQAAESHD?format=jpg&name=medium", "body": ["Vadodara: A ₹1 lakh reward for her missing parrot has brought numerous calls for Jessica Parekh, but many callers have misunderstood her appeal. While some have offered to sell her another bird, the 35-year-old former schoolteacher insists she wants only her beloved “child” back.", "Laddu, a six-month-old Congo African grey parrot, escaped from his cage and flew out of the family’s home in Sevasi on Saturday evening. The family has been unable to trace him since.", "Jessica said she was feeding Laddu when a delivery person rang the doorbell around 7.24 pm. She briefly stepped out to collect the parcel, during which Laddu opened his cage latch and flew out through the main door.", "Since then, she has contacted neighbours, the forest department and rescue organisations and circulated appeals on social media. The forest department has assured her of assistance in capturing Laddu if she spots him.", "A possible sighting near a farmhouse close to their home raised hopes, but subsequent searches yielded no results. Jessica believes the young bird could not have flown more than 15 km.", "“Knowing him, he must be hiding somewhere in isolation and feeling lost. He does not like company or noise. Even at home, he was close only to me, his ‘mumma’. I am worried that the Diwali firecrackers must be making him anxious,” she told the media.", "The reward poster features Laddu’s photograph and describes him as the family’s “only child” and a precious member of the household.", "However, the appeal has also attracted misleading calls. Jessica said some people have sent photographs of grey parrots with QR codes to claim the reward, while others have offered similar birds at discounted prices."]}, {"id": 363364, "date": "2026-11-04T17:22:57", "time": "5:22 PM", "link": "https://deshgujarat.com/2026/11/04/gujarat-govt-okays-fish-landing-centre-on-shiyalbet-island/", "title": "Gujarat Govt OKays Fish Landing Centre on Shiyalbet Island", "excerpt": "Amreli: The Gujarat government has granted in-principle approval for the development of a fish landing centre on Shiyalbet Island in Amreli district, addressing a long-standing", "categories": ["Gujarat", "Saurastra"], "og_image": "https://deshgujarat.com/wp-content/uploads/2022/09/Gujarat-Govt-CM.jpg", "img_small": "https://deshgujarat.com/wp-content/uploads/2022/09/Gujarat-Govt-CM.jpg", "img_medium": "https://deshgujarat.com/wp-content/uploads/2022/09/Gujarat-Govt-CM.jpg", "body": ["Amreli: The Gujarat government has granted in-principle approval for the development of a fish landing centre on Shiyalbet Island in Amreli district, addressing a long-standing demand of the local fishing community and improving infrastructure for fishermen.", "The project will benefit 1,101 fishermen residing on the island, which has a population of 2,680 and a fleet of 154 fishing boats. Shiyalbet records an annual fish production of 4,711 tonnes, highlighting the importance of fishing to the local economy and livelihoods.", "The proposed fish landing centre will feature modern infrastructure, including a pile jetty, land reclamation, a stone bund and paver blocks. These facilities are expected to provide fishermen with safer and more convenient access for landing their catch and carrying out fishing-related activities.", "The initiative is expected to strengthen fisheries infrastructure, improve operational efficiency for local fishermen and support the livelihoods and economic activities of the fishing community. DeshGujarat"]}, {"id": 363361, "date": "2026-11-04T17:14:12", "time": "5:14 PM", "link": "https://deshgujarat.com/2026/11/04/gujarat-cabinet-approves-livestock-insurance-scheme-for-1-lakh-animals/", "title": "Gujarat Cabinet Approves Livestock Insurance Scheme for 1 Lakh Animals", "excerpt": "Ahmedabad: The Gujarat government has approved a livestock insurance scheme covering 1 lakh animals under the National Livestock Mission, providing financial relief to livestock owners", "categories": ["Gujarat"], "og_image": "https://deshgujarat.com/wp-content/uploads/2022/09/0-2022-09-07T185337.586.jpg", "img_small": "https://deshgujarat.com/wp-content/uploads/2022/09/0-2022-09-07T185337.586.jpg", "img_medium": "https://deshgujarat.com/wp-content/uploads/2022/09/0-2022-09-07T185337.586.jpg", "body": ["Ahmedabad: The Gujarat government has approved a livestock insurance scheme covering 1 lakh animals under the National Livestock Mission, providing financial relief to livestock owners through insurance coverage of up to Rs 40,000 per animal for one year at a subsidised premium of just Rs 229.", "Under the scheme, the state government will bear 85% of the insurance premium, amounting to approximately Rs 1,300 per animal, while livestock owners will pay the remaining 15%. The initiative aims to protect livestock owners against financial losses arising from unforeseen circumstances and encourage wider insurance coverage for their animals.", "Minister Jitu Vaghani announced the decision during a cabinet briefing, stating that the scheme had been approved and that the first instalment of central assistance had also been received. The Centre has sanctioned Rs 2.50 crore for the project, while the state government will contribute approximately Rs 55 lakh towards livestock insurance assistance.", "According to the minister, 87,147 applications have already been received through the i-Khedut portal. The government has urged livestock owners who have not yet enrolled to apply and avail themselves of the insurance benefits, as the scheme has a coverage limit of 1 lakh animals for the current year.", "The initiative is expected to strengthen financial security for livestock owners and provide compensation in the event of unforeseen losses involving insured animals. DeshGujarat"]}, {"id": 363355, "date": "2026-11-04T17:01:12", "time": "5:01 PM", "link": "https://deshgujarat.com/2026/11/04/49-gujarat-youth-congress-office-bearers-suspended-for-skipping-india-bloc-rally-in-delhi/", "title": "49 Gujarat Youth Congress Office-Bearers Suspended for Skipping INDI Alliance Rally in Delhi", "excerpt": "Ahmedabad: The Indian Youth Congress (IYC) has suspended 49 office-bearers from Gujarat, including state-level leaders and district presidents, for allegedly skipping the INDIA bloc rally", "categories": ["Congress", "Gujarat", "Politics"], "og_image": "https://deshgujarat.com/wp-content/uploads/2022/11/Congress-party-flag-hand-.jpg", "img_small": "https://deshgujarat.com/wp-content/uploads/2022/11/Congress-party-flag-hand-.jpg", "img_medium": "https://deshgujarat.com/wp-content/uploads/2022/11/Congress-party-flag-hand-.jpg", "body": ["Ahmedabad: The Indian Youth Congress (IYC) has suspended 49 office-bearers from Gujarat, including state-level leaders and district presidents, for allegedly skipping the INDIA bloc rally held at Ramlila Maidan in Delhi on November 1. The suspensions have been imposed with immediate effect until further notice, according to an order issued by the IYC national leadership on November 3.", "The disciplinary action is part of a wider crackdown against 215 office-bearers across seven states and the Uttar Pradesh Central unit for their absence from the Opposition rally. The IYC leadership has taken a strict view of the absence, treating it as a failure to follow organisational directions at a major political event.", "Among those suspended in Gujarat are 25 state-level office-bearers, including general secretaries representing Open, OBC, SC/ST and minority categories, as well as state secretaries. The list also includes 24 district-level office-bearers, comprising district presidents from Ahmedabad Rural, Amreli, Anand, Aravalli, Banaskantha, Bharuch, Dang, Devbhumi Dwarka, Gandhinagar Rural, Gandhinagar City, Gir Somnath, Junagadh Rural, Junagadh City, Mahisagar, Mehsana, Narmada, Navsari, Panchmahal, Patan, Porbandar, Rajkot City, Sabarkantha, Surendranagar and Vadodara City.", "The rally at Ramlila Maidan was organised by the INDIA bloc against alleged irregularities in electoral rolls, with the Congress seeking to mobilise Opposition parties and supporters over concerns surrounding the electoral process.", "The suspensions across other states include 60 office-bearers from Madhya Pradesh, 32 from Jharkhand, 26 from West Bengal, 14 from Telangana, 13 from Himachal Pradesh and 10 from Haryana, besides 11 from Uttar Pradesh Central."]}, {"id": 363353, "date": "2026-11-04T15:56:45", "time": "3:56 PM", "link": "https://deshgujarat.com/2026/11/04/western-railway-suspends-parcel-service-at-surat-udhna-stations-for-11-days-amid-festive-rush/", "title": "Western Railway Suspends Parcel Service at Surat, Udhna Stations for 11 Days Amid Festive Rush", "excerpt": "Surat: Western Railway has suspended parcel booking and handling at Surat and Udhna railway stations from November 5 to 15, 2026, to ensure passenger safety", "categories": ["Gujarat", "Railway", "South Gujarat", "Surat", "Travel"], "og_image": "https://deshgujarat.com/wp-content/uploads/2019/12/WesternRailway.jpg", "img_small": "https://deshgujarat.com/wp-content/uploads/2019/12/WesternRailway.jpg", "img_medium": "https://deshgujarat.com/wp-content/uploads/2019/12/WesternRailway.jpg", "body": ["Surat: Western Railway has suspended parcel booking and handling at Surat and Udhna railway stations from November 5 to 15, 2026, to ensure passenger safety and prevent overcrowding during the Diwali and Chhath Puja festive rush.", "The restriction, announced through a circular issued by Western Railway headquarters in Mumbai, will apply to both inward and outward movement of departmental railway parcels and leased parcel traffic.", "The decision comes amid an expected surge in passenger traffic, with several festival special trains being operated from Surat and Udhna to destinations across North and East India. Railway officials said the movement of parcel trolleys and loading and unloading activities on platforms during the rush could obstruct passenger movement and increase the risk of accidents, including stampedes.", "The 11-day restriction will cover all trains originating from or terminating at Surat and Udhna, as well as trains passing through and making scheduled stops at these stations. However, passengers will continue to be allowed to carry their personal luggage in train coaches.", "Western Railway has also advised traders and the business community to make alternative arrangements for parcel transportation during the restriction period to avoid congestion and ensure smooth passenger movement at the stations. DeshGujarat"]}, {"id": 363348, "date": "2026-11-04T14:41:42", "time": "2:41 PM", "link": "https://deshgujarat.com/2026/11/04/narsinh-mehta-sarovar-in-junagadh-to-remain-open-till-midnight-during-diwali/", "title": "Narsinh Mehta Sarovar in Junagadh to Remain Open Till Midnight During Diwali", "excerpt": "Junagadh: Narsinh Mehta Lake in Junagadh will remain open to visitors until midnight from November 7 to 15, with special arrangements made for the Diwali", "categories": ["Gujarat", "Saurastra"], "og_image": "https://pbs.twimg.com/media/HAEsEBja4AAHP3w.jpg", "img_small": "https://pbs.twimg.com/media/HAEsEBja4AAHP3w?format=jpg&name=small", "img_medium": "https://pbs.twimg.com/media/HAEsEBja4AAHP3w?format=jpg&name=medium", "body": ["Junagadh: Narsinh Mehta Lake in Junagadh will remain open to visitors until midnight from November 7 to 15, with special arrangements made for the Diwali festive season. The lake will, however, remain closed on November 9 for routine maintenance work.", "The decision was taken following instructions from the Mayor of Junagadh Municipal Corporation to facilitate residents and tourists visiting the city during the festive period.", "The extended timings are aimed at allowing residents to enjoy the lake’s natural surroundings with their families and providing greater convenience to tourists visiting Junagadh during Diwali.", "The municipal corporation has made special arrangements to accommodate visitors during the extended hours, enabling families to enjoy an evening outing at the lake throughout the festive period. DeshGujarat"]}, {"id": 363344, "date": "2026-11-04T14:30:41", "time": "2:30 PM", "link": "https://deshgujarat.com/2026/11/04/boating-at-nal-sarovar-to-resume-from-dec-15-200-new-boats-to-be-deployed/", "title": "Boating at Nal Sarovar to Resume from Dec 15; 200 New Boats to Be Deployed", "excerpt": "Ahmedabad: Boating services at Nalsarovar Bird Sanctuary are expected to commence by December 15, with the Gujarat Tourism Corporation Limited (GTCL) preparing to introduce around", "categories": ["Ahmedabad", "Gujarat"], "og_image": "https://pbs.twimg.com/media/HWROkG2aQAAuOlD.jpg", "img_small": "https://pbs.twimg.com/media/HWROkG2aQAAuOlD?format=jpg&name=small", "img_medium": "https://pbs.twimg.com/media/HWROkG2aQAAuOlD?format=jpg&name=medium", "body": ["Ahmedabad: Boating services at Nalsarovar Bird Sanctuary are expected to commence by December 15, with the Gujarat Tourism Corporation Limited (GTCL) preparing to introduce around 200 boats this month. Ahead of the launch, 230 local water sports operators have undergone life-saving and water rescue training to ensure tourist safety.", "The boats are expected to arrive by the end of November, following which the Forest Department will oversee their allocation. The initiative comes after boating activities resumed at Kankaria Lake and is aimed at improving tourism infrastructure and safety at Nalsarovar.", "GTCL, in collaboration with the National Institute of Water Sports, organised a month-long training programme titled Life-Saving Techniques for Water Sports Operators at the Nalsarovar complex from October 4 to November 2. The programme was conducted through five-day training batches, covering both theoretical and practical aspects of water safety.", "Participants were trained in identifying aquatic emergencies, rescuing drowning victims, swimming, lifeguard duties and emergency response. The sessions also included demonstrations and practical assessments of cardiopulmonary resuscitation (CPR) and first aid.", "Nalsarovar Bird Sanctuary has recorded more than 15,877 visitors this year. With tourist footfall and boating activities expected to increase, the training programme aims to strengthen the emergency response capabilities of local operators and minimise the risk of accidents, ensuring a safer experience for visitors. DeshGujarat"]}, {"id": 363340, "date": "2026-11-04T13:54:54", "time": "1:54 PM", "link": "https://deshgujarat.com/2026/11/04/gujarat-govt-declares-additional-diwali-holiday-for-employees-to-be-swapped-with-4th-saturday/", "title": "Gujarat Govt Declares Additional Diwali Holiday for Employees; to Be Swapped with 4th Saturday", "excerpt": "Gandhinagar: The Gujarat government has declared November 9, 2026, a holiday for all state government offices to enable employees to celebrate Diwali with their families", "categories": ["Gujarat"], "og_image": "https://deshgujarat.com/wp-content/uploads/2024/07/Swarnim-Sankul.jpg", "img_small": "https://deshgujarat.com/wp-content/uploads/2024/07/Swarnim-Sankul.jpg", "img_medium": "https://deshgujarat.com/wp-content/uploads/2024/07/Swarnim-Sankul.jpg", "body": ["Gandhinagar: The Gujarat government has declared November 9, 2026, a holiday for all state government offices to enable employees to celebrate Diwali with their families in their hometowns. The holiday will be compensated by making government offices operational on November 28, the fourth Saturday of the month.", "According to a notification issued by the General Administration Department (GAD) on November 4, the holiday will apply to all government offices, including those under the state government, panchayats, and state-run boards and corporations.", "The decision comes as November 9 falls between the Diwali holiday on November 8, New Year Day on November 10, and Bhai Bij on November 11. Although November 9 was originally a working day, the government has now declared it a holiday to facilitate festive celebrations."]}, {"id": 363336, "date": "2026-11-04T13:37:34", "time": "1:37 PM", "link": "https://deshgujarat.com/2026/11/04/amit-shah-to-inaugurate-iskcon-sanand-elevated-corridor-on-sg-highway-on-nov-9/", "title": "Amit Shah to Inaugurate Iskcon-Sanand Elevated Corridor on SG Highway on Nov 9", "excerpt": "Ahmedabad: Union Home and Cooperation Minister Amit Shah will inaugurate a six-lane elevated corridor connecting Iskcon Junction to Sanand Chowkdi on Ahmedabad’s SG Highway on", "categories": ["Ahmedabad", "Gujarat"], "og_image": "https://deshgujarat.com/wp-content/uploads/2016/08/Amit-Shah-Ahmedabad.jpg", "img_small": "https://deshgujarat.com/wp-content/uploads/2016/08/Amit-Shah-Ahmedabad.jpg", "img_medium": "https://deshgujarat.com/wp-content/uploads/2016/08/Amit-Shah-Ahmedabad.jpg", "body": ["Ahmedabad: Union Home and Cooperation Minister Amit Shah will inaugurate a six-lane elevated corridor connecting Iskcon Junction to Sanand Chowkdi on Ahmedabad’s SG Highway on November 9 during his annual Diwali visit to Gujarat. The 4-km corridor, constructed at a cost of over ₹464 crore, has been completed and will be opened to the public.", "Shah, along with Gujarat Chief Minister Bhupendra Patel, will inaugurate the corridor at 11 am. During the visit, development projects worth over ₹1,500 crore across Ahmedabad and the Gandhinagar Lok Sabha constituency will be inaugurated or have their foundation stones laid.", "The elevated corridor is expected to ease traffic congestion on SG Highway and benefit around 2 lakh motorists daily. It is likely to improve connectivity between Ahmedabad and Gandhinagar while making travel faster and more convenient for commuters.", "Motorists travelling from Saurashtra towards Gandhinagar via Ujala Circle in Ahmedabad are also expected to benefit from the project.", "The National Highways Authority of India (NHAI) undertook the elevated corridor project to address persistent traffic congestion on SG Highway, particularly along the stretch between Iskcon Junction and Sanand Chowkdi.", "Construction has been underway for over two years. The corridor features three ramps on each side to facilitate access for motorists and improve traffic movement along the highway.", "Apart from the ₹464-crore elevated corridor, several development projects undertaken by the Ahmedabad Municipal Corporation (AMC) and the state and central governments will be launched during Shah’s visit.", "Projects worth over ₹700 crore will be inaugurated, while foundation stones will be laid for development works valued at ₹364 crore."]}, {"id": 363331, "date": "2026-11-04T13:11:21", "time": "1:11 PM", "link": "https://deshgujarat.com/2026/11/04/amul-hikes-ghee-butter-prices-ahead-of-diwali/", "title": "Amul Hikes Ghee, Butter Prices Ahead of Diwali", "excerpt": "Anand: Amul has raised prices of ghee and butter ahead of Diwali, adding to consumers’ festive expenses, while retailers across Gujarat report persistent shortages of", "categories": ["Gujarat"], "og_image": "https://pbs.twimg.com/media/HWQ9SqibwAAwq2V.jpg", "img_small": "https://pbs.twimg.com/media/HWQ9SqibwAAwq2V?format=jpg&name=small", "img_medium": "https://pbs.twimg.com/media/HWQ9SqibwAAwq2V?format=jpg&name=medium", "body": ["Anand: Amul has raised prices of ghee and butter ahead of Diwali, adding to consumers’ festive expenses, while retailers across Gujarat report persistent shortages of popular dairy products, particularly cow ghee.", "According to revised maximum retail prices (MRPs), a 1-kg carton of Amul ghee now costs Rs 680, up from Rs 630, while a 500-gm pouch of pure ghee has become costlier, rising from Rs 325 to Rs 345. Butter prices have also increased, with the 100-gm pack now priced at Rs 66, against Rs 63 earlier, and the 500-gm pack costing Rs 325, up from Rs 310.", "The price hike comes amid a sharp increase in demand for branded ghee following a crackdown on adulterated products in Gujarat and Rajasthan. A cooperative leader associated with Amul said nearly 2 lakh kg of counterfeit ghee had been seized across the two states over the past six months, prompting consumers to shift towards trusted brands.", "The festive season has further strained supplies, with nearly 45% of annual ghee consumption typically taking place during this period.", "The latest price revision also offsets much of the benefit of the GST reduction in September 2025, when the tax on dairy products was cut from 12% to 5%. Amul had subsequently reduced prices across 700 dairy products, including ghee and butter. DeshGujarat"]}, {"id": 363326, "date": "2026-11-04T12:59:23", "time": "12:59 PM", "link": "https://deshgujarat.com/2026/11/04/gujarat-govt-declares-3-da-hike-for-employees-pensioners/", "title": "Gujarat Govt Declares 3% DA Hike for Employees, Pensioners", "excerpt": "Gandhinagar: The Gujarat government has given in-principle approval for a 3% increase in dearness allowance (DA) for state government employees and pensioners ahead of Diwali,", "categories": ["Gujarat"], "og_image": "https://deshgujarat.com/wp-content/uploads/2024/08/Swarnim-Sankul.jpg", "img_small": "https://deshgujarat.com/wp-content/uploads/2024/08/Swarnim-Sankul.jpg", "img_medium": "https://deshgujarat.com/wp-content/uploads/2024/08/Swarnim-Sankul.jpg", "body": ["Gandhinagar: The Gujarat government has given in-principle approval for a 3% increase in dearness allowance (DA) for state government employees and pensioners ahead of Diwali, potentially benefiting around 4 lakh employees and 4.82 lakh pensioners across the state.", "The decision follows the Centre’s announcement of a DA hike and is expected to provide financial relief to government employees and retirees ahead of the festive season. The proposed increase covers employees of the state government and panchayat services, among others. However, the eligibility criteria and effective date of the revised rates will be clarified following the formal government notification.", "The hike will be calculated on employees’ basic pay, resulting in an increase in their monthly income. Pensioners will also receive a corresponding increase in dearness relief (DR), which is calculated on their pension.", "The increase is expected to be implemented retrospectively, potentially entitling beneficiaries to arrears for the applicable period. However, the effective date and payment schedule will be confirmed through the official government resolution (GR).", "The Finance Department is expected to issue a formal notification shortly, detailing the revised DA rates, implementation date and other applicable provisions. The announcement is likely to bring financial relief to thousands of government employees and pensioners ahead of Diwali and the Gujarati New Year. DeshGujarat"]}, {"id": 363322, "date": "2026-11-04T12:49:36", "time": "12:49 PM", "link": "https://deshgujarat.com/2026/11/04/kutch-declares-white-rann-road-to-heaven-plastic-free-no-spitting-zones/", "title": "Kutch Declares White Rann, Road to Heaven Plastic-Free, No-Spitting Zones", "excerpt": "Kutch: The Kutch district administration has imposed strict restrictions at major tourist destinations, including Dhordo, the White Rann and the Road to Heaven, ahead of", "categories": ["Gujarat", "Kutch"], "og_image": "https://deshgujarat.com/wp-content/uploads/2023/12/Road-to-Heaven.jpg", "img_small": "https://deshgujarat.com/wp-content/uploads/2023/12/Road-to-Heaven.jpg", "img_medium": "https://deshgujarat.com/wp-content/uploads/2023/12/Road-to-Heaven.jpg", "body": ["Kutch: The Kutch district administration has imposed strict restrictions at major tourist destinations, including Dhordo, the White Rann and the Road to Heaven, ahead of the annual Rann Utsav to protect the fragile desert ecosystem.", "The four key measures prohibit spitting, plastic littering, unregistered animal rides and private vehicle access to sensitive areas. Kutch attracts nearly 10 lakh tourists to Dhordo and Dholavira between November and February.", "The White Rann, Dhordo festival grounds and the Road to Heaven have been declared no-spitting zones, banning the consumption and spitting of tobacco, gutka and pan masala. The restrictions cover the stretch from Sabras Bus Stand to the Watch Tower, extending two km on either side, and the Road to Heaven from Kadhvand in Bhuj taluka to the Dholavira entry point.", "The entire belt has also been declared plastic-free, prohibiting the dumping of single-use plastics, bottles and carry bags in the desert and waterlogged flats along the Road to Heaven.", "Private vehicles have been barred from the stretch between Sabras Bus Stand and the Watch Tower and the adjoining White Rann following incidents of tourists getting stranded on fragile desert flats, necessitating rescue operations and damaging the salt crust.", "Unregistered horse and camel rides at the Dhordo Rann Utsav grounds have also been prohibited. Operators must obtain formal registration from the designated committee before offering rides to tourists. DeshGujarat"]}, {"id": 363314, "date": "2026-11-04T11:37:38", "time": "11:37 AM", "link": "https://deshgujarat.com/2026/11/04/vietnam-airlines-launches-ahmedabad-hanoi-direct-flight/", "title": "Vietnam Airlines Launches Direct Ahmedabad-Hanoi Flight Service", "excerpt": "Ahmedabad: Sardar Vallabhbhai Patel International Airport (SVPIA) in Ahmedabad has expanded its international connectivity with the launch of Vietnam Airlines’ direct service to Hanoi, marking", "categories": ["Ahmedabad", "Aviation", "Gujarat", "Travel"], "og_image": "https://pbs.twimg.com/media/HWQnyJ5agAAZ-P9.jpg", "img_small": "https://pbs.twimg.com/media/HWQnyJ5agAAZ-P9?format=jpg&name=small", "img_medium": "https://pbs.twimg.com/media/HWQnyJ5agAAZ-P9?format=jpg&name=medium", "body": ["Ahmedabad: Sardar Vallabhbhai Patel International Airport (SVPIA) in Ahmedabad has expanded its international connectivity with the launch of Vietnam Airlines’ direct service to Hanoi, marking the airline’s entry into Gujarat and making Ahmedabad its fifth passenger destination in India.", "The inaugural flight departed from Ahmedabad on November 3, establishing a new direct air link between Gujarat and Vietnam.", "The service will operate four times a week, on Tuesdays, Thursdays, Saturdays and Sundays, offering travellers from Ahmedabad and neighbouring markets direct access to Hanoi and onward connections across Vietnam Airlines’ domestic and international network.", "The new Ahmedabad-Hanoi route is expected to boost tourism, business travel and trade while strengthening Gujarat’s links with international markets.", "H.E. Trinh Minh Manh, Ambassador of Vietnam to India, said the direct service was a welcome development in strengthening India-Vietnam connectivity.", "“Improved air links will further boost tourism, trade, business exchanges and people-to-people ties, thus further strengthening the Enhanced Comprehensive Strategic Partnership between our two countries,” he said.", "Nguyen Trung Hieu, Vietnam Airlines’ Country Manager for India, said the launch reflected the airline’s continued commitment to the Indian market and its ambition to make Vietnam more accessible to Indian travellers.", "“Gujarat offers considerable potential across leisure, business and MICE travel. This new route will provide travellers with a convenient direct connection to Hanoi, while enabling access to Vietnam’s diverse destinations and our wider international network,” he said. DeshGujarat"]}, {"id": 363304, "date": "2026-11-04T10:54:15", "time": "10:54 AM", "link": "https://deshgujarat.com/2026/11/04/sarathi-portal-outage-disrupts-rto-services-in-gujarat-15000-applicants-hit/", "title": "Sarathi Portal Outage Disrupts RTO Services in Gujarat; 15,000 Applicants Hit", "excerpt": "Surat: The Sarathi portal, the central online platform for driving licence-related services, crashed again on Tuesday morning, disrupting operations at 39 Regional Transport Offices (RTOs)", "categories": ["Gujarat"], "og_image": "https://pbs.twimg.com/media/HWQd1ZBaUAAqq0c.jpg", "img_small": "https://pbs.twimg.com/media/HWQd1ZBaUAAqq0c?format=jpg&name=small", "img_medium": "https://pbs.twimg.com/media/HWQd1ZBaUAAqq0c?format=jpg&name=medium", "body": ["Surat: The Sarathi portal, the central online platform for driving licence-related services, crashed again on Tuesday morning, disrupting operations at 39 Regional Transport Offices (RTOs) across Gujarat, including Ahmedabad.", "The outage inconvenienced around 15,000 applicants, affecting almost all licence-related services, including learning licence tests, driving licence renewals and modifications or corrections to existing licences.", "With the portal inaccessible, applicants with scheduled appointments were unable to complete their transactions, forcing them to reschedule and face further delays.", "Learning licence applicants were among the worst affected, as tests scheduled at ITIs across Ahmedabad were cancelled due to the technical glitch. Applicants seeking licence renewals, corrections and other related services were also forced to reschedule their appointments. DeshGujarat"]}, {"id": 363309, "date": "2026-11-04T10:50:53", "time": "10:50 AM", "link": "https://deshgujarat.com/2026/11/04/lion-dies-after-entering-sea-during-territorial-fight-near-pipavav-port/", "title": "Lion Dies After Entering Sea During Territorial Fight Near Pipavav Port", "excerpt": "Amreli: A six-year-old lion drowned in the Arabian Sea near Pipavav Port in Amreli district, apparently after entering the water while fleeing a territorial clash", "categories": ["Gujarat", "Saurastra"], "og_image": "https://pbs.twimg.com/media/HWQgWBcaUAALJzU.jpg", "img_small": "https://pbs.twimg.com/media/HWQgWBcaUAALJzU?format=jpg&name=small", "img_medium": "https://pbs.twimg.com/media/HWQgWBcaUAALJzU?format=jpg&name=medium", "body": ["Amreli: A six-year-old lion drowned in the Arabian Sea near Pipavav Port in Amreli district, apparently after entering the water while fleeing a territorial clash with two other lions, a forest official said on Tuesday.", "The lion’s carcass was recovered from the sea near the port’s jetty around 1.30 pm on Tuesday, approximately three km from the coastline of Patva village, said DK Makwana, Range Forest Officer (RFO) of Rajula range.", "As per the information, three lions were spotted near Patva’s coastline on Monday and may have been involved in a territorial fight. Following the clash, the lion apparently entered the sea near Chanch Bandar in an attempt to escape and reach a safer location on the other side.", "Local residents reportedly saw the lion entering the water, while forest personnel later confirmed its footprints near the spot.", "“Lions can generally swim and cross water bodies if the distance is not too long. However, this lion may have exhausted itself while swimming,” Makwana said, adding that officials learnt about the incident after the carcass was spotted on Tuesday afternoon.", "Personnel conducting routine surveillance near the port’s jetty initially mistook the floating carcass for that of a cow or buffalo. Upon closer inspection, they identified it as a wild animal and alerted the company management, which subsequently informed the forest department.", "Forest officials reached the spot and confirmed that the carcass was that of a lion."]}, {"id": 363300, "date": "2026-11-04T10:40:52", "time": "10:40 AM", "link": "https://deshgujarat.com/2026/11/04/dummy-enrolment-suspected-after-318-students-skip-exams-at-odhav-school/", "title": "Dummy Enrolment Suspected After 318 Students Skip Exams at Odhav School", "excerpt": "Ahmedabad: Natraj High School in Odhav has received a notice from the Education Department after an inspection revealed that 318 students from Classes 9 to", "categories": ["Ahmedabad", "Gujarat"], "og_image": "https://content.jdmagicbox.com/v2/comp/ahmedabad/x9/079pxx79.xx79.161117204540.g5x9/catalogue/natraj-high-school-odhav-gam-ahmedabad-schools-BB8LnSs5dY.jpg", "img_small": "https://content.jdmagicbox.com/v2/comp/ahmedabad/x9/079pxx79.xx79.161117204540.g5x9/catalogue/natraj-high-school-odhav-gam-ahmedabad-schools-BB8LnSs5dY.jpg", "img_medium": "https://content.jdmagicbox.com/v2/comp/ahmedabad/x9/079pxx79.xx79.161117204540.g5x9/catalogue/natraj-high-school-odhav-gam-ahmedabad-schools-BB8LnSs5dY.jpg", "body": ["Ahmedabad: Natraj High School in Odhav has received a notice from the Education Department after an inspection revealed that 318 students from Classes 9 to 12 were absent during examinations. The District Education Officer (DEO) has sought an explanation from the school over suspected dummy enrolments and summoned its management for a hearing on November 11.", "Following the inspection, the school was directed to submit a complete list of absent students but failed to comply. The department suspects that the students may be dummy enrolments. The hearing will consider a proposed reduction in the number of classes, with the school management instructed to appear along with relevant documents. DeshGujarat"]}], "videos": [{"id": "xcfE_XSsWho", "title": "Nita Ambani Spotted at Gateway of India Jetty in Mumbai", "published": "2026-11-04T12:34:18+00:00", "link": "https://www.youtube.com/shorts/xcfE_XSsWho", "short": true, "thumb": "https://i.ytimg.com/vi/xcfE_XSsWho/mqdefault.jpg", "channel": "DeshGujarat Local"}, {"id": "Frdkpaa3tWI", "title": "‘We Don’t Kneel Down’: Piyush Goyal on China’s Export Curbs on Tunnel-Boring Machines", "published": "2026-11-04T10:20:01+00:00", "link": "https://www.youtube.com/shorts/Frdkpaa3tWI", "short": true, "thumb": "https://i.ytimg.com/vi/Frdkpaa3tWI/mqdefault.jpg", "channel": "DeshGujaratHD"}, {"id": "13Et1eXaSPo", "title": "Modi at Wedding Reception of Dr Karan Singh’s Grandson in Delhi", "published": "2026-11-04T10:00:53+00:00", "link": "https://www.youtube.com/shorts/13Et1eXaSPo", "short": true, "thumb": "https://i.ytimg.com/vi/13Et1eXaSPo/mqdefault.jpg", "channel": "DeshGujaratHD"}, {"id": "5DPgFlMsYGg", "title": "Zukega nahi! India will not open dairy sector or allow GM imports says Goyal", "published": "2026-11-04T10:00:43+00:00", "link": "https://www.youtube.com/shorts/5DPgFlMsYGg", "short": true, "thumb": "https://i.ytimg.com/vi/5DPgFlMsYGg/mqdefault.jpg", "channel": "DeshGujaratHD"}, {"id": "WCai2_pKWQI", "title": "Shivraj Demonstrates Sugarcane Cutter Planter", "published": "2026-11-04T09:59:06+00:00", "link": "https://www.youtube.com/shorts/WCai2_pKWQI", "short": true, "thumb": "https://i.ytimg.com/vi/WCai2_pKWQI/mqdefault.jpg", "channel": "DeshGujaratHD"}, {"id": "zF5dL-h1OVs", "title": "Agniveers extension announced by CDS Gen NS Raja Subramani ", "published": "2026-11-04T09:37:02+00:00", "link": "https://www.youtube.com/watch?v=zF5dL-h1OVs", "short": false, "thumb": "https://i.ytimg.com/vi/zF5dL-h1OVs/mqdefault.jpg", "channel": "DeshGujaratHD"}, {"id": "uV-wrL_fzBM", "title": "Massive Passenger Rush at Udhna Railway Station Ahead of Diwali, Chhath Puja", "published": "2026-11-04T07:02:25+00:00", "link": "https://www.youtube.com/shorts/uV-wrL_fzBM", "short": true, "thumb": "https://i.ytimg.com/vi/uV-wrL_fzBM/mqdefault.jpg", "channel": "DeshGujarat Local"}, {"id": "75MtGfy6xRM", "title": "Saudi Man Sings Sanskrit Song at Samskritotsava 2026 in Riyadh", "published": "2026-11-04T06:55:42+00:00", "link": "https://www.youtube.com/shorts/75MtGfy6xRM", "short": true, "thumb": "https://i.ytimg.com/vi/75MtGfy6xRM/mqdefault.jpg", "channel": "DeshGujaratHD"}, {"id": "ffF9uHIlID4", "title": "Muslim BJP Workers Sing Vande Mataram", "published": "2026-11-04T06:38:22+00:00", "link": "https://www.youtube.com/shorts/ffF9uHIlID4", "short": true, "thumb": "https://i.ytimg.com/vi/ffF9uHIlID4/mqdefault.jpg", "channel": "DeshGujarat Local"}, {"id": "KODojHmDr_M", "title": "Piyush Goyal Meets Denmark Minister Martin Lidegaard", "published": "2026-11-04T06:20:33+00:00", "link": "https://www.youtube.com/shorts/KODojHmDr_M", "short": true, "thumb": "https://i.ytimg.com/vi/KODojHmDr_M/mqdefault.jpg", "channel": "DeshGujaratHD"}, {"id": "vo8wQoueF4c", "title": "Jaishankar Attends Commonwealth Executive Session", "published": "2026-11-04T04:51:24+00:00", "link": "https://www.youtube.com/shorts/vo8wQoueF4c", "short": true, "thumb": "https://i.ytimg.com/vi/vo8wQoueF4c/mqdefault.jpg", "channel": "DeshGujaratHD"}, {"id": "g7lALUkEkYY", "title": "Happy Diwali Song 🪔 | Beautiful Diwali Special Song | Festival of Lights", "published": "2026-11-03T13:22:20+00:00", "link": "https://www.youtube.com/shorts/g7lALUkEkYY", "short": true, "thumb": "https://i.ytimg.com/vi/g7lALUkEkYY/mqdefault.jpg", "channel": "DeshGujarat Local"}], "logo": "data:image/png;base64,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"};
+const S = D.stories;
+const byId = id => S.find(s => s.id === id) || S[0];
+const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const PRI = ['Politics','Business','Faith','India/World','Aviation','Railway','Travel'];
+const kick = s => { for (const p of PRI) if (s.categories.includes(p)) return p; return s.categories.find(c => c !== 'Gujarat') || 'Gujarat'; };
+const pic = (s, size) => !s.og_image ? '' : (s.og_image.includes('twimg') ? (size === 'small' ? s.img_small : s.img_medium) : s.og_image);
+const place = s => (s.body[0] || s.excerpt).split(':')[0].slice(0, 24);
+const lede = s => s.body[0] || s.excerpt;
+const firstSentence = t => { const m = t.replace(/^[A-Z][A-Za-z .]+:\s*/, '').match(/^.*?[.!?](\s|$)/); return m ? m[0].trim() : t; };
+
+/* ---------- icons ---------- */
+const P = {
+ x:'<path fill="currentColor" d="M18.2 2H21l-6.5 7.4L22 22h-6l-4.7-6.1L5.8 22H3l7-8L2 2h6.1l4.2 5.6L18.2 2zm-1 18h1.6L7 3.9H5.3L17.2 20z"/>',
+ wa:'<path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/>',
+ fb:'<path fill="currentColor" d="M14 8h3V4h-3c-2.8 0-4 1.8-4 4.3V10H7v4h3v8h4v-8h3l1-4h-4V8.6c0-.4.3-.6.6-.6z"/>',
+ yt:'<path fill="currentColor" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15.1V8.9l5.8 3.1-5.8 3.1z"/>',
+ ig:'<rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/>',
+ link:'<path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>',
+ share:'<circle cx="18" cy="5" r="2.6" fill="currentColor"/><circle cx="6" cy="12" r="2.6" fill="currentColor"/><circle cx="18" cy="19" r="2.6" fill="currentColor"/><path stroke="currentColor" stroke-width="1.8" d="M8.3 10.8l7.4-4.3M8.3 13.2l7.4 4.3"/>',
+ search:'<circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M15.5 15.5L21 21"/>',
+ menu:'<path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/>',
+ sun:'<circle cx="12" cy="12" r="4.5" fill="currentColor"/><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 1.5v2.5M12 20v2.5M1.5 12H4M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/>',
+ moon:'<path fill="currentColor" d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/>',
+ play:'<path fill="currentColor" d="M8 5.5v13l11-6.5z"/>',
+ home:'<path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',
+ grid:'<path fill="none" stroke="currentColor" stroke-width="2" d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/>',
+ clock:'<circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 7v5l3 2"/>'
+};
+const ic = (n, s = 18) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" aria-hidden="true">${P[n]}</svg>`;
+
+/* ---------- shared parts ---------- */
+function img(s, size, w, h, cls = '', eager = false) {
+  const src = pic(s, size);
+  return `<figure class="ph ${cls} ${src ? '' : 'noimg'}" style="aspect-ratio:${w}/${h}" data-k="${esc(kick(s))}">` +
+    (src ? `<img src="${esc(src)}" width="${w}" height="${h}" alt="${esc(s.title)}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" onerror="this.parentNode.classList.add('noimg');this.remove()">` : '') +
+    `</figure>`;
+}
+const vthumb = (v, cls = '') => `<figure class="ph vid ${cls}" style="aspect-ratio:16/9"><img src="${esc(v.thumb)}" width="320" height="180" alt="${esc(v.title)}" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('noimg');this.remove()"><span class="playb">${ic('play', 22)}</span>${v.short ? '<span class="shortb">Short</span>' : ''}</figure>`;
+/* share buttons are buttons, not links: a link inside a story link would split the card */
+const shareRow = (cls = '') => `<span class="share ${cls}"><span role="button" tabindex="0" class="s-wa" aria-label="Share on WhatsApp">${ic('wa', 16)}</span><span role="button" tabindex="0" class="s-x" aria-label="Share on X">${ic('x', 14)}</span><span role="button" tabindex="0" class="s-fb" aria-label="Share on Facebook">${ic('fb', 15)}</span><span role="button" tabindex="0" class="s-ln" aria-label="Copy link">${ic('link', 15)}</span></span>`;
+const socials = () => `<span class="soc"><a href="#" aria-label="YouTube">${ic('yt', 17)}</a><a href="#" aria-label="X">${ic('x', 14)}</a><a href="#" aria-label="Facebook">${ic('fb', 15)}</a><a href="#" aria-label="Instagram">${ic('ig', 15)}</a></span>`;
+const MENU = ['Gujarat','India/World','Politics','Faith','Business','Videos','More'];
+
+/* Your own banners for the times Google has no advert */
+const HOUSE = {
+  yt: (shape) => `<a href="#" class="house h-yt"><span class="hic">${ic('yt', shape === 'top' ? 34 : 48)}</span><span class="htx"><b>Watch DeshGujarat on YouTube</b><small>10.9 lakh subscribers · Gujarat on video, every day</small></span><span class="hbtn">Subscribe</span>${shape === 'tall' ? '<span class="hthumbs">' + D.videos.filter(v => !v.short).concat(D.videos).slice(0, 3).map(v => `<span class="ht"><img src="${esc(v.thumb)}" width="320" height="180" alt="" loading="lazy"><em>${esc(v.title)}</em></span>`).join('') + '</span>' : ''}</a>`,
+  local: () => `<a href="#" class="house h-local"><span class="hic"><img src="${D.logo}" width="44" height="44" alt=""></span><span class="htx"><b lang="gu">દેશગુજરાત હવે ગુજરાતીમાં</b><small>DeshGujarat Local on YouTube · 2.35 lakh subscribers</small></span><span class="hbtn">Watch</span></a>`,
+  x: () => `<a href="#" class="house h-x"><span class="hic">${ic('x', 30)}</span><span class="htx"><b>Follow @DeshGujarat on X</b><small>4.5 lakh followers · Gujarat news as it breaks</small></span><span class="hbtn">Follow</span></a>`,
+  gnews: () => `<a href="#" class="house h-gn"><span class="hic"><svg width="38" height="38" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2" fill="#4285F4"/><rect x="5" y="8" width="7" height="2" fill="#fff"/><rect x="5" y="11" width="7" height="2" fill="#fff"/><rect x="5" y="14" width="5" height="2" fill="#fff"/><rect x="14" y="8" width="5" height="8" rx="1" fill="#FBBC04"/></svg></span><span class="htx"><b>Follow DeshGujarat on Google News</b><small>Our stories in your Google News feed</small></span><span class="hbtn">Follow</span></a>`
+};
+const SIZES = {top:['728 × 90','320 × 100'], wide:['728 × 90','300 × 250'], box:['300 × 250','300 × 250'], tall:['300 × 600','300 × 600']};
+const ad = (shape, house = 'yt', cls = '') => `<div class="ad ad-${shape} ${cls}"><span class="lbl">Advertisement</span><div class="slot" data-d="${SIZES[shape][0]}" data-m="${SIZES[shape][1]}">${HOUSE[house](shape)}</div></div>`;
+
+const BASE = `
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0}img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
+h1,h2,h3,h4,p{margin:0}button{font:inherit}
+.ph{position:relative;margin:0;overflow:hidden;background:var(--ph);width:100%}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph.noimg{background:#FFC317 url(${D.logo}) 50% 42%/auto 46% no-repeat}
+.ph.noimg::after{content:attr(data-k);position:absolute;left:10px;bottom:8px;font:700 11px/1 Montserrat,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#1a1a1a}
+.ph.vid .playb{position:absolute;left:50%;top:50%;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:rgba(0,0,0,.6);color:#fff;display:grid;place-items:center}
+.ph.vid .shortb{position:absolute;right:8px;bottom:8px;background:#ff0033;color:#fff;font:700 10px/1 system-ui;padding:4px 6px;border-radius:4px;letter-spacing:.04em;text-transform:uppercase}
+.share{display:flex;gap:6px}
+.share [role=button]{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:#fff;cursor:pointer}
+.s-wa{background:#25D366}.s-x{background:#111}.s-fb{background:#1877F2}.s-ln{background:#6b6b73}
+.soc{display:inline-flex;gap:12px;align-items:center}
+.ad{text-align:center;margin:0 auto;max-width:100%}
+.ad .lbl{display:block;font:600 10px/1 system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.ad .slot{position:relative;margin:0 auto;overflow:hidden;border-radius:6px;contain:strict}
+.ad-top .slot,.ad-wide .slot{width:728px;height:90px}.ad-box .slot{width:300px;height:250px}.ad-tall .slot{width:300px;height:600px}
+.house{position:absolute;inset:0;display:flex;align-items:center;gap:14px;padding:0 18px;text-align:left;font-family:system-ui,"Segoe UI",sans-serif}
+.house .hic{flex:none;display:grid;place-items:center}
+.house .htx{flex:1;min-width:0}.house b{display:block;font-size:17px;line-height:1.2}.house small{display:block;font-size:12.5px;opacity:.8;margin-top:3px}
+.house .hbtn{flex:none;font:700 13px/1 system-ui;padding:10px 16px;border-radius:999px}
+.house .hthumbs{display:none}
+.ad-box .house,.ad-tall .house{flex-direction:column;justify-content:center;text-align:center;padding:20px}
+.ad-box .htx,.ad-tall .htx{flex:none}.ad-box .house b{font-size:20px}.ad-tall .house{justify-content:flex-start;padding-top:34px}.ad-tall .house b{font-size:22px}
+.ad-tall .hthumbs{display:grid;gap:10px;width:100%;margin-top:6px}
+.ht{display:grid;grid-template-columns:110px 1fr;gap:8px;text-align:left;align-items:center}.ht img{width:110px;height:62px;object-fit:cover;border-radius:4px}
+.ht em{font:600 12px/1.3 system-ui;font-style:normal;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.h-yt{background:#0f0f0f;color:#fff}.h-yt .hic{color:#ff0033}.h-yt .hbtn{background:#ff0033;color:#fff}
+.h-local{background:#FFC317;color:#141414}.h-local .hbtn{background:#141414;color:#FFC317}.h-local .hic img{border-radius:8px;width:44px;height:44px}
+.h-local b{font-family:"Noto Sans Gujarati","Nirmala UI",system-ui,sans-serif}
+.h-x{background:#000;color:#fff}.h-x .hbtn{background:#fff;color:#000}
+.h-gn{background:#fff;color:#1f1f1f;border:1px solid #dadce0;border-radius:6px}.h-gn .hbtn{background:#1a73e8;color:#fff}
+html.gads .house{display:none}
+html.gads .slot{background:repeating-linear-gradient(45deg,#e7e7e7 0 10px,#f3f3f3 10px 20px);border:1px dashed #b5b5b5}
+html.gads .slot::after{content:"Google advert · " attr(data-d);position:absolute;inset:0;display:grid;place-items:center;font:600 12px system-ui;color:#777}
+@media (max-width:760px){
+ .ad-top .slot{width:320px;height:100px}.ad-wide .slot{width:300px;height:250px}
+ html.gads .slot::after{content:"Google advert · " attr(data-m)}
+ .ad-top .house{gap:10px;padding:0 12px}.ad-top .house b{font-size:14px}.ad-top .house small{font-size:11px}.ad-top .hbtn{padding:8px 11px;font-size:12px}
+ .ad-wide .house{flex-direction:column;justify-content:center;text-align:center;padding:20px}.ad-wide .house b{font-size:20px}
+}
+.lim2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.lim3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+`;
+
+/* ---------- the three options ---------- */
+const O = {};
+
+/* ===== Option 1: refined current identity ===== */
+O[1] = {
+  name: 'Option 1 · DeshGujarat, sharpened',
+  idea: 'Your site as readers already know it, made cleaner and faster. Dark by default with a proper light mode, the yellow of your logo replaces the teal, Montserrat stays, and a breaking line runs under the menu. A dense news grid with a "Latest" column on the right keeps the homepage busy the way a daily news site should be.',
+  fonts: 'family=Montserrat:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600',
+  css: `
+:root{--bg:#111214;--surf:#1b1c1f;--line:#2d2e33;--text:#f1f1f1;--muted:#a4a5ab;--acc:#FFC317;--kick:#FFC317;--ph:#26272b}
+html[data-theme=light]{--bg:#f3f2ef;--surf:#fff;--line:#e2e0db;--text:#151515;--muted:#5d5d63;--kick:#8a5d00;--ph:#e4e2dd}
+body{background:var(--bg);color:var(--text);font:16px/1.5 Montserrat,system-ui,sans-serif}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.util{border-bottom:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+.util .wrap{display:flex;align-items:center;gap:16px;height:38px}
+.util .sp{margin-left:auto}
+html[data-theme=dark] .tl::after{content:"Dark"}html[data-theme=light] .tl::after{content:"Light"}
+.tgl{border:1px solid var(--line);background:var(--surf);color:var(--text);border-radius:999px;height:28px;padding:0 10px;display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;cursor:pointer}
+.adband{padding:16px 0;border-bottom:1px solid var(--line)}
+.mast .wrap{display:flex;align-items:center;gap:28px;height:76px}
+.logo{display:flex;align-items:center;gap:12px;flex:none}
+.logo img{width:46px;height:46px;border-radius:4px}
+.logo span{font:600 30px/1 "Source Serif 4",Georgia,serif;letter-spacing:-.01em}
+.nav{display:flex;gap:4px;flex:1;min-width:0}
+.nav a{font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;padding:10px 12px;border-radius:6px}
+.nav a.on{background:var(--acc);color:#111}
+.nav a:hover{background:var(--surf)}
+.mast .ico{display:flex;gap:6px}.mast .ico a{width:40px;height:40px;display:grid;place-items:center;border-radius:50%;background:var(--surf)}
+.ham{display:none}
+.tick{background:var(--surf);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tick .wrap{display:flex;align-items:center;height:44px;gap:14px;overflow:hidden}
+.tick b{flex:none;background:#e0251b;color:#fff;font-size:11.5px;letter-spacing:.12em;padding:6px 10px;border-radius:4px}
+.tick .run{display:flex;gap:34px;white-space:nowrap;overflow:hidden;font-size:14px;font-weight:600;mask-image:linear-gradient(90deg,#000 85%,transparent)}
+.tick .run span em{font-style:normal;color:var(--kick);margin-right:8px;font-weight:700}
+.page{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:36px;padding-top:28px;padding-bottom:40px}
+.kick{font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--kick)}
+.meta{display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--muted);font-weight:500}
+.lead{display:grid;grid-template-columns:1.55fr 1fr;gap:24px}
+.lead .big h2{font-size:34px;line-height:1.15;font-weight:800;margin:10px 0 10px;letter-spacing:-.01em}
+.lead .big p{color:var(--muted);font-size:15.5px;margin-bottom:12px}
+.lead .big .ph{border-radius:8px;margin-bottom:14px}
+.side3{display:grid;gap:16px;align-content:start}
+.side3 a{display:grid;grid-template-columns:120px 1fr;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.side3 a:last-child{border:0}
+.side3 .ph{border-radius:6px}
+.side3 h3{font-size:15px;line-height:1.3;font-weight:700;margin-top:4px}
+.sech{display:flex;align-items:center;gap:12px;margin:34px 0 16px;font-size:19px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+.sech::before{content:"";width:6px;height:22px;background:var(--acc);border-radius:2px}
+.sech::after{content:"";flex:1;height:1px;background:var(--line)}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.card{background:var(--surf);border:1px solid var(--line);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+.card .bd{padding:12px 14px 14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font-size:15.5px;line-height:1.3;font-weight:700}
+.card .ft{margin-top:auto;display:flex;justify-content:space-between;align-items:center}
+.card .share [role=button]{width:26px;height:26px}.card .share{gap:4px}.card .s-ln{display:none}.card .ft .meta{white-space:nowrap}
+.infeed{margin:30px 0 6px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.list a{display:grid;grid-template-columns:96px 1fr;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.list .ph{border-radius:5px}.list h3{font-size:14.5px;line-height:1.3;font-weight:700}
+.vrow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.vrow h3{font-size:13.5px;line-height:1.3;font-weight:700;margin-top:8px}
+.vrow .ph{border-radius:6px}
+aside{display:grid;gap:26px;align-content:start}
+.latest h4,.box h4{font-size:15px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.latest h4::before{content:"";width:9px;height:9px;border-radius:50%;background:#e0251b;box-shadow:0 0 0 4px rgba(224,37,27,.2)}
+.latest a{display:grid;grid-template-columns:62px 1fr;gap:10px;padding:10px 0;border-top:1px solid var(--line);font-size:14px;font-weight:600;line-height:1.3}
+.latest time{color:var(--kick);font-size:12.5px;font-weight:700}
+.sticky{position:sticky;top:16px}
+footer{border-top:1px solid var(--line);background:var(--surf);padding:28px 0;font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px 30px;align-items:center}
+footer nav{display:flex;gap:18px;flex-wrap:wrap}
+footer .logo span{color:var(--text)}
+/* story */
+.crumbs{font-size:12.5px;color:var(--muted);margin-bottom:12px}.crumbs a{color:var(--kick);font-weight:700}
+.story h1{font-size:40px;line-height:1.14;font-weight:800;letter-spacing:-.015em;margin:10px 0 14px}
+.story .dek{font-size:18px;color:var(--muted);margin-bottom:16px;line-height:1.5}
+.byline{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:20px}
+.byline b{color:var(--text)}
+.hero{border-radius:8px}
+.cap{font-size:12px;color:var(--muted);margin:8px 0 22px}
+.body p{font:400 18px/1.75 "Source Serif 4",Georgia,serif;margin-bottom:20px}
+.body .ad{margin:8px auto 28px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 6px}.tags a{border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:12.5px;font-weight:600}
+@media (max-width:1100px){.grid4,.vrow{grid-template-columns:repeat(3,minmax(0,1fr))}.nav a{padding:10px 8px;font-size:13px}}
+@media (max-width:760px){
+ .wrap{padding:0 16px}
+ .util{display:none}
+ .mast .wrap{height:60px;gap:10px}
+ .logo img{width:36px;height:36px}.logo span{font-size:23px}
+ .nav{display:none}.ham{display:grid!important}
+ .mast .ico{margin-left:auto}.mast .ico a{width:36px;height:36px}
+ .chips{display:flex!important;gap:8px;overflow-x:auto;padding:10px 16px;border-top:1px solid var(--line);scrollbar-width:none}
+ .chips a{flex:none;font-size:12.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:7px 12px;border-radius:999px;background:var(--surf);border:1px solid var(--line)}
+ .chips a.on{background:var(--acc);color:#111;border-color:var(--acc)}
+ .tick .wrap{height:40px}.tick .run{font-size:13px}
+ .adband{padding:12px 0}
+ .page{grid-template-columns:1fr;padding-top:18px;gap:24px}
+ .lead{grid-template-columns:1fr;gap:6px}
+ .lead .big h2{font-size:24px}
+ .lead .big p{display:none}
+ .side3 a{grid-template-columns:110px 1fr}
+ .grid4{grid-template-columns:1fr;gap:0}
+ .grid4 .card{display:grid;grid-template-columns:120px 1fr;gap:12px;background:none;border:0;border-top:1px solid var(--line);border-radius:0;padding:12px 0}
+ .grid4 .card .ph{border-radius:6px}.grid4 .card .bd{padding:0;gap:5px}.grid4 .card h3{font-size:15px}
+ .grid4 .card .share{display:none}
+ .sech{margin:26px 0 10px;font-size:16px}
+ .two{grid-template-columns:1fr;gap:0}
+ .vrow{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:72%;overflow-x:auto;scrollbar-width:none}
+ aside .sticky,aside .ad-tall{display:none}
+ .story h1{font-size:28px}.story .dek{font-size:16px}
+ .body p{font-size:17.5px}
+}
+.chips{display:none}
+`,
+  header(s) {
+    const latest = S.slice(0, 7);
+    return `
+<div class="util"><div class="wrap"><span>${D.dateLong}</span><span>Ahmedabad · Since 2006</span><span class="sp"></span>${socials()}<button class="tgl" onclick="flipTheme()">${ic('moon', 13)} <span class="tl"></span></button></div></div>
+<div class="adband"><div class="wrap">${ad('top', 'yt')}</div></div>
+<header class="mast"><div class="wrap">
+ <a href="#" class="logo"><img src="${D.logo}" width="46" height="46" alt="DeshGujarat"><span>DeshGujarat</span></a>
+ <nav class="nav">${MENU.map((m, i) => `<a href="#" class="${i === 0 ? 'on' : ''}">${m}</a>`).join('')}</nav>
+ <div class="ico"><a href="#" onclick="flipTheme();return false" class="ham" aria-label="Dark or light">${ic('sun', 18)}</a><a href="#" aria-label="Search">${ic('search', 18)}</a><a href="#" class="ham" aria-label="Menu">${ic('menu', 20)}</a></div>
+</div>
+<nav class="chips">${MENU.map((m, i) => `<a href="#" class="${i === 0 ? 'on' : ''}">${m}</a>`).join('')}</nav></header>
+<div class="tick"><div class="wrap"><b>LATEST</b><div class="run">${latest.map(x => `<span><em>${x.time}</em>${esc(x.title)}</span>`).join('')}</div></div></div>`;
+  },
+  aside() {
+    return `<aside>
+ <div class="latest"><h4>Latest</h4>${S.slice(0, 9).map(x => `<a href="#" data-story="${x.id}"><time>${x.time}</time><span class="lim3">${esc(x.title)}</span></a>`).join('')}</div>
+ ${ad('box', 'local')}
+ <div class="box"><h4>${ic('yt', 18)} On YouTube</h4><div style="display:grid;gap:14px">${D.videos.slice(0, 3).map(v => `<a href="#">${vthumb(v)}<div class="lim2" style="font-size:13.5px;font-weight:700;margin-top:6px;line-height:1.3">${esc(v.title)}</div></a>`).join('')}</div></div>
+ <div class="sticky">${ad('tall', 'yt')}</div>
+</aside>`;
+  },
+  footer: () => `<footer><div class="wrap"><a href="#" class="logo"><img src="${D.logo}" width="36" height="36" alt=""><span style="font-size:22px">DeshGujarat</span></a><nav>${MENU.map(m => `<a href="#">${m}</a>`).join('')}<a href="#">About</a><a href="#">Contact us</a></nav>${socials()}<span>Copyright © 2026 DeshGujarat</span></div></footer>`,
+  home() {
+    const lead = byId(D.lead);
+    const rest = S.filter(s => s.id !== lead.id);
+    const side = rest.filter(s => s.og_image).slice(0, 3);
+    const grid = rest.filter(s => !side.includes(s)).slice(0, 8);
+    const used = new Set([lead, ...side, ...grid].map(s => s.id));
+    const left = S.filter(s => !used.has(s.id));
+    const card = s => `<a href="#" class="card" data-story="${s.id}">${img(s, 'small', 400, 225)}<div class="bd"><span class="kick">${esc(kick(s))}</span><h3 class="lim3">${esc(s.title)}</h3><div class="ft"><span class="meta">${s.time}</span>${shareRow()}</div></div></a>`;
+    const li = s => `<a href="#" data-story="${s.id}">${img(s, 'small', 192, 128)}<div><span class="kick">${esc(kick(s))}</span><h3 class="lim3">${esc(s.title)}</h3><span class="meta">${s.time}</span></div></a>`;
+    return this.header() + `
+<main class="wrap page"><div>
+ <section class="lead">
+  <a href="#" class="big" data-story="${lead.id}">${img(lead, 'medium', 800, 450, '', true)}<span class="kick">${esc(kick(lead))}</span><h2>${esc(lead.title)}</h2><p class="lim3">${esc(lede(lead))}</p><div class="meta">${ic('clock', 14)} ${lead.time} · Today ${shareRow()}</div></a>
+  <div class="side3">${side.map(s => `<a href="#" data-story="${s.id}">${img(s, 'small', 240, 160)}<div><span class="kick">${esc(kick(s))}</span><h3 class="lim3">${esc(s.title)}</h3><span class="meta">${s.time}</span></div></a>`).join('')}</div>
+ </section>
+ <h2 class="sech">Top stories</h2>
+ <div class="grid4">${grid.map(card).join('')}</div>
+ <div class="infeed">${ad('wide', 'x')}</div>
+ <h2 class="sech">Videos</h2>
+ <div class="vrow">${D.videos.slice(3, 7).map(v => `<a href="#">${vthumb(v)}<h3 class="lim2">${esc(v.title)}</h3></a>`).join('')}</div>
+ <div class="two">
+  <div><h2 class="sech">Across Gujarat</h2><div class="list">${left.slice(0, Math.ceil(left.length / 2)).map(li).join('')}</div></div>
+  <div><h2 class="sech">More today</h2><div class="list">${left.slice(Math.ceil(left.length / 2)).map(li).join('')}</div></div>
+ </div>
+</div>${this.aside()}</main>` + this.footer();
+  },
+  story(s) {
+    const more = S.filter(x => x.id !== s.id).slice(0, 4);
+    const paras = s.body.map((p, i) => `<p>${esc(p)}</p>` + (i === 2 ? ad('wide', 'gnews') : '')).join('');
+    return this.header() + `
+<main class="wrap page"><article class="story">
+ <div class="crumbs"><a href="#">Home</a> › ${esc(kick(s))}</div>
+ <span class="kick">${esc(kick(s))}</span>
+ <h1>${esc(s.title)}</h1>
+ <div class="byline meta"><span>By <b>DeshGujarat News Desk</b> · ${esc(place(s))} · 4 Nov 2026, ${s.time}</span>${shareRow()}</div>
+ ${img(s, 'medium', 1200, 675, 'hero', true)}
+ <p class="cap">Picture: DeshGujarat</p>
+ <div class="body">${paras}</div>
+ <div class="tags">${s.categories.map(c => `<a href="#">#${esc(c)}</a>`).join('')}</div>
+ <div class="byline meta" style="margin-top:18px"><span>Share this story</span>${shareRow()}</div>
+ <h2 class="sech">More from today</h2>
+ <div class="grid4">${more.map(x => `<a href="#" class="card" data-story="${x.id}">${img(x, 'small', 400, 225)}<div class="bd"><span class="kick">${esc(kick(x))}</span><h3 class="lim3">${esc(x.title)}</h3><div class="ft"><span class="meta">${x.time}</span>${shareRow()}</div></div></a>`).join('')}</div>
+</article>${this.aside()}</main>` + this.footer();
+  }
+};
+
+/* ===== Option 2: light editorial newsroom ===== */
+O[2] = {
+  name: 'Option 2 · The Daily Edition',
+  idea: 'A calm, white, newspaper-style front page: serif headlines (your logo is already a serif), one strong lead story and a numbered "Top stories" list, then sections. Very little decoration, so it loads fastest of the three and reads like a serious paper of record for Gujarat.',
+  fonts: 'family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700',
+  css: `
+:root{--bg:#fff;--text:#121212;--muted:#5f5f63;--line:#e3e1dc;--rule:#121212;--kick:#a8341f;--ph:#eceae5;--acc:#FFC317}
+body{background:var(--bg);color:var(--text);font:16px/1.5 Inter,system-ui,sans-serif}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.serif{font-family:"Source Serif 4",Georgia,serif}
+.topline{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--muted);padding:12px 24px}
+.adtop{padding:14px 24px 18px}
+.mast{text-align:center;padding:6px 24px 14px}
+.mast .logo{display:inline-flex;align-items:center;gap:14px}
+.mast img{width:52px;height:52px;border-radius:4px}
+.mast .logo span{font:700 52px/1 "Source Serif 4",Georgia,serif;letter-spacing:-.02em}
+.mast .tagl{font:italic 400 15px/1.4 "Source Serif 4",Georgia,serif;color:var(--muted);margin-top:8px}
+.nav{border-top:2px solid var(--rule);border-bottom:1px solid var(--rule);display:flex;justify-content:center;gap:4px;padding:2px 0;position:relative}
+.nav::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:var(--rule)}
+.nav a{font-size:13px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:11px 14px}
+.nav a.on{box-shadow:inset 0 -3px 0 var(--acc)}
+.upd{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--muted);padding:14px 0 0}
+.upd b{color:var(--text)}
+.kick{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--kick)}
+.time{font-size:12.5px;color:var(--muted)}
+.front{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:40px;padding:22px 0 10px}
+.lead{display:block}.lead .ph{margin-bottom:14px}
+.also{display:grid;grid-template-columns:1fr 1fr;gap:26px;border-top:1px solid var(--line);margin-top:20px;padding-top:16px}
+.also h3{font:600 20px/1.25 "Source Serif 4",Georgia,serif;margin:6px 0 4px}
+.lead h2{font:700 42px/1.1 "Source Serif 4",Georgia,serif;letter-spacing:-.015em;margin:8px 0 12px}
+.lead p{font:400 18px/1.55 "Source Serif 4",Georgia,serif;color:#333;margin-bottom:10px}
+.top h4,.sec h4{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-bottom:2px solid var(--rule);padding-bottom:8px;margin-bottom:4px}
+.top ol{list-style:none;margin:0;padding:0;counter-reset:n}
+.top li a{display:grid;grid-template-columns:34px 1fr;gap:6px;padding:13px 0;border-bottom:1px solid var(--line)}
+.top li a::before{counter-increment:n;content:counter(n);font:700 26px/1 "Source Serif 4",Georgia,serif;color:var(--acc);-webkit-text-stroke:.5px #b58400}
+.top h3{font:600 18px/1.28 "Source Serif 4",Georgia,serif}
+.top .ad{margin-top:22px}
+.row4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px;border-top:1px solid var(--line);margin-top:26px;padding-top:22px}
+.row4 h3{font:600 19px/1.25 "Source Serif 4",Georgia,serif;margin:8px 0 6px}
+.row4 .ph{margin-bottom:10px}
+.infeed{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;margin:28px 0}
+.secs{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:34px}
+.sec a{display:block;padding:12px 0;border-bottom:1px solid var(--line)}
+.sec a:first-of-type .ph{margin:8px 0 10px}
+.sec h3{font:600 17.5px/1.3 "Source Serif 4",Georgia,serif;margin-bottom:4px}
+.vids{margin:34px 0 0;border-top:2px solid var(--rule);padding-top:12px}
+.vids .hd{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
+.vids .hd a{color:var(--kick);letter-spacing:.04em;text-transform:none;font-weight:600}
+.vgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.vgrid h3{font:600 15.5px/1.3 "Source Serif 4",Georgia,serif;margin-top:8px}
+footer{margin-top:44px;border-top:2px solid var(--rule);padding:22px 0 34px;font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center}
+footer .logo{display:flex;align-items:center;gap:10px;font:700 22px "Source Serif 4",Georgia,serif;color:var(--text)}
+footer nav{display:flex;gap:18px;flex-wrap:wrap}
+/* story */
+.sgrid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:56px;padding-top:30px}
+.story{max-width:720px}
+.story h1{font:700 46px/1.1 "Source Serif 4",Georgia,serif;letter-spacing:-.018em;margin:10px 0 14px}
+.story .dek{font:italic 400 21px/1.45 "Source Serif 4",Georgia,serif;color:#3c3c40;margin-bottom:20px}
+.byl{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0;margin-bottom:24px}
+.byl b{color:var(--text)}
+.share [role=button]{width:32px;height:32px}
+.cap{font-size:12.5px;color:var(--muted);margin:8px 0 26px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.body p{font:400 19.5px/1.72 "Source Serif 4",Georgia,serif;margin-bottom:22px;color:#1d1d1f}
+.body p:first-child::first-letter{float:left;font:700 64px/.82 "Source Serif 4",Georgia,serif;margin:8px 10px 0 0;color:var(--text)}
+.body .ad{margin:6px auto 30px}
+.tags{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:13px;font-weight:600;margin:6px 0 30px}.tags a{color:var(--kick)}
+.rail{display:grid;gap:30px;align-content:start}
+.rail .sticky{position:sticky;top:18px}
+.more h4{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-bottom:2px solid var(--rule);padding-bottom:8px}
+.more a{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.more h3{font:600 16px/1.3 "Source Serif 4",Georgia,serif}
+.chips{display:none}
+@media (max-width:980px){.row4,.vgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.secs{grid-template-columns:1fr 1fr;grid-auto-flow:row}}
+@media (max-width:760px){
+ .wrap{padding:0 16px}
+ .topline{font-size:11.5px;padding:10px 16px}.topline .soc{display:none}
+ .adtop{padding:6px 16px 12px}
+ .mast{padding:2px 16px 10px}.mast img{width:34px;height:34px}.mast .logo span{font-size:32px}.mast .tagl{font-size:13px;margin-top:4px}
+ .nav{justify-content:flex-start;overflow-x:auto;scrollbar-width:none}
+ .nav a{flex:none;font-size:12px;padding:10px 10px}
+ .front{grid-template-columns:1fr;gap:24px;padding-top:16px}
+ .lead h2{font-size:29px}.lead p{font-size:16.5px}
+ .also{grid-template-columns:1fr;gap:12px}.also h3{font-size:18px}
+ .row4{grid-template-columns:1fr;gap:0;padding-top:4px}
+ .row4 a{display:grid;grid-template-columns:1fr 112px;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+ .row4 a .ph{grid-column:2;grid-row:1/4;margin:0}
+ .row4 h3{font-size:17.5px;margin:4px 0 4px}
+ .secs{grid-template-columns:1fr;gap:20px;grid-auto-flow:row}
+ .vgrid{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:70%;overflow-x:auto;scrollbar-width:none}
+ .sgrid{grid-template-columns:1fr;gap:20px;padding-top:18px}
+ .story h1{font-size:31px}.story .dek{font-size:18px}
+ .body p{font-size:18px}
+ .rail .sticky{display:none}
+}
+`,
+  header() {
+    return `
+<div class="wrap topline"><span>${D.dateLong}</span>${socials()}</div>
+<div class="wrap adtop">${ad('top', 'yt')}</div>
+<header class="wrap mast"><a href="#" class="logo"><img src="${D.logo}" width="52" height="52" alt="DeshGujarat"><span>DeshGujarat</span></a><div class="tagl">Gujarat is something we are passionate about · Since 2006</div></header>
+<nav class="wrap nav">${MENU.map((m, i) => `<a href="#" class="${i === 0 ? 'on' : ''}">${m}</a>`).join('')}</nav>`;
+  },
+  footer: () => `<footer><div class="wrap"><a href="#" class="logo"><img src="${D.logo}" width="30" height="30" alt="">DeshGujarat</a><nav>${MENU.map(m => `<a href="#">${m}</a>`).join('')}<a href="#">About</a><a href="#">Contact us</a></nav><span>Copyright © 2026 DeshGujarat</span></div></footer>`,
+  home() {
+    const lead = byId(D.lead);
+    const rest = S.filter(s => s.id !== lead.id);
+    const top = rest.slice(0, 6);
+    const row = rest.filter(s => !top.includes(s) && s.og_image).slice(0, 4);
+    const used = new Set([lead, ...top, ...row].map(s => s.id));
+    const also = S.filter(s => !used.has(s.id)).slice(0, 2);
+    also.forEach(s => used.add(s.id));
+    const left = S.filter(s => !used.has(s.id));
+    const pick = (f) => left.filter(f);
+    const ahd = pick(s => s.categories.includes('Ahmedabad'));
+    const biz = pick(s => !ahd.includes(s) && (s.categories.includes('Business') || s.categories.includes('Travel')));
+    const st = pick(s => !ahd.includes(s) && !biz.includes(s));
+    // a section with no stories left today is left out, and the others share the width
+    const sec = (t, list) => !list.length ? '' : `<div class="sec"><h4>${t}</h4>${list.map((s, i) => `<a href="#" data-story="${s.id}">${i === 0 ? img(s, 'small', 400, 225) : ''}<h3>${esc(s.title)}</h3><span class="time">${s.time}</span></a>`).join('')}</div>`;
+    return this.header() + `
+<main class="wrap">
+ <div class="upd"><span><b>Today's edition</b> · updated ${S[0].time}</span><span>${S.length} stories today</span></div>
+ <section class="front">
+  <div><a href="#" class="lead" data-story="${lead.id}">${img(lead, 'medium', 900, 506, '', true)}<span class="kick">${esc(kick(lead))}</span><h2>${esc(lead.title)}</h2><p class="lim3">${esc(lede(lead))}</p><span class="time">${lead.time} · ${esc(place(lead))}</span></a>
+  <div class="also">${also.map(s => `<a href="#" data-story="${s.id}"><span class="kick">${esc(kick(s))}</span><h3>${esc(s.title)}</h3><span class="time">${s.time}</span></a>`).join('')}</div></div>
+  <div class="top"><h4>Top stories</h4><ol>${top.map(s => `<li><a href="#" data-story="${s.id}"><div><h3>${esc(s.title)}</h3><span class="time">${esc(kick(s))} · ${s.time}</span></div></a></li>`).join('')}</ol>${ad('box', 'local')}</div>
+ </section>
+ <section class="row4">${row.map(s => `<a href="#" data-story="${s.id}">${img(s, 'small', 400, 267)}<span class="kick">${esc(kick(s))}</span><h3>${esc(s.title)}</h3><span class="time">${s.time}</span></a>`).join('')}</section>
+ <div class="infeed">${ad('wide', 'x')}</div>
+ <section class="secs">${sec('Ahmedabad', ahd)}${sec('Business &amp; travel', biz)}${sec('Across Gujarat', st)}</section>
+ <section class="vids"><div class="hd"><span>On DeshGujarat video</span><a href="#">All videos on YouTube →</a></div><div class="vgrid">${D.videos.slice(0, 4).map(v => `<a href="#">${vthumb(v)}<h3 class="lim2">${esc(v.title)}</h3></a>`).join('')}</div></section>
+</main>` + this.footer();
+  },
+  story(s) {
+    const more = S.filter(x => x.id !== s.id).slice(0, 5);
+    const paras = s.body.map((p, i) => `<p>${esc(p)}</p>` + (i === 2 ? ad('box', 'gnews') : '')).join('');
+    return this.header() + `
+<main class="wrap sgrid"><article class="story">
+ <span class="kick">${esc(kick(s))}</span>
+ <h1>${esc(s.title)}</h1>
+ <div class="byl"><span>By <b>DeshGujarat News Desk</b> · ${esc(place(s))}<br>Wednesday, 4 November 2026, ${s.time}</span>${shareRow()}</div>
+ ${img(s, 'medium', 1200, 675, '', true)}
+ <p class="cap">Picture: DeshGujarat</p>
+ <div class="body">${paras}</div>
+ <div class="tags">${s.categories.map(c => `<a href="#">${esc(c)}</a>`).join('')}</div>
+ <div class="byl"><span>Share this story</span>${shareRow()}</div>
+</article>
+<aside class="rail">
+ <div class="more"><h4>More from today</h4>${more.map(x => `<a href="#" data-story="${x.id}">${img(x, 'small', 220, 147)}<div><h3>${esc(x.title)}</h3><span class="time">${x.time}</span></div></a>`).join('')}</div>
+ <div class="sticky">${ad('tall', 'yt')}</div>
+</aside></main>` + this.footer();
+  }
+};
+
+/* ===== Option 3: mobile-first, video-first ===== */
+O[3] = {
+  name: 'Option 3 · DeshGujarat Watch',
+  idea: 'Built for the phone first, where most of your readers are. Big picture cards, a swipe row of your newest YouTube videos from both channels near the top (10.9 lakh + 2.35 lakh subscribers), a WhatsApp share button on every story and a bottom tab bar like an app. On a computer it opens up into a picture grid.',
+  fonts: 'family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Sans+Gujarati:wght@600',
+  css: `
+:root{--bg:#f1f0ec;--surf:#fff;--text:#141416;--muted:#62626a;--line:#e3e1db;--acc:#FFC317;--ph:#e2e0da}
+body{background:var(--bg);color:var(--text);font:16px/1.5 Inter,system-ui,sans-serif;padding-bottom:0}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.top{background:var(--acc);color:#141414;position:sticky;top:0;z-index:5}
+.top .wrap{display:flex;align-items:center;gap:14px;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo i{width:42px;height:42px;border-radius:10px;background:#141414;display:grid;place-items:center}
+.logo i img{width:34px;height:34px}
+.logo span{font:800 25px/1 Montserrat,system-ui,sans-serif;letter-spacing:-.02em}
+.tnav{display:flex;gap:2px;margin-left:18px}
+.tnav a{font:700 14px/1 Montserrat,system-ui;padding:11px 12px;border-radius:999px}
+.tnav a.on{background:#141414;color:var(--acc)}
+.top .sp{margin-left:auto}
+.subs{display:inline-flex;align-items:center;gap:7px;background:#ff0033;color:#fff;font:700 13px/1 Inter,system-ui;padding:10px 14px;border-radius:999px}
+.sbtn{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(0,0,0,.08)}
+.chips{display:none}
+.adtop{padding:16px 0}
+.kick{display:inline-block;font:700 11px/1 Montserrat,system-ui;letter-spacing:.08em;text-transform:uppercase;background:var(--acc);color:#141414;padding:5px 8px;border-radius:5px}
+.meta{font-size:12.5px;color:var(--muted);font-weight:500}
+.home{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:30px;padding-bottom:40px}
+.hero{display:grid;grid-template-columns:1.6fr 1fr;gap:18px}
+.ov{position:relative;border-radius:16px;overflow:hidden;display:block;color:#fff}
+.ov .ph{border-radius:0}
+.ov .cap{position:absolute;inset:auto 0 0 0;padding:60px 20px 18px;background:linear-gradient(transparent,rgba(0,0,0,.86))}
+.ov h2{font:800 30px/1.15 Montserrat,system-ui;margin:10px 0 8px;letter-spacing:-.01em;text-shadow:0 1px 2px rgba(0,0,0,.3)}
+.ov h3{font:700 18px/1.25 Montserrat,system-ui;margin:8px 0 6px}
+.ov .meta{color:rgba(255,255,255,.85)}
+.hero .two{display:grid;gap:18px}
+.watch{margin:30px 0 8px}
+.wh{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.wh h2{font:800 22px/1 Montserrat,system-ui;display:flex;align-items:center;gap:10px}
+.wh h2 svg{color:#ff0033}
+.tabs{display:flex;gap:6px;margin-left:auto}
+.tabs a{font:600 13px/1 Inter;padding:9px 13px;border-radius:999px;background:var(--surf);border:1px solid var(--line)}
+.tabs a.on{background:#141414;color:#fff;border-color:#141414}
+.vr{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 54px)/4);gap:18px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+.vr a{background:var(--surf);border-radius:12px;overflow:hidden}
+.vr h3{font:600 14px/1.3 Inter,system-ui;padding:10px 12px 4px}
+.vr .meta{padding:0 12px 12px;display:block}
+.vr .ph{border-radius:0}
+.sh{font:800 22px/1 Montserrat,system-ui;margin:30px 0 14px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.c{background:var(--surf);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.c .bd{padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.c h3{font:700 17.5px/1.3 Montserrat,system-ui;letter-spacing:-.005em}
+.c .act{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:4px}
+.wab{display:inline-flex;align-items:center;gap:7px;background:#25D366;color:#063;font:700 13px/1 Inter;padding:9px 13px;border-radius:999px}
+.mini{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--bg)}
+.cards .ad{grid-column:1/-1;padding:6px 0}
+.quick a{display:grid;grid-template-columns:70px 1fr;gap:12px;align-items:center;background:var(--surf);border-radius:12px;padding:10px 14px 10px 10px;margin-bottom:10px}
+.quick time{font:800 14px/1.2 Montserrat;text-align:center}
+.quick h3{font:600 15px/1.3 Inter}
+aside{display:grid;gap:24px;align-content:start}
+aside .sticky{position:sticky;top:84px;display:grid;gap:24px}
+.bnav{display:none}
+footer{background:#141414;color:#bbb;padding:26px 0 30px;font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center}
+footer .logo span{color:#fff;font-size:20px}
+footer nav{display:flex;gap:16px;flex-wrap:wrap}
+/* story */
+.st{max-width:760px;margin:0 auto;padding:22px 0 40px}
+.st .ph{border-radius:16px}
+.st h1{font:800 38px/1.14 Montserrat,system-ui;letter-spacing:-.015em;margin:14px 0 12px}
+.st .dek{font-size:18px;color:#3d3d42;margin-bottom:16px}
+.st .who{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.st .who img{width:36px;height:36px;border-radius:50%}
+.st .who b{display:block;font-size:14px}
+.st .body p{font:400 18px/1.75 Inter,system-ui;margin-bottom:20px;color:#232326}
+.st .body .ad{margin:4px auto 28px}
+.wa-big{display:flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:#053;font:700 16px/1 Inter;padding:16px;border-radius:14px;margin:10px 0 26px}
+.vcard{display:grid;grid-template-columns:240px 1fr;gap:16px;align-items:center;background:#141414;color:#fff;border-radius:16px;overflow:hidden;margin:6px 0 26px}
+.vcard .ph{border-radius:0}.vcard div{padding:14px 16px 14px 0}.vcard small{color:#ff4d6a;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:11px}
+.vcard h3{font:700 16px/1.3 Montserrat;margin-top:6px}
+.sbar{display:none}
+@media (max-width:1000px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.vr{grid-auto-columns:calc((100% - 36px)/3)}.tnav{display:none}}
+@media (max-width:760px){
+ body{padding-bottom:64px}
+ .wrap{padding:0 14px}
+ .top .wrap{height:58px;gap:10px}
+ .logo i{width:36px;height:36px;border-radius:9px}.logo i img{width:28px;height:28px}
+ .logo span{font-size:21px}
+ .subs{padding:9px 11px;font-size:12px}
+ .sbtn{display:none}
+ .chips{display:flex;gap:8px;overflow-x:auto;padding:10px 14px;background:var(--surf);border-bottom:1px solid var(--line);scrollbar-width:none}
+ .chips a{flex:none;font:700 13px/1 Montserrat;padding:9px 13px;border-radius:999px;background:var(--bg)}
+ .chips a.on{background:#141414;color:var(--acc)}
+ .adtop{padding:12px 0}
+ .home{grid-template-columns:1fr;gap:0}
+ .hero{grid-template-columns:1fr;gap:12px}
+ .ov h2{font-size:23px}.ov .cap{padding:50px 16px 14px}
+ .hero .two{grid-template-columns:1fr 1fr;gap:12px}
+ .hero .two .ov h3{font-size:14px}.hero .two .ov .cap{padding:30px 10px 10px}.hero .two .ov .kick{display:none}
+ .watch{margin:22px 0 4px}
+ .wh{flex-wrap:wrap}.wh h2{font-size:19px}.tabs{margin-left:0;width:100%}
+ .vr{grid-auto-columns:76%;gap:12px}
+ .sh{font-size:19px;margin:24px 0 12px}
+ .cards{grid-template-columns:1fr;gap:14px}
+ .c h3{font-size:18px}
+ aside{display:none}
+ .bnav{display:flex;position:fixed;left:0;right:0;bottom:0;height:64px;background:var(--surf);border-top:1px solid var(--line);z-index:6}
+ .bnav a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font:600 11px/1 Inter;color:var(--muted)}
+ .bnav a.on{color:#141414}.bnav a.on svg{color:#c48f00}
+ .st{padding-top:0}
+ .st .hero-wrap{margin:0 -14px}.st .hero-wrap .ph{border-radius:0}
+ .st h1{font-size:27px}.st .dek{font-size:16.5px}
+ .st .body p{font-size:17px}
+ .vcard{grid-template-columns:1fr}.vcard div{padding:0 16px 16px}
+ .sbar{display:flex;position:fixed;left:0;right:0;bottom:0;height:64px;background:var(--surf);border-top:1px solid var(--line);z-index:7;align-items:center;gap:10px;padding:0 14px}
+ .sbar .wab{flex:1;justify-content:center;padding:13px;font-size:14.5px}
+ .story-page .bnav{display:none}
+}
+`,
+  header() {
+    return `
+<header class="top"><div class="wrap">
+ <a href="#" class="logo"><i><img src="${D.logo}" width="34" height="34" alt=""></i><span>DeshGujarat</span></a>
+ <nav class="tnav">${MENU.map((m, i) => `<a href="#" class="${i === 0 ? 'on' : ''}">${m}</a>`).join('')}</nav>
+ <span class="sp"></span><a href="#" class="subs">${ic('yt', 16)} Subscribe</a><a href="#" class="sbtn" aria-label="Search">${ic('search', 18)}</a>
+</div></header>
+<nav class="chips">${['Top','Videos','Gujarat','Ahmedabad','Business','Politics','Travel','Faith','India/World'].map((m, i) => `<a href="#" class="${i === 0 ? 'on' : ''}">${m}</a>`).join('')}</nav>`;
+  },
+  bnav: () => `<nav class="bnav"><a href="#" class="on">${ic('home', 22)}Home</a><a href="#">${ic('yt', 22)}Videos</a><a href="#">${ic('grid', 22)}Sections</a><a href="#">${ic('search', 22)}Search</a></nav>`,
+  footer: () => `<footer><div class="wrap"><a href="#" class="logo"><i><img src="${D.logo}" width="34" height="34" alt=""></i><span>DeshGujarat</span></a><nav>${MENU.map(m => `<a href="#">${m}</a>`).join('')}<a href="#">About</a><a href="#">Contact us</a></nav>${socials()}<span>Copyright © 2026 DeshGujarat</span></div></footer>`,
+  card(s) { return `<a href="#" class="c" data-story="${s.id}">${img(s, 'small', 600, 338)}<div class="bd"><span><span class="kick">${esc(kick(s))}</span></span><h3>${esc(s.title)}</h3><div class="act"><span class="meta">${s.time}</span><span style="display:flex;gap:8px"><span class="wab">${ic('wa', 16)} Share</span><span class="mini">${ic('share', 16)}</span></span></div></div></a>`; },
+  watch() {
+    return `<section class="watch"><div class="wh"><h2>${ic('yt', 26)} Watch</h2><div class="tabs"><a href="#" class="on">All</a><a href="#">DeshGujaratHD</a><a href="#" lang="gu" style="font-family:'Noto Sans Gujarati','Nirmala UI',sans-serif">દેશગુજરાત Local</a></div></div>
+ <div class="vr">${D.videos.slice(0, 8).map(v => `<a href="#">${vthumb(v)}<h3 class="lim2">${esc(v.title)}</h3><span class="meta">${esc(v.channel)}</span></a>`).join('')}</div></section>`;
+  },
+  home() {
+    const lead = byId(D.lead);
+    const rest = S.filter(s => s.id !== lead.id);
+    const pics = rest.filter(s => s.og_image);
+    const two = pics.slice(0, 2);
+    const feed = rest.filter(s => !two.includes(s)).slice(0, 9);
+    const quick = rest.filter(s => !two.includes(s) && !feed.includes(s));
+    const cards = feed.map((s, i) => this.card(s) + (i === 2 ? ad('wide', 'local') : '')).join('');
+    return this.header() + `
+<div class="wrap adtop">${ad('top', 'yt')}</div>
+<main class="wrap home"><div>
+ <section class="hero">
+  <a href="#" class="ov" data-story="${lead.id}">${img(lead, 'medium', 800, 520, '', true)}<div class="cap"><span class="kick">${esc(kick(lead))}</span><h2>${esc(lead.title)}</h2><span class="meta">${lead.time} · Today</span></div></a>
+  <div class="two">${two.map(s => `<a href="#" class="ov" data-story="${s.id}">${img(s, 'small', 480, 300)}<div class="cap"><span class="kick">${esc(kick(s))}</span><h3 class="lim3">${esc(s.title)}</h3></div></a>`).join('')}</div>
+ </section>
+ ${this.watch()}
+ <h2 class="sh">Today in Gujarat</h2>
+ <div class="cards">${cards}</div>
+ <h2 class="sh">Quick reads</h2>
+ <div class="quick">${quick.map(s => `<a href="#" data-story="${s.id}"><time>${s.time.replace(' ', '<br>')}</time><h3>${esc(s.title)}</h3></a>`).join('')}</div>
+</div>
+<aside><div class="sticky">${ad('box', 'x')}${ad('tall', 'yt')}</div></aside>
+</main>` + this.footer() + this.bnav();
+  },
+  story(s) {
+    const more = S.filter(x => x.id !== s.id && x.og_image).slice(0, 3);
+    const v = D.videos.find(v => !v.short) || D.videos[0];
+    const paras = s.body.map((p, i) => `<p>${esc(p)}</p>` + (i === 2 ? ad('box', 'local') : '')).join('');
+    return this.header() + `
+<div class="wrap adtop">${ad('top', 'yt')}</div>
+<main class="wrap"><article class="st">
+ <div class="hero-wrap">${img(s, 'medium', 1200, 675, '', true)}</div>
+ <h1>${esc(s.title)}</h1>
+ <div class="who"><img src="${D.logo}" width="36" height="36" alt=""><div><b>DeshGujarat News Desk</b><span class="meta">${esc(place(s))} · Today, ${s.time} · ${esc(kick(s))}</span></div></div>
+ <div class="body">${paras}</div>
+ <a href="#" class="wa-big">${ic('wa', 22)} Share this story on WhatsApp</a>
+ <a href="#" class="vcard">${vthumb(v)}<div><small>${ic('yt', 13)} Watch on ${esc(v.channel)}</small><h3>${esc(v.title)}</h3></div></a>
+ ${ad('wide', 'yt')}
+ <h2 class="sh">Up next</h2>
+ <div class="cards">${more.map(x => this.card(x)).join('')}</div>
+</article></main>` + this.footer() + `<div class="sbar"><span class="wab">${ic('wa', 18)} Share on WhatsApp</span><span class="mini">${ic('x', 15)}</span><span class="mini">${ic('fb', 16)}</span><span class="mini">${ic('link', 16)}</span></div>`;
+  }
+};
+
+/* ---------- building one page of one option ---------- */
+function pageDoc(o, view, storyId, theme, ads) {
+  const opt = O[o];
+  const body = view === 'story' ? opt.story(byId(storyId)) : opt.home();
+  return `<!doctype html><html lang="en" data-theme="${theme}" class="${ads === 'google' ? 'gads' : ''}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">` +
+    `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?${opt.fonts}&display=swap">` +
+    `<style>${BASE}${opt.css}</style></head><body class="${view === 'story' ? 'story-page' : 'home-page'}">${body}` +
+    `<script>function flipTheme(){var h=document.documentElement;h.dataset.theme=h.dataset.theme==='light'?'dark':'light';try{parent.postMessage({theme:h.dataset.theme},'*')}catch(e){}}` +
+    `document.addEventListener('click',function(e){var a=e.target.closest('a,button');if(!a)return;var c=e.target.closest('[data-story]');if(a.tagName==='A')e.preventDefault();if(c&&!e.target.closest('.share,.wab,.mini'))parent.postMessage({story:+c.dataset.story},'*')});<\/script></body></html>`;
+}
+
+/* ---------- the switcher ---------- */
+const st = {o: 1, v: 'home', w: 'desk', t: 'dark', a: 'house', s: D.story};
+const q = new URLSearchParams(location.search);
+for (const k of ['o','v','w','t','a','s']) if (q.get(k)) st[k] = k === 'o' || k === 's' ? +q.get(k) : q.get(k);
+
+if (q.get('raw')) {
+  /* one page alone, at the window's own width (used for the checks and the phone screenshots) */
+  /* replace the whole document once the switcher has finished loading (writing during loading would append) */
+  window.addEventListener('DOMContentLoaded', () => { const h = pageDoc(st.o, st.v, st.s, st.t, st.a); document.open(); document.write(h); document.close(); });
+} else {
+  document.getElementById('when').textContent = `Your ${S.length} stories of ${D.dateLong} · ${D.videos.length} newest YouTube videos`;
+  const optBox = document.getElementById('opt');
+  optBox.innerHTML = [1, 2, 3].map(n => `<button data-o="${n}">Option ${n}</button>`).join('');
+  const stage = document.getElementById('stage');
+  let frame;
+  function render() {
+    document.querySelectorAll('#opt button').forEach(b => b.setAttribute('aria-pressed', +b.dataset.o === st.o));
+    document.querySelectorAll('#view button').forEach(b => b.setAttribute('aria-pressed', b.dataset.v === st.v));
+    document.querySelectorAll('#width button').forEach(b => b.setAttribute('aria-pressed', b.dataset.w === st.w));
+    document.querySelectorAll('#theme button').forEach(b => b.setAttribute('aria-pressed', b.dataset.t === st.t));
+    document.querySelectorAll('#ads button').forEach(b => b.setAttribute('aria-pressed', b.dataset.a === st.a));
+    document.getElementById('theme').style.display = st.o === 1 ? '' : 'none';
+    document.getElementById('oname').textContent = O[st.o].name;
+    document.getElementById('oidea').textContent = O[st.o].idea;
+    const s = byId(st.s);
+    const addr = st.v === 'story' ? s.link.replace('https://', '') : 'deshgujarat.com';
+    stage.innerHTML = st.w === 'desk'
+      ? `<div class="desk"><div class="chrome"><i></i><i></i><i></i><span>${esc(decodeURI(addr))}</span></div><iframe title="Design preview"></iframe></div>`
+      : `<div class="phone"><iframe title="Design preview, phone"></iframe></div>`;
+    frame = stage.querySelector('iframe');
+    frame.srcdoc = pageDoc(st.o, st.v, st.s, st.t, st.a);
+    if (st.w === 'desk') {
+      const fit = () => { try { frame.style.height = frame.contentDocument.documentElement.scrollHeight + 'px'; } catch (e) {} };
+      frame.onload = () => { fit(); setTimeout(fit, 600); setTimeout(fit, 2000); };
+    }
+  }
+  document.querySelector('.bar').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    if (b.dataset.o) st.o = +b.dataset.o;
+    if (b.dataset.v) { st.v = b.dataset.v; if (st.v === 'story') st.s = st.s || D.story; }
+    if (b.dataset.w) st.w = b.dataset.w;
+    if (b.dataset.t) st.t = b.dataset.t;
+    if (b.dataset.a) st.a = b.dataset.a;
+    render(); window.scrollTo(0, 0);
+  });
+  window.addEventListener('message', e => {
+    if (e.data && e.data.story) { st.s = e.data.story; st.v = 'story'; render(); window.scrollTo(0, 0); }
+    if (e.data && e.data.theme) { st.t = e.data.theme; document.querySelectorAll('#theme button').forEach(b => b.setAttribute('aria-pressed', b.dataset.t === st.t)); }
+  });
+  render();
+}
+</script>
+</body>
+</html>
