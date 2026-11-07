@@ -67,7 +67,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 "Segoe UI",sy
   <div class="seg opt" id="opt"><button data-o="1">Option 1</button><button data-o="2">Option 2</button><button data-o="3">Option 3</button><button data-o="4">Option 4<i>new</i></button></div>
   <div class="seg" id="view"><button data-v="home">Home page</button><button data-v="story">Story page</button></div>
   <div class="seg" id="width"><button data-w="phone">Phone</button><button data-w="desk">Computer</button></div>
-  <div class="seg" id="theme" title="Option 1 has a dark and a light mode" hidden><button data-t="dark">Dark</button><button data-t="light">Light</button></div>
+  <div class="seg" id="theme" title="Options 1 and 4 have a dark and a light page" hidden><button data-t="dark">Dark</button><button data-t="light">Light</button></div>
   <div class="seg" id="ads" title="What the advert spaces show"><button data-a="house">Your own banners</button><button data-a="google">Google advert spaces</button></div>
 </div>
 <div class="info"><div><h1 id="oname">Option 4 · The Daily Edition, with your changes</h1><p id="oidea">Option 2, the calm newspaper-style design you chose, reworked from your notes: on phones one continuous feed with your top stories first, mostly headline with a small picture, a big picture where your team wants one, categories always at hand, your Shorts, search and a morning email. On a computer it keeps the broad front page.</p></div>
@@ -85,6 +85,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 "Segoe UI",sy
    <li><b>Search on every page:</b> a box on computers, the magnifier on phones. Try it in the preview.</li>
    <li><b>"Get DeshGujarat every morning":</b> an email sign-up made from your own feed, your WhatsApp channel and phone alerts.</li>
    <li><b>Soft off-white background,</b> the same paper tone as the app idea you liked, easier on the eyes than pure white.</li>
+   <li><b>Light or dark, as the reader likes.</b> The moon button at the top turns the page dark for night reading; the sun button brings the off-white page back. On your site it remembers each reader's choice, and the off-white page stays the default. Try it above, or with Dark / Light in the bar.</li>
   </ol>
   <div class="small">
    <span><b>Left out on purpose: a row of X posts.</b> Live X posts need X's own embed code, which is heavy and would slow your pages again. Your X account stays one tap away in your own banners and the footer.</span>
@@ -761,9 +762,13 @@ const P = {
  play:'<path fill="currentColor" d="M8 5.5v13l11-6.5z"/>',
  pin:'<path fill="currentColor" d="M15.6 2.6l5.8 5.8-1.8.6-3.4 3.4.3 4.4-1.5 1.5-3.8-3.8-5 5-1.3-1.3 5-5-3.8-3.8 1.5-1.5 4.4.3 3.4-3.4z"/>',
  bell:'<path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M6 16v-5a6 6 0 0 1 12 0v5l2 2H4zM10 20.5a2 2 0 0 0 4 0"/>',
- mail:'<rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" d="M3.5 6.5L12 13l8.5-6.5"/>'
+ mail:'<rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" d="M3.5 6.5L12 13l8.5-6.5"/>',
+ sun:'<circle cx="12" cy="12" r="4.5" fill="currentColor"/><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 1.5v2.5M12 20v2.5M1.5 12H4M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/>',
+ moon:'<path fill="currentColor" d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/>'
 };
 const ic = (n, s = 18) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" aria-hidden="true">${P[n]}</svg>`;
+/* the light/dark button: a moon on the light page, a sun on the dark one */
+const themeBtn = () => `<button type="button" class="tbtn" aria-label="Dark or light page" title="Dark or light page">${ic('moon', 17).replace('<svg ', '<svg class="i-moon" ')}${ic('sun', 18).replace('<svg ', '<svg class="i-sun" ')}</button>`;
 
 /* ---------- shared parts ---------- */
 function img(s, size, w, h, cls = '', eager = false) {
@@ -1001,6 +1006,29 @@ footer nav{display:flex;gap:18px;flex-wrap:wrap}
  .toast{bottom:16px}
  html.gads .toast{bottom:72px}
 }
+/* the light/dark button */
+.tbtn{flex:none;display:grid;place-items:center;width:34px;height:34px;border:1px solid var(--line);border-radius:50%;background:var(--card);color:var(--text);cursor:pointer;padding:0}
+.tbtn .i-sun{display:none}
+html[data-theme=dark] .tbtn .i-sun{display:block}html[data-theme=dark] .tbtn .i-moon{display:none}
+@media (max-width:760px){.tbtn{width:40px;height:40px}}
+@media (max-width:980px) and (min-width:761px){.search{width:150px}}
+/* the dark page: the same layout, warm near-black paper, off-white ink */
+html[data-theme=dark]{color-scheme:dark;--bg:#141311;--card:#1d1c19;--text:#ece8df;--muted:#a8a296;--line:#302e29;--rule:#cfc8bb;--kick:#f08a6b;--ph:#26241f}
+html[data-theme=dark] .lead p,html[data-theme=dark] .ytc p{color:#d2cdc3}
+html[data-theme=dark] .body p{color:#e4e0d7}
+html[data-theme=dark] .nl input,html[data-theme=dark] .msearch input,html[data-theme=dark] .alt a{background:var(--card)}
+html[data-theme=dark] .nl button,html[data-theme=dark] .msearch button,html[data-theme=dark] .cats a.on{color:#141311}
+html[data-theme=dark] .alt .wa{color:#6fd99a;border-color:#2c5a40}
+html[data-theme=dark] .s-x{box-shadow:inset 0 0 0 1px #4a4a4a}
+html[data-theme=dark] .h-yt,html[data-theme=dark] .h-x{box-shadow:inset 0 0 0 1px #3a3833}
+html[data-theme=dark] .sc .ph{background:#000}
+html[data-theme=dark] .toast{background:#ece8df;color:#141311}
+html[data-theme=dark].gads .slot{background:repeating-linear-gradient(45deg,#2a2926 0 10px,#22211e 10px 20px);border-color:#55524b}
+html[data-theme=dark].gads .slot::after{color:#a8a296}
+@media (max-width:760px){
+ html[data-theme=dark] .snav{box-shadow:0 2px 8px rgba(0,0,0,.5)}
+ html[data-theme=dark].gads .anchor{background:repeating-linear-gradient(45deg,#2a2926 0 10px,#22211e 10px 20px);border-top-color:#55524b;color:#a8a296}
+}
 `;
 
 /* ---------- pieces of the page ---------- */
@@ -1014,6 +1042,7 @@ function header() {
  <nav class="nav">${MENU.map((m, i) => `<a href="#" class="${i === 0 ? 'on' : ''}" ${i ? demoPage(m) : ''}>${m}</a>`).join('')}</nav>
  <form class="search" role="search"><span class="si">${ic('search', 16)}</span><input type="search" name="q" placeholder="Search DeshGujarat" aria-label="Search DeshGujarat"></form>
  <button type="button" class="sbtn" aria-label="Search">${ic('search', 19)}</button>
+ ${themeBtn()}
 </div>
 <nav class="cats">${CATS.map((m, i) => `<a href="#" class="${i === 0 ? 'on' : ''}" ${i ? demoPage(m) : ''}>${m}</a>`).join('')}</nav>
 <form class="msearch" role="search"><input type="search" name="q" placeholder="Search DeshGujarat" aria-label="Search DeshGujarat"><button type="submit">Search</button></form>
@@ -1099,6 +1128,7 @@ const js = o => JSON.stringify(o).replace(/</g, '\\u003c');
 
 /* the script inside every page: the feed that keeps loading, search, and the preview messages */
 const PAGE_JS = `
+function flipTheme(){var h=document.documentElement;h.dataset.theme=h.dataset.theme==='dark'?'light':'dark';try{if(parent!==window)parent.postMessage({theme:h.dataset.theme},'*')}catch(e){}}
 function T(t){if(parent!==window&&innerHeight>1000){try{parent.postMessage({toast:t},'*')}catch(e){}return}
  var el=document.getElementById('toast');el.textContent=t;el.classList.add('on');clearTimeout(window.__t);window.__t=setTimeout(function(){el.classList.remove('on')},3400)}
 function fit(){try{if(parent!==window)parent.postMessage({fit:1},'*')}catch(e){}}
@@ -1121,6 +1151,7 @@ document.addEventListener('submit',function(e){e.preventDefault();var f=e.target
  if(f.classList.contains('nl')){T('Preview: nothing was sent. On your site this signs the reader up for the morning email.');f.reset();return}
  find(f.querySelector('input').value)});
 document.addEventListener('click',function(e){
+ if(e.target.closest('.tbtn')){flipTheme();return}
  if(e.target.closest('.sbtn')){var h=document.documentElement;h.classList.toggle('sopen');var mi=document.querySelector('.msearch input');if(mi&&h.classList.contains('sopen'))mi.focus();return}
  if(e.target.closest('.clr')){document.getElementById('sres').hidden=true;var m=document.getElementById('home');if(m)m.hidden=false;fit();toTop();return}
  var dm=e.target.closest('[data-demo]');if(dm){e.preventDefault();T(dm.getAttribute('data-demo'));return}
@@ -1130,23 +1161,27 @@ document.addEventListener('click',function(e){
 `;
 
 /* ---------- one page ---------- */
-function pageDoc(view, storyId, ads) {
+function pageDoc(view, storyId, ads, theme) {
   const body = view === 'story' ? story(byId(storyId)) : home();
   const more = view === 'story' ? [] : FEED.slice(FIRST);
-  return `<!doctype html><html lang="en" class="${ads === 'google' ? 'gads' : ''}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">` +
+  return `<!doctype html><html lang="en" data-theme="${theme === 'dark' ? 'dark' : 'light'}" class="${ads === 'google' ? 'gads' : ''}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">` +
     `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?${FONTS}&display=swap">` +
     `<style>${BASE}${CSS}</style></head><body class="${view === 'story' ? 'story-page' : 'home-page'}">${body}` +
     `<script>var FEED_MORE=${js(more)},FEED_IDX=${js(IDX)};${PAGE_JS}<\/script></body></html>`;
 }
 
 /* ---------- the switcher: four options, opening on Option 4 ---------- */
-/* s = the open story of Option 4 (stories of 5-7 Nov), s0 = the open story of Options 1-3 (stories of 4 Nov) */
-const st = {o: 4, v: 'home', w: 'phone', a: 'house', t: 'dark', s: D.featured, s0: OLD.D.story};
+/* s = the open story of Option 4 (stories of 5-7 Nov), s0 = the open story of Options 1-3 (stories of 4 Nov);
+   t = Option 1's look (dark first, as on 5 Nov), t4 = Option 4's look (the off-white light page first) */
+const st = {o: 4, v: 'home', w: 'phone', a: 'house', t: 'dark', t4: 'light', s: D.featured, s0: OLD.D.story};
 const q = new URLSearchParams(location.search);
-for (const k of ['o','v','w','a','t']) if (q.get(k)) st[k] = k === 'o' ? +q.get(k) : q.get(k);
+for (const k of ['o','v','w','a']) if (q.get(k)) st[k] = k === 'o' ? +q.get(k) : q.get(k);
 if (![1, 2, 3, 4].includes(st.o)) st.o = 4;
 if (q.get('s')) st[st.o === 4 ? 's' : 's0'] = +q.get('s');
-const pageOf = () => st.o === 4 ? pageDoc(st.v, st.s, st.a) : OLD.pageDoc(st.o, st.v, st.s0, st.t, st.a);
+if (q.get('t') === 'dark' || q.get('t') === 'light') st[st.o === 4 ? 't4' : 't'] = q.get('t');
+const themeOf = () => st.o === 4 ? st.t4 : st.t;
+const bgOf = () => st.o === 4 ? (st.t4 === 'dark' ? '#141311' : '#FAF7F0') : '#fff';
+const pageOf = () => st.o === 4 ? pageDoc(st.v, st.s, st.a, st.t4) : OLD.pageDoc(st.o, st.v, st.s0, st.t, st.a);
 
 if (q.get('raw')) {
   /* one page alone, at the window's own width (used for the checks and the phone screenshots) */
@@ -1160,13 +1195,13 @@ if (q.get('raw')) {
     document.querySelectorAll('#opt button').forEach(b => b.setAttribute('aria-pressed', +b.dataset.o === st.o));
     document.querySelectorAll('#view button').forEach(b => b.setAttribute('aria-pressed', b.dataset.v === st.v));
     document.querySelectorAll('#width button').forEach(b => b.setAttribute('aria-pressed', b.dataset.w === st.w));
-    document.querySelectorAll('#theme button').forEach(b => b.setAttribute('aria-pressed', b.dataset.t === st.t));
+    document.querySelectorAll('#theme button').forEach(b => b.setAttribute('aria-pressed', b.dataset.t === themeOf()));
     document.querySelectorAll('#ads button').forEach(b => b.setAttribute('aria-pressed', b.dataset.a === st.a));
   };
   function render() {
     const four = st.o === 4;
     press();
-    document.getElementById('theme').hidden = st.o !== 1;
+    document.getElementById('theme').hidden = st.o !== 1 && st.o !== 4;
     document.getElementById('oname').textContent = four ? NAME4 : OLD.O[st.o].name;
     document.getElementById('oidea').textContent = four ? IDEA4 : OLD.O[st.o].idea;
     document.getElementById('when').textContent = four
@@ -1176,7 +1211,7 @@ if (q.get('raw')) {
     document.getElementById('notes13').hidden = four;
     const s = four ? byId(st.s) : OLD.byId(st.s0);
     const addr = st.v === 'story' ? s.link.replace('https://', '') : 'deshgujarat.com';
-    const bg = four ? '#FAF7F0' : '#fff';
+    const bg = bgOf();
     stage.innerHTML = st.w === 'desk'
       ? `<div class="desk"><div class="chrome"><i></i><i></i><i></i><span>${esc(decodeURI(addr))}</span></div><iframe title="Design preview" style="background:${bg}"></iframe></div>`
       : `<div class="phone"><iframe title="Design preview, phone" style="background:${bg}"></iframe></div><p class="hint">${four ? 'Scroll inside the phone: more stories load by themselves. Tap any story to open it.' : 'Scroll inside the phone. Tap any story to open it.'}</p>`;
@@ -1184,12 +1219,17 @@ if (q.get('raw')) {
     frame.srcdoc = pageOf();
     frame.onload = () => { fit(); setTimeout(fit, 600); setTimeout(fit, 2000); };
   }
+  /* a new look is put on the open page in place, so the reader keeps the place where they were */
+  const applyTheme = () => {
+    try { const d = frame.contentDocument; if (!d || !d.body || !d.body.className) return false; d.documentElement.dataset.theme = themeOf(); } catch (e) { return false; }
+    frame.style.background = bgOf(); press(); fit(); return true;
+  };
   document.querySelector('.bar').addEventListener('click', e => {
     const b = e.target.closest('button'); if (!b) return;
+    if (b.dataset.t) { st[st.o === 4 ? 't4' : 't'] = b.dataset.t; if (applyTheme()) return; }
     if (b.dataset.o) st.o = +b.dataset.o;
     if (b.dataset.v) st.v = b.dataset.v;
     if (b.dataset.w) st.w = b.dataset.w;
-    if (b.dataset.t) st.t = b.dataset.t;
     if (b.dataset.a) st.a = b.dataset.a;
     render(); window.scrollTo(0, 0);
   });
@@ -1200,7 +1240,7 @@ if (q.get('raw')) {
     if (e.data.fit) fit();
     if (e.data.top) stage.scrollIntoView();
     if (e.data.toast) { pt.textContent = e.data.toast; pt.classList.add('on'); clearTimeout(ptTimer); ptTimer = setTimeout(() => pt.classList.remove('on'), 3400); }
-    if (e.data.theme) { st.t = e.data.theme; press(); fit(); }
+    if (e.data.theme) { st[st.o === 4 ? 't4' : 't'] = e.data.theme; frame.style.background = bgOf(); press(); fit(); }
     if (e.data.story) { if (st.o === 4) st.s = e.data.story; else st.s0 = e.data.story; st.v = 'story'; render(); window.scrollTo(0, 0); }
     if (e.data.home) { st.v = 'home'; render(); window.scrollTo(0, 0); }
   });
