@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Both Sides · AI workflows for articles and social media</title>
-<meta name="description" content="Both Sides builds custom AI workflows for enterprises. One AI editorial desk finds the material, writes it in your voice, checks every line against its sources and publishes it on your website and on LinkedIn, Instagram, Facebook and X.">
+<title>Both Sides · A news desk that runs itself 24/7, for ₹15,000 a month</title>
+<meta name="description" content="An AI news desk that gathers, writes, fact-checks and publishes on your own website, day and night. ₹10,000 set-up, ₹15,000 a month with all AI costs included, your own app for ₹50,000 if you want one. Your website checked and fixed.">
 <link rel="canonical" href="https://bothsides.tech/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Both Sides">
 <meta property="og:url" content="https://bothsides.tech/">
-<meta property="og:title" content="Both Sides · AI workflows for articles and social media">
-<meta property="og:description" content="One AI editorial desk that finds, writes, checks and publishes, on your website and every social handle. Customised for your business.">
+<meta property="og:title" content="Both Sides · A news desk that runs itself 24/7, for ₹15,000 a month">
+<meta property="og:description" content="AI gathers the news, writes every story, checks every line and publishes it on your website, day and night. All of this at one-tenth of the market cost.">
 <meta property="og:image" content="https://bothsides.tech/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Both Sides: we automate the work behind your articles and social media.">
+<meta property="og:image:alt" content="Both Sides: a news desk that runs itself 24/7, for ₹15,000 a month.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0F1A2B">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3CclipPath id='c'%3E%3Ccircle cx='10' cy='16' r='8'/%3E%3C/clipPath%3E%3Ccircle cx='10' cy='16' r='8' fill='%233D5A6C'/%3E%3Ccircle cx='16' cy='10' r='8' fill='%23C05A2E'/%3E%3Ccircle cx='16' cy='10' r='8' fill='%232B1D12' clip-path='url(%23c)'/%3E%3C/svg%3E">
@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;700&display=swap">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"Both Sides","url":"https://bothsides.tech/","email":"amit@bothsides.tech","telephone":"+91-91685-08071","founder":{"@type":"Person","name":"Amit Kamble"},"address":{"@type":"PostalAddress","addressLocality":"Pune","addressRegion":"Maharashtra","addressCountry":"IN"},"description":"Custom AI workflows for enterprises: an AI editorial desk that finds, writes, checks and publishes articles and social media posts."}
+{"@context":"https://schema.org","@type":"Organization","name":"Both Sides","url":"https://bothsides.tech/","email":"amit@bothsides.tech","telephone":"+91-91685-08071","founder":{"@type":"Person","name":"Amit Kamble"},"address":{"@type":"PostalAddress","addressLocality":"Pune","addressRegion":"Maharashtra","addressCountry":"IN"},"description":"An AI news desk that gathers, writes, fact-checks and publishes on a newsroom's own website, 24/7, for ₹15,000 a month."}
 </script>
 <style>
 :root{--ink:#0F1A2B;--text:#253041;--muted:#5D6877;--rule:#D5DBE3;--soft:#F3F5F8;--accent:#1B4F8C;--accent-soft:#E8EFF7;--gut:24px}
@@ -211,6 +211,35 @@ section[id]{scroll-margin-top:76px}
 .charge p{margin:0}
 .charge p+p{font-size:16.5px;line-height:1.6;color:var(--text)}
 
+/* the offer: price table */
+.tenth{margin:18px 0 0;font-size:clamp(20px,2vw,26px);line-height:1.3;font-weight:600;letter-spacing:-.012em;color:var(--accent)}
+.price{width:100%;border-collapse:collapse}
+.price th{text-align:left;padding:0 24px 12px 0;border-bottom:1px solid var(--ink);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.price td{vertical-align:top;padding:24px 24px 24px 0;border-bottom:1px solid var(--rule);font-size:16.5px;line-height:1.6;color:var(--text)}
+.price td:first-child{width:26%;font-size:19px;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
+.price td:first-child small{display:block;font-size:14px;font-weight:400;letter-spacing:0;color:var(--muted)}
+.price td.amt{width:22%;white-space:nowrap;font-size:clamp(26px,2.6vw,34px);line-height:1.1;font-weight:600;letter-spacing:-.025em;color:var(--ink)}
+.price td.amt small{display:block;margin-top:6px;font-size:13px;font-weight:500;letter-spacing:0;color:var(--muted)}
+.price tr.main td{background:var(--accent-soft)}
+.price tr.main td:first-child{padding-left:20px}
+.price tr.main td.amt{color:var(--accent)}
+.price tr:last-child td{border-bottom:1px solid var(--ink)}
+.price b{color:var(--ink);font-weight:600}
+.opt{display:inline-block;margin-left:8px;padding:1px 7px;border:1px solid #C3CAD4;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);vertical-align:3px}
+.incl{--c:4;--pt:22px;--pb:6px;margin-top:8px}
+.incl h3{margin:0 0 8px;font-size:17px;line-height:1.3;letter-spacing:-.01em}
+.incl p{margin:0;font-size:15px;line-height:1.6;color:var(--muted)}
+
+/* the website check */
+.checks{--c:3;--pt:24px;--pb:28px}
+.checks h3{margin:0 0 12px;font-size:18px;line-height:1.3;letter-spacing:-.01em}
+.checks ul{margin:0;padding:0;list-style:none}
+.checks li{position:relative;padding-left:18px;margin:0 0 9px;font-size:15px;line-height:1.55;color:var(--muted)}
+.checks li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;background:var(--accent)}
+.fixline{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:baseline;gap:8px 32px;margin-top:40px;padding:22px 26px;border:1px solid var(--ink)}
+.fixline p{margin:0}
+.fixline p+p{font-size:16.5px;line-height:1.6;color:var(--text)}
+
 /* contact */
 .cta{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:40px 72px;padding:64px;background:var(--ink);color:#C9D2DE}
 .cta .lab{color:#8FB0DA}
@@ -242,6 +271,8 @@ section[id]{scroll-margin-top:76px}
   .steps .tag{display:inline}
   .steps li:nth-child(n+4){--pt:26px}
   .also .rg{--c:2}
+  .incl{--c:2;--pb:26px}
+  .checks{--c:2}
   .outs{--c:2;--pb:30px}
   .outs > *:nth-child(n+3){--pt:28px}
 }
@@ -278,7 +309,17 @@ section[id]{scroll-margin-top:76px}
   .posts::-webkit-scrollbar{display:none}
   .post{flex:0 0 84%;scroll-snap-align:center}
   .stage figcaption{flex-direction:column;gap:8px}
-  .facts .rg,.steps,.also .rg,.outs,.guards,.how{--c:1}
+  .facts .rg,.steps,.also .rg,.outs,.guards,.how,.incl,.checks{--c:1}
+  .incl > *,.checks > *{--pt:20px;--pb:20px}
+  .price thead{display:none}
+  .price tr{display:block;padding:18px 0;border-bottom:1px solid var(--rule)}
+  .price tr:first-child{border-top:1px solid var(--ink)}
+  .price tr.main{background:var(--accent-soft);padding:18px 14px;margin:0 -14px}
+  .price tr.main td,.price tr.main td:first-child{padding-left:0;background:none}
+  .price td{display:block;width:auto!important;padding:0;border:0!important}
+  .price td.amt{margin:6px 0 8px;font-size:30px}
+  .price td.amt small{display:inline;margin:0 0 0 8px}
+  .fixline{grid-template-columns:minmax(0,1fr);padding:20px}
   .facts .rg > *{--pt:20px;--pb:22px}
   .steps li,.steps li:nth-child(n+4){--pt:20px;--pb:20px}
   .also .rg > *{--pb:24px}
@@ -349,28 +390,29 @@ section[id]{scroll-margin-top:76px}
   <div class="wrap bar">
     <a class="brand" href="#main" aria-label="Both Sides, top of the page"><svg viewBox="0 0 26 26" aria-hidden="true"><use href="#mark" width="26" height="26"/></svg><span>BOTH SIDES</span></a>
     <nav aria-label="Sections">
+      <a href="#offer">The price</a>
+      <a href="#check">Website check</a>
       <a href="#desk">The desk</a>
-      <a href="#publish">Where it publishes</a>
-      <a href="#who">Who it’s for</a>
       <a href="#how">How we work</a>
     </nav>
-    <a class="btn sm" href="#contact">Book a walkthrough</a>
+    <a class="btn sm" href="#contact">Book a demo</a>
   </div>
 </header>
 
 <main id="main">
 <section class="hero">
   <div class="wrap">
-    <p class="lab">AI workflows for enterprises</p>
-    <h1>We automate the work behind your <em>articles and social media.</em></h1>
+    <p class="lab">AI news desk · for newsrooms and publishers</p>
+    <h1>A news desk that runs itself 24/7, for <em>₹15,000 a month.</em></h1>
+    <p class="tenth">All of this at one-tenth of the market cost.</p>
     <div class="hero-row">
-      <p class="lede">Both Sides builds custom AI workflows for enterprises. One AI editorial desk finds the material, writes it in your voice and your language, checks every line against its sources, and publishes it on your website and on LinkedIn, Instagram, Facebook and X.</p>
+      <p class="lede">AI gathers the news, writes every story in your style, checks every line against its sources and publishes it on your own website, day and night, with a copyright-free picture. Your editor can step in on any story, whenever they choose.</p>
       <div class="ctas">
-        <a class="btn" href="#contact">Book a 30-minute walkthrough</a>
-        <a class="tlink" href="#desk">See the desk, part by part</a>
+        <a class="btn" href="#contact">Book a 30-minute demo</a>
+        <a class="tlink" href="#offer">See the price</a>
       </div>
     </div>
-    <p class="fine">An end-to-end working model, built and working today, customised for each business.</p>
+    <p class="fine">An end-to-end working model, built and working today, customised for each newsroom.</p>
 
     <figure class="stage" id="stage">
       <div class="run" aria-hidden="true">
@@ -443,7 +485,7 @@ section[id]{scroll-margin-top:76px}
 
     <div class="facts rgw">
       <div class="rg">
-        <div><b>24/7</b><span>The desk works day and night, on a server in your own account.</span></div>
+        <div><b>24/7</b><span>The desk works day and night, with no shift to staff.</span></div>
         <div><b>1</b><span>One desk for every website and social handle you run.</span></div>
         <div><b>8</b><span>Indian languages besides English. Each translation gets its own check.</span></div>
         <div><b>4</b><span>Social platforms: LinkedIn, Instagram, Facebook and X.</span></div>
@@ -452,10 +494,87 @@ section[id]{scroll-margin-top:76px}
   </div>
 </section>
 
+<section class="sec" id="offer">
+  <div class="wrap">
+    <div class="head">
+      <p class="lab"><span class="no">01</span>The price</p>
+      <h2>One set-up fee. One monthly price. No other bills.</h2>
+      <p>The same three lines for every newsroom. The AI, the software and the pictures are all inside the monthly price.</p>
+    </div>
+    <table class="price">
+      <thead><tr><th scope="col">What you pay for</th><th scope="col">Price</th><th scope="col">What it covers</th></tr></thead>
+      <tbody>
+        <tr><td>Set-up<small>once</small></td><td class="amt">₹10,000</td>
+            <td>The desk connected to your own website, set up with your sources, your sections and your style.</td></tr>
+        <tr class="main"><td>The 24/7 desk<small>every month</small></td><td class="amt">₹15,000<small>a month</small></td>
+            <td>₹10,000 for the AI and ₹5,000 for the software subscription. <b>All AI costs included:</b> no other bills. <b>Copyright-free pictures</b> with every story.</td></tr>
+        <tr><td>Your own app <span class="opt">optional</span><small>once</small></td><td class="amt">₹50,000</td>
+            <td>On Google Play and the App Store, in your name and your design. The 24/7 desk posts to it on its own.</td></tr>
+      </tbody>
+    </table>
+    <div class="rgw">
+      <div class="incl rg">
+        <div><h3>Day and night</h3><p>Stories go out at 3 am as surely as at 3 pm, with no shift to staff.</p></div>
+        <div><h3>Every line checked</h3><p>A separate check of each line against its sources before anything is published.</p></div>
+        <div><h3>Pictures you may use</h3><p>A copyright-free picture with every story, credited and described.</p></div>
+        <div><h3>Your editor decides</h3><p>Approve, hold or change any story, or let the desk run on its own.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="check">
+  <div class="wrap">
+    <div class="head">
+      <p class="lab"><span class="no">02</span>Your website, checked and fixed</p>
+      <h2>We read your site the way Google does, and fix what costs you readers.</h2>
+      <p>Before the desk goes live we check your website on 23 points, from public pages only, and send you what we found in plain words.</p>
+    </div>
+    <div class="rgw">
+      <div class="checks rg">
+        <div><h3>Found by Google</h3><ul>
+          <li>A sitemap that lists today’s stories</li>
+          <li>A Google News sitemap with your fresh stories</li>
+          <li>A robots.txt that lets Google in</li>
+          <li>News labels on every story: headline, date, author, picture</li>
+          <li>The right language tag for a Hindi, Marathi or Gujarati site</li></ul></div>
+        <div><h3>Fast on phones</h3><ul>
+          <li>Google’s PageSpeed score and its rating from real readers</li>
+          <li>Pictures that load as the reader scrolls</li>
+          <li>Pinch-to-zoom and a phone layout</li>
+          <li>A proper ‘page not found’, and no pages that crash</li></ul></div>
+        <div><h3>Seen and shared</h3><ul>
+          <li>A share picture for WhatsApp, Facebook and X</li>
+          <li>Large pictures allowed in Google Discover</li>
+          <li>A search description and title on every story</li>
+          <li>A description on every picture</li></ul></div>
+        <div><h3>Safe</h3><ul>
+          <li>A valid certificate and the padlock on every page</li>
+          <li>WordPress and its plugins up to date</li>
+          <li>Writer accounts hidden from the public</li>
+          <li>Mail records that stop others faking your address</li></ul></div>
+        <div><h3>Earning</h3><ul>
+          <li>An ads.txt file for your Google ads</li>
+          <li>A privacy policy, which AdSense requires</li>
+          <li>Visitor counting on current Google Analytics</li>
+          <li>Adverts and counting on your AMP pages too</li></ul></div>
+        <div><h3>Looked after</h3><ul>
+          <li>No years-old code, footers or add-ons on show</li>
+          <li>A working news feed (RSS) for apps and readers</li>
+          <li>Google’s accessibility and good-practice scores</li></ul></div>
+      </div>
+    </div>
+    <div class="fixline">
+      <p class="lab">How we fix it</p>
+      <p>Your design, your content and your team’s way of working stay as they are. We work on the site at a quiet hour you choose, and show you the before and after.</p>
+    </div>
+  </div>
+</section>
+
 <section class="sec" id="desk">
   <div class="wrap">
     <div class="head">
-      <p class="lab"><span class="no">01</span>The desk, part by part</p>
+      <p class="lab"><span class="no">03</span>The desk, part by part</p>
       <h2>Six parts, from the first source to the published post.</h2>
       <p>Each part takes one routine job off your team. Your approval rules decide where a person steps in.</p>
     </div>
@@ -489,7 +608,7 @@ section[id]{scroll-margin-top:76px}
 <section class="sec" id="publish">
   <div class="wrap">
     <div class="head">
-      <p class="lab"><span class="no">02</span>Where it publishes</p>
+      <p class="lab"><span class="no">04</span>Where it publishes</p>
       <h2>Your website, your handles, your app.</h2>
       <p>The desk publishes the way your team does today, each piece in the format of the place it goes.</p>
     </div>
@@ -507,7 +626,7 @@ section[id]{scroll-margin-top:76px}
 <section class="sec" id="who">
   <div class="wrap">
     <div class="head">
-      <p class="lab"><span class="no">03</span>Who it’s for</p>
+      <p class="lab"><span class="no">05</span>Who it’s for</p>
       <h2>For teams that publish every day.</h2>
       <p>We build each desk around the business it serves. These are the teams we build for.</p>
     </div>
@@ -526,7 +645,7 @@ section[id]{scroll-margin-top:76px}
 <section class="sec" id="safeguards">
   <div class="wrap">
     <div class="head">
-      <p class="lab"><span class="no">04</span>Safeguards</p>
+      <p class="lab"><span class="no">06</span>Safeguards</p>
       <h2>Safe to leave running.</h2>
       <p>The desk is built to hold back rather than guess.</p>
     </div>
@@ -535,8 +654,8 @@ section[id]{scroll-margin-top:76px}
         <div><h3>Checked before it goes out</h3><p>Every line is matched against its sources before anything is published.</p></div>
         <div><h3>Held, with the reason</h3><p>A line the sources do not support is corrected or held for a person, with the reason. It never goes out as written.</p></div>
         <div><h3>Credited pictures</h3><p>Every picture carries its credit, or is drawn for the story and described.</p></div>
-        <div><h3>A cap on every bill</h3><p>The AI service and X each take a monthly cap, so a bill never runs past it.</p></div>
-        <div><h3>Your data stays yours</h3><p>Your accounts, your server and your archive.</p></div>
+        <div><h3>One fixed bill</h3><p>All AI costs are inside the monthly price, so the bill is the same every month.</p></div>
+        <div><h3>Your data stays yours</h3><p>Your website, your accounts and your archive.</p></div>
         <div><h3>Your AI policy</h3><p>Whether and how AI is labelled on your pieces follows your own policy.</p></div>
       </div>
     </div>
@@ -546,7 +665,7 @@ section[id]{scroll-margin-top:76px}
 <section class="sec" id="custom">
   <div class="wrap">
     <div class="head">
-      <p class="lab"><span class="no">05</span>Customised for you</p>
+      <p class="lab"><span class="no">07</span>Customised for you</p>
       <h2>Nothing about your product changes. The work behind it does.</h2>
       <p>Every desk is set up for one business: its sources, its voice, its rules and its accounts.</p>
     </div>
@@ -554,7 +673,7 @@ section[id]{scroll-margin-top:76px}
       <div><dt>Your sources</dt><dd>The outlets, feeds, accounts and documents your team follows today.</dd></div>
       <div><dt>Your voice and language</dt><dd>Learned from your published work: your style, your words, your languages.</dd></div>
       <div><dt>Your formats and rules</dt><dd>Articles, captions and cards in the forms you use, published under your approval rules.</dd></div>
-      <div><dt>Your accounts</dt><dd>The desk runs on a server in your own account. You pay the AI service and the server directly, each with a monthly spending cap.</dd></div>
+      <div><dt>Your accounts</dt><dd>The desk publishes into your own website and app accounts. The AI and the software are ours to run, inside the monthly price.</dd></div>
     </dl>
   </div>
 </section>
@@ -562,21 +681,21 @@ section[id]{scroll-margin-top:76px}
 <section class="sec" id="how">
   <div class="wrap">
     <div class="head">
-      <p class="lab"><span class="no">06</span>How we work</p>
+      <p class="lab"><span class="no">08</span>How we work</p>
       <h2>From a 30-minute call to a desk that runs on its own.</h2>
       <p>You see the working model first. You decide after.</p>
     </div>
     <div class="rgw">
       <ol class="how rg">
-        <li><span class="n">1</span><h3>Walkthrough</h3><p>Thirty minutes on Google Meet. We show you the working model on content like yours.</p></li>
-        <li><span class="n">2</span><h3>Proposal</h3><p>A short written proposal: one price for the build, and the running costs at the volume you publish today.</p></li>
-        <li><span class="n">3</span><h3>Build</h3><p>We connect the desk to your website and handles, in your own accounts, and tune it to your voice.</p></li>
+        <li><span class="n">1</span><h3>Demo</h3><p>Thirty minutes on Google Meet. We show you the working model on stories like yours.</p></li>
+        <li><span class="n">2</span><h3>Website check</h3><p>What we found on your site, in plain words, and how each fault is fixed.</p></li>
+        <li><span class="n">3</span><h3>Set-up</h3><p>We connect the desk to your website, set up your sources and sections, and tune it to your style.</p></li>
         <li><span class="n">4</span><h3>Live</h3><p>The desk works day and night. A report reaches you every evening, and we stay on hand for support.</p></li>
       </ol>
     </div>
     <div class="charge">
       <p class="lab">How we charge</p>
-      <p>One fixed price for the build. Running costs go straight to the providers, from your own accounts: the AI service, the server, and per-post charges such as X’s.</p>
+      <p>₹10,000 once for the set-up. ₹15,000 a month for the 24/7 desk, all AI costs included. ₹50,000 once for your own app, if you want one.</p>
     </div>
   </div>
 </section>
@@ -586,10 +705,10 @@ section[id]{scroll-margin-top:76px}
     <div class="cta">
       <div>
         <p class="lab">Get in touch</p>
-        <h2>Tell us the one task that eats your team’s day.</h2>
-        <p>We reply within two working days with a one-page plan for automating it, at no charge.</p>
+        <h2>See the desk run on stories like yours.</h2>
+        <p>A 30-minute demo on Google Meet. WhatsApp us to fix a time, or simply write.</p>
         <div class="ctas">
-          <a class="btn" href="mailto:amit@bothsides.tech?subject=A%2030-minute%20walkthrough">Book a 30-minute walkthrough</a>
+          <a class="btn" href="mailto:amit@bothsides.tech?subject=A%2030-minute%20demo">Book a 30-minute demo</a>
           <a class="btn line" href="https://wa.me/919168508071">Message us on WhatsApp</a>
         </div>
       </div>
@@ -607,7 +726,7 @@ section[id]{scroll-margin-top:76px}
 <footer class="foot">
   <div class="wrap">
     <a class="brand" href="#main"><svg viewBox="0 0 26 26" aria-hidden="true"><use href="#mark" width="26" height="26"/></svg><span>BOTH SIDES</span></a>
-    <span>AI workflows for enterprises · Pune, India</span>
+    <span>A 24/7 AI news desk · Pune, India</span>
     <nav aria-label="Legal"><a href="privacy.html">Privacy policy</a><a href="delete-account.html">Account deletion</a><span>© 2026 Both Sides</span></nav>
   </div>
 </footer>
