@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="hi" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Nalanda Darpan · नया रूप (design preview)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Khand:wght@600;700&family=Yantramanav:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#1b3fae;--blue-deep:#13307f;--red:#e3262a;--red-text:#ff6b6e}
+html[data-theme=dark]{--bg:#0e1116;--card:#171b22;--card2:#1e232c;--text:#eef1f6;--muted:#a3abb8;--rule:#2a303a;--chip:#232a35;--red-ink:#ff6b6e;color-scheme:dark}
+html[data-theme=light]{--bg:#f4f5f7;--card:#ffffff;--card2:#f0f2f5;--text:#14171c;--muted:#5b6472;--rule:#e1e4ea;--chip:#eef1f5;--red-ink:#c8161b;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Yantramanav,"Noto Sans Devanagari",sans-serif;font-size:17px;line-height:1.5}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.pv{position:sticky;top:0;z-index:20;background:#0a0c10;color:#cfd5df;font:13px/1.4 system-ui,Segoe UI,Arial,sans-serif;display:flex;gap:12px;align-items:center;justify-content:space-between;padding:8px 16px;border-bottom:1px solid #222}
+.pv b{color:#fff}
+.pv .sw{display:flex;background:#1b1f27;border-radius:20px;padding:3px}
+.pv .sw button{border:0;background:none;color:#cfd5df;font:inherit;padding:4px 12px;border-radius:16px;cursor:pointer}
+.pv .sw button.on{background:#fff;color:#111}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+.topline{font-size:14px;color:var(--muted);display:flex;justify-content:space-between;padding:8px 0}
+.topline .tag{color:var(--text);font-weight:500}
+header.brand{background:linear-gradient(180deg,var(--blue) 0%,var(--blue-deep) 100%)}
+header.brand .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:14px;padding-bottom:14px}
+.logo{background:#fff;border-radius:10px;padding:6px 14px;display:flex;align-items:center}
+.logo img{height:64px;width:auto}
+.hdr-right{display:flex;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:24px;padding:9px 16px;font-weight:700;font-size:15px;border:0;cursor:pointer;font-family:inherit}
+.btn.alert{background:var(--red);color:#fff}
+.btn.ghost{background:rgba(255,255,255,.14);color:#fff}
+.icon{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.14);display:grid;place-items:center;color:#fff}
+nav.menu{background:var(--card);border-bottom:1px solid var(--rule);position:sticky;top:37px;z-index:10}
+nav.menu .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+nav.menu a{white-space:nowrap;padding:12px 12px;font-family:Khand,sans-serif;font-weight:600;font-size:19px;color:var(--text);border-bottom:3px solid transparent}
+nav.menu a.on{border-color:var(--red);color:var(--red-ink)}
+.ticker{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--rule);background:var(--card2);overflow:hidden}
+.ticker .lbl{background:var(--red);color:#fff;font-family:Khand,sans-serif;font-weight:700;font-size:18px;padding:8px 14px;flex:none;position:relative;z-index:1}
+.ticker .track{flex:1;min-width:0;overflow:hidden}
+.ticker .run{white-space:nowrap;display:inline-block;animation:run 60s linear infinite;font-size:15px}
+.ticker .run span{margin-right:42px}.ticker .run b{color:var(--red-ink);margin-right:8px}
+@keyframes run{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.top{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);gap:22px;margin:22px auto}
+.lead{background:var(--card);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.lead .pic{aspect-ratio:16/9;background:var(--card2)}
+.lead .pic img{width:100%;height:100%;object-fit:cover}
+.lead .txt{padding:16px 20px 20px}
+.cat{display:inline-block;font-size:13px;font-weight:700;color:#fff;background:var(--red);border-radius:4px;padding:2px 8px;margin-bottom:8px}
+.lead h1{font-family:Khand,sans-serif;font-weight:700;font-size:34px;line-height:1.18;margin:4px 0 8px}
+.meta{font-size:14px;color:var(--muted)}
+.side{background:var(--card);border-radius:14px;padding:6px 16px 10px;display:flex;flex-direction:column}
+.side h2,.sec h2{font-family:Khand,sans-serif;font-weight:700;font-size:24px;margin:10px 0 6px;display:flex;align-items:center;gap:10px}
+.side h2:before,.sec h2:before{content:"";width:6px;height:22px;background:var(--red);border-radius:3px}
+.row{display:grid;grid-template-columns:84px minmax(0,1fr);gap:12px;padding:10px 0;border-top:1px solid var(--rule);align-items:start}
+.row img{width:84px;height:63px;object-fit:cover;border-radius:6px;background:var(--card2)}
+.row h3{font-size:16px;font-weight:500;line-height:1.35;margin:0 0 3px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.sec{margin:26px auto}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.card{background:var(--card);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card .pic{aspect-ratio:16/9;background:var(--card2)}
+.card .pic img{width:100%;height:100%;object-fit:cover}
+.card .t{padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font-size:17px;font-weight:500;line-height:1.35;margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card .meta{margin-top:auto}
+.reach{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:30px auto}
+.box{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-deep) 100%);color:#fff;border-radius:14px;padding:20px 22px}
+.box h2{font-family:Khand,sans-serif;font-size:26px;margin:0 0 4px}
+.box p{margin:0 0 14px;color:#dbe3ff;font-size:15px}
+.box form{display:flex;gap:8px}
+.box input{flex:1;min-width:0;border:0;border-radius:24px;padding:10px 16px;font:inherit;font-size:15px}
+.box .btn{background:#fff;color:var(--blue-deep)}
+.box.alt{background:linear-gradient(135deg,#b3171b 0%,var(--red) 100%)}
+.box.alt .btn{color:#b3171b}
+footer{background:#0a0c10;color:#c3cad6;margin-top:30px;padding:26px 0 30px;font-size:14px}
+footer .wrap{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start}
+footer .logo img{height:52px}
+footer .links{display:flex;flex-wrap:wrap;gap:8px 18px}
+footer .links a:hover{color:#fff}
+footer .copy{grid-column:1/-1;border-top:1px solid #222;padding-top:12px;color:#8a93a3}
+@media (max-width:980px){.top{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.reach{grid-template-columns:1fr}}
+@media (max-width:560px){body{font-size:16px}.logo img{height:46px}.btn .lbl{display:none}.lead h1{font-size:27px}
+.cards.swipe{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px}.cards.swipe .card{flex:0 0 78%;scroll-snap-align:start}
+.cards:not(.swipe){grid-template-columns:1fr}footer .wrap{grid-template-columns:1fr}.topline .date{display:none}.pv .note{display:none}}
+</style>
+</head>
+<body>
+<div class="pv"><span><b>Nalanda Darpan</b> <span class="note">· Design preview by Both Sides, not the live website · real stories and pictures from nalandadarpan.com, 26 Nov 2026</span></span>
+<span class="sw"><button data-m="light">Light</button><button data-m="dark" class="on">Dark</button></span></div>
+
+<div class="wrap topline"><span class="date" id="today"></span><span class="tag">गाँव-जवार की बात।</span></div>
+<header class="brand"><div class="wrap">
+  <a class="logo" href="https://nalandadarpan.com/" aria-label="Nalanda Darpan होम"><picture><source srcset="assets/logo-mobile.png" media="(max-width:560px)"><img src="assets/logo-main.png" alt="Nalanda Darpan" width="200" height="107"></picture></a>
+  <div class="hdr-right">
+    <button class="btn alert" type="button" aria-label="फ़ोन पर अलर्ट चालू करें">🔔<span class="lbl">अलर्ट चालू करें</span></button>
+    <a class="icon" href="https://www.facebook.com/nalandadarpan/" aria-label="Facebook पर Nalanda Darpan">f</a>
+    <a class="icon" href="https://x.com/nalandadarpan" aria-label="X पर Nalanda Darpan">𝕏</a>
+  </div>
+</div></header>
+<nav class="menu" aria-label="विभाग"><div class="wrap" id="menu"></div></nav>
+<div class="ticker" aria-label="ताज़ा"><span class="lbl">ताज़ा</span><div class="track"><div class="run" id="run"></div></div></div>
+
+<main class="wrap">
+  <section class="top">
+    <a class="lead" id="lead"></a>
+    <aside class="side"><h2>ताज़ा खबरें</h2><div id="latest"></div></aside>
+  </section>
+  <section class="sec" id="rajgir-sec"><h2>राजगीर और पर्यटन</h2><div class="cards swipe" id="rajgir"></div></section>
+  <section class="sec"><h2>और खबरें</h2><div class="cards" id="more"></div></section>
+  <section class="reach">
+    <div class="box alt"><h2>हर ब्रेकिंग खबर, सीधे आपके फ़ोन पर</h2><p>एक बार "अनुमति दें" दबाएँ: नालंदा की बड़ी खबर छपते ही फ़ोन पर सूचना आ जाएगी।</p><button class="btn" type="button">🔔 अलर्ट चालू करें</button></div>
+    <div class="box"><h2>सुबह की खबरें, आपके ईमेल में</h2><p>हर सुबह 7 बजे बीते दिन की नालंदा की मुख्य खबरें।</p><form onsubmit="return false"><input type="email" placeholder="आपका ईमेल" aria-label="आपका ईमेल"><button class="btn" type="submit">जुड़ें</button></form></div>
+  </section>
+</main>
+<footer><div class="wrap">
+  <a class="logo" href="https://nalandadarpan.com/"><img src="assets/logo-main.png" alt="Nalanda Darpan" width="200" height="107"></a>
+  <div><div style="margin-bottom:10px;color:#fff;font-weight:500">नालंदा दर्पण · गाँव-जवार की बात।</div><div class="links" id="trust"></div></div>
+  <div class="copy">© 2026 Nalanda Darpan. यह Both Sides का डिज़ाइन प्रीव्यू है; खबरें और तस्वीरें nalandadarpan.com की हैं।</div>
+</div></footer>
+
+<script>
+const D = {"lead": {"url": "https://nalandadarpan.com/islampur-bijli-chori-12-log-pakde-jurmana-fir-nalanda/", "title": "इस्लामपुर में बिजली चोरी करते 12 लोग पकड़े गए, भारी जुर्माना समेत FIR दर्ज", "img": "https://nalandadarpan.com/wp-content/uploads/2026/11/Islampur-Electricity-Theft-Case-390x220.jpg", "date": "35 seconds पहले", "cat": "अपराध", "iso": "2026-11-26T18:54:18+05:30", "when": "26 नवंबर, 18:54", "big": "https://nalandadarpan.com/wp-content/uploads/2026/11/Islampur-Electricity-Theft-Case-1024x576.jpg", "mid": "https://nalandadarpan.com/wp-content/uploads/2026/11/Islampur-Electricity-Theft-Case-768x432.jpg"}, "latest": [{"url": "https://nalandadarpan.com/nalanda-bird-flu-h5n1-confirmed-four-crows-dead-12-km-surveillance-alert/", "title": "Nalanda Bird Flu Alert: डीएम आवास में मृत मिले 4 कौओं में H5N1 वायरस की पुष्टि", "img": "https://nalandadarpan.com/wp-content/uploads/2026/11/Nalanda-Bird-Flu-Alert-390x220.jpg", "date": "3 days पहले", "cat": "स्वास्थ्य", "iso": "2026-11-23T08:40:53+05:30", "when": "23 नवंबर, 08:40", "big": "https://nalandadarpan.com/wp-content/uploads/2026/11/Nalanda-Bird-Flu-Alert-1024x576.jpg", "mid": "https://nalandadarpan.com/wp-content/uploads/2026/11/Nalanda-Bird-Flu-Alert-768x432.jpg"}, {"url": "https://nalandadarpan.com/rajgir-jdu-sushasan-diwas-nitish-samvad-preparation/", "title": "राजगीर में सुशासन दिवस सह नीतीश संवाद की तैयारी, जदयू कार्यकर्ताओं ने बनाई रणनीति", "img": "https://nalandadarpan.com/wp-content/uploads/2026/11/Nitish-Samvad-Programme-390x220.jpg", "date": "4 days पहले", "cat": "राजनीति", "iso": "2026-11-22T19:02:33+05:30", "when": "22 नवंबर, 19:02", "big": "https://nalandadarpan.com/wp-content/uploads/2026/11/Nitish-Samvad-Programme-1024x576.jpg", "mid": "https://nalandadarpan.com/wp-content/uploads/2026/11/Nitish-Samvad-Programme-768x432.jpg"}, {"url": "https://nalandadarpan.com/ben-nalanda-unseasonal-rain-paddy-crop-damage-wedding-disrupted/", "title": "बेन प्रखंड के किसानों की परेशानी बढ़ी और शादी समारोह में पड़ा खलल", "img": "https://nalandadarpan.com/wp-content/uploads/2026/11/Nalanda-Darpan-latest-news-390x220.jpg", "date": "4 days पहले", "cat": "खेती-बारी", "iso": "2026-11-22T16:28:22+05:30", "when": "22 नवंबर, 16:28", "big": "https://nalandadarpan.com/wp-content/uploads/2026/11/Nalanda-Darpan-latest-news-1024x576.jpg", "mid": "https://nalandadarpan.com/wp-content/uploads/2026/11/Nalanda-Darpan-latest-news-768x432.jpg"}, {"url": "https://nalandadarpan.com/ben-bazar-encroachment-traffic-jam-nalanda/", "title": "बेन बाजार में अतिक्रमण से भीषण जाम, मिनटों का सफर घंटों में हो रहा तय", "img": "https://nalandadarpan.com/wp-content/uploads/2026/11/Ben-Bazar-Encroachment-390x220.jpg", "date": "1 week पहले", "cat": "आवागमन", "iso": "2026-11-19T18:50:32+05:30", "when": "19 नवंबर, 18:50", "big": "https://nalandadarpan.com/wp-content/uploads/2026/11/Ben-Bazar-Encroachment-1024x576.jpg", "mid": "https://nalandadarpan.com/wp-content/uploads/2026/11/Ben-Bazar-Encroachment-768x432.jpg"}, {"url": "https://nalandadarpan.com/pan-anusandhan-kendra-islampur-sheikhpura-farmers-exposure-visit/", "title": "पान अनुसंधान केंद्र इस्लामपुर में शेखपुरा के 50 किसानों ने सीखी उन्नत खेती की तकनीक", "img": "https://nalandadarpan.com/wp-content/uploads/2026/11/Pan-Research-Centre-Islampur-390x220.jpg", "date": "1 week पहले", "cat": "खेती-बारी", "iso": "2026-11-18T20:22:19+05:30", "when": "18 नवंबर, 20:22", "big": "https://nalandadarpan.com/wp-content/uploads/2026/11/Pan-Research-Centre-Islampur-1024x576.jpg", "mid": "https://nalandadarpan.com/wp-content/uploads/2026/11/Pan-Research-Centre-Islampur-768x432.jpg"}, {"url": "https://nalandadarpan.com/khesari-lal-yadav-program-stampede-shekhli-nalanda/", "title": "खेसारी लाल यादव के तिलक नाच कार्यक्रम में मची भगदड़, प्राथमिकी दर्ज", "img": "https://nalandadarpan.com/wp-content/uploads/2026/11/Khesari-Lal-Yadav-Programme-390x220.jpg", "date": "1 week पहले", "cat": "इस्लामपुर", "iso": "2026-11-17T17:15:47+05:30", "when": "17 नवंबर, 17:15", "big": "https://nalandadarpan.com/wp-content/uploads/2026/11/Khesari-Lal-Yadav-Programme-1024x576.jpg", "mid": "https://nalandadarpan.com/wp-content/uploads/2026/11/Khesari-Lal-Yadav-Programme-768x432.jpg"}], "rajgir": [{"url": "https://nalandadarpan.com/lion-yuvraj-moves-to-etawah-17-snake-rescuers-get-id-cards/", "title": "राजगीर सफारी का युवराज गया इटावा, 17 सर्प मित्रों को पहचान पत्र; अस्पताल में मौत से हड़कंप", "img": "https://nalandadarpan.com/wp-content/uploads/2026/11/Rajgir-safaris-to-remain-closed-on-November-15-390x220.jpg", "date": "3 weeks पहले", "cat": "नालंदा", "iso": "", "when": "", "big": "https://nalandadarpan.com/wp-content/uploads/2026/11/Rajgir-safaris-to-remain-closed-on-November-15-1024x576.jpg", "mid": "https://nalandadarpan.com/wp-content/uploads/2026/11/Rajgir-safaris-to-remain-closed-on-November-15-768x432.jpg"}, {"url": "https://nalandadarpan.com/rajgir-integrated-parking-system-one-ticket-four-tourist-spots/", "title": "राजगीर में इंटीग्रेटेड पार्किंग व्यवस्था लागू, टिकट एक-पार्किंग चार!", "img": "https://nalandadarpan.com/wp-content/uploads/2026/10/Rajgir-Integrated-Parking-Announcement-390x220.jpg", "date": "October 1, 2026", "cat": "आवागमन", "iso": "", "when": "1 अक्टूबर 2026", "big": "https://nalandadarpan.com/wp-content/uploads/2026/10/Rajgir-Integrated-Parking-Announcement-1024x576.jpg", "mid": "https://nalandadarpan.com/wp-content/uploads/2026/10/Rajgir-Integrated-Parking-Announcement-768x432.jpg"}, {"url": "https://nalandadarpan.com/rajgir-malmas-mela-2026-33-koti-devta-rajgir-faith-history/", "title": "आस्था और इतिहास का अद्भुत संगम है राजगीर मलमास मेला", "img": "https://nalandadarpan.com/wp-content/uploads/2026/05/Rajgir-Malmas-Mela-2026-390x220.jpg", "date": "May 14, 2026", "cat": "धर्म-कर्म", "iso": "", "when": "14 मई 2026", "big": "https://nalandadarpan.com/wp-content/uploads/2026/05/Rajgir-Malmas-Mela-2026-1024x576.jpg", "mid": "https://nalandadarpan.com/wp-content/uploads/2026/05/Rajgir-Malmas-Mela-2026-768x432.jpg"}, {"url": "https://nalandadarpan.com/rajgir-nature-safari-closed-from-april-27-to-may-8-for-maintenance-work/", "title": "8 मई तक न जाएं राजगीर नेचर सफारी, होंगे निराश", "img": "https://nalandadarpan.com/wp-content/uploads/2026/04/Rajgir-Nature-Safari-closed-390x220.jpg", "date": "April 27, 2026", "cat": "पर्यटन", "iso": "", "when": "27 अप्रैल 2026", "big": "https://nalandadarpan.com/wp-content/uploads/2026/04/Rajgir-Nature-Safari-closed-1024x576.jpg", "mid": "https://nalandadarpan.com/wp-content/uploads/2026/04/Rajgir-Nature-Safari-closed-768x432.jpg"}], "more": [{"url": "https://nalandadarpan.com/rashtriya-lok-adalat-12-december-2026-nalanda-hilsa/", "title": "12 दिसंबर को राष्ट्रीय लोक अदालत, हिलसा और बिहारशरीफ में निःशुल्क निपटेंगे मुकदमे", "img": "https://nalandadarpan.com/wp-content/uploads/2026/11/National-Lok-Adalat-2026-390x220.jpg", "date": "1 week पहले", "cat": "इस्लामपुर", "iso": "2026-11-16T15:50:35+05:30", "when": "16 नवंबर, 15:50", "big": "https://nalandadarpan.com/wp-content/uploads/2026/11/National-Lok-Adalat-2026-1024x576.jpg", "mid": "https://nalandadarpan.com/wp-content/uploads/2026/11/National-Lok-Adalat-2026-768x432.jpg"}, {"url": "https://nalandadarpan.com/katrisarai-chhath-ghat-security-inspection-nalanda/", "title": "कतरीसराय में प्रशासन अलर्ट, BDO और SHO ने किया छठ घाटों का यूं निरीक्षण", "img": "https://nalandadarpan.com/wp-content/uploads/2026/11/Katrisarai-Chhath-Puja-390x220.jpg", "date": "2 weeks पहले", "cat": "कतरीसराय", "iso": "2026-11-14T19:34:42+05:30", "when": "14 नवंबर, 19:34", "big": "https://nalandadarpan.com/wp-content/uploads/2026/11/Katrisarai-Chhath-Puja-1024x576.jpg", "mid": "https://nalandadarpan.com/wp-content/uploads/2026/11/Katrisarai-Chhath-Puja-768x432.jpg"}, {"url": "https://nalandadarpan.com/biharsharif-rainbow-foot-overbridge-inauguration-november-14/", "title": "बिहारशरीफ में तैयार हुआ इंद्रधनुषी फुट ओवरब्रिज, 14 नवंबर को होगा उद्घाटन", "img": "https://nalandadarpan.com/wp-content/uploads/2026/11/Biharsharif-Rainbow-Foot-Overbridge-390x220.jpg", "date": "2 weeks पहले", "cat": "आवागमन", "iso": "", "when": "", "big": "https://nalandadarpan.com/wp-content/uploads/2026/11/Biharsharif-Rainbow-Foot-Overbridge-1024x576.jpg", "mid": "https://nalandadarpan.com/wp-content/uploads/2026/11/Biharsharif-Rainbow-Foot-Overbridge-768x432.jpg"}, {"url": "https://nalandadarpan.com/nalanda-liquor-smuggling-3400-litres-foreign-liquor-seized/", "title": "नालंदा में पटना ले जा रहे 395 कार्टून अंग्रेजी शराब जब्त, हरियाणा का चालक गिरफ्तार", "img": "https://nalandadarpan.com/wp-content/uploads/2026/11/Nalanda-Liquor-Seizure-390x220.jpg", "date": "2 weeks पहले", "cat": "अपराध", "iso": "", "when": "", "big": "https://nalandadarpan.com/wp-content/uploads/2026/11/Nalanda-Liquor-Seizure-1024x576.jpg", "mid": "https://nalandadarpan.com/wp-content/uploads/2026/11/Nalanda-Liquor-Seizure-768x432.jpg"}], "ticker": [{"url": "https://nalandadarpan.com/islampur-bijli-chori-12-log-pakde-jurmana-fir-nalanda/", "title": "इस्लामपुर में बिजली चोरी करते 12 लोग पकड़े गए, भारी जुर्माना समेत FIR दर्ज", "img": "https://nalandadarpan.com/wp-content/uploads/2026/11/Islampur-Electricity-Theft-Case-390x220.jpg", "date": "35 seconds पहले", "cat": "अपराध", "iso": "2026-11-26T18:54:18+05:30", "when": "26 नवंबर, 18:54", "big": "https://nalandadarpan.com/wp-content/uploads/2026/11/Islampur-Electricity-Theft-Case-1024x576.jpg", "mid": "https://nalandadarpan.com/wp-content/uploads/2026/11/Islampur-Electricity-Theft-Case-768x432.jpg"}, {"url": "https://nalandadarpan.com/nalanda-bird-flu-h5n1-confirmed-four-crows-dead-12-km-surveillance-alert/", "title": "Nalanda Bird Flu Alert: डीएम आवास में मृत मिले 4 कौओं में H5N1 वायरस की पुष्टि", "img": "https://nalandadarpan.com/wp-content/uploads/2026/11/Nalanda-Bird-Flu-Alert-390x220.jpg", "date": "3 days पहले", "cat": "स्वास्थ्य", "iso": "2026-11-23T08:40:53+05:30", "when": "23 नवंबर, 08:40", "big": "https://nalandadarpan.com/wp-content/uploads/2026/11/Nalanda-Bird-Flu-Alert-1024x576.jpg", "mid": "https://nalandadarpan.com/wp-content/uploads/2026/11/Nalanda-Bird-Flu-Alert-768x432.jpg"}, {"url": "https://nalandadarpan.com/rajgir-jdu-sushasan-diwas-nitish-samvad-preparation/", "title": "राजगीर में सुशासन दिवस सह नीतीश संवाद की तैयारी, जदयू कार्यकर्ताओं ने बनाई रणनीति", "img": "https://nalandadarpan.com/wp-content/uploads/2026/11/Nitish-Samvad-Programme-390x220.jpg", "date": "4 days पहले", "cat": "राजनीति", "iso": "2026-11-22T19:02:33+05:30", "when": "22 नवंबर, 19:02", "big": "https://nalandadarpan.com/wp-content/uploads/2026/11/Nitish-Samvad-Programme-1024x576.jpg", "mid": "https://nalandadarpan.com/wp-content/uploads/2026/11/Nitish-Samvad-Programme-768x432.jpg"}, {"url": "https://nalandadarpan.com/ben-nalanda-unseasonal-rain-paddy-crop-damage-wedding-disrupted/", "title": "बेन प्रखंड के किसानों की परेशानी बढ़ी और शादी समारोह में पड़ा खलल", "img": "https://nalandadarpan.com/wp-content/uploads/2026/11/Nalanda-Darpan-latest-news-390x220.jpg", "date": "4 days पहले", "cat": "खेती-बारी", "iso": "2026-11-22T16:28:22+05:30", "when": "22 नवंबर, 16:28", "big": "https://nalandadarpan.com/wp-content/uploads/2026/11/Nalanda-Darpan-latest-news-1024x576.jpg", "mid": "https://nalandadarpan.com/wp-content/uploads/2026/11/Nalanda-Darpan-latest-news-768x432.jpg"}, {"url": "https://nalandadarpan.com/ben-bazar-encroachment-traffic-jam-nalanda/", "title": "बेन बाजार में अतिक्रमण से भीषण जाम, मिनटों का सफर घंटों में हो रहा तय", "img": "https://nalandadarpan.com/wp-content/uploads/2026/11/Ben-Bazar-Encroachment-390x220.jpg", "date": "1 week पहले", "cat": "आवागमन", "iso": "2026-11-19T18:50:32+05:30", "when": "19 नवंबर, 18:50", "big": "https://nalandadarpan.com/wp-content/uploads/2026/11/Ben-Bazar-Encroachment-1024x576.jpg", "mid": "https://nalandadarpan.com/wp-content/uploads/2026/11/Ben-Bazar-Encroachment-768x432.jpg"}, {"url": "https://nalandadarpan.com/pan-anusandhan-kendra-islampur-sheikhpura-farmers-exposure-visit/", "title": "पान अनुसंधान केंद्र इस्लामपुर में शेखपुरा के 50 किसानों ने सीखी उन्नत खेती की तकनीक", "img": "https://nalandadarpan.com/wp-content/uploads/2026/11/Pan-Research-Centre-Islampur-390x220.jpg", "date": "1 week पहले", "cat": "खेती-बारी", "iso": "2026-11-18T20:22:19+05:30", "when": "18 नवंबर, 20:22", "big": "https://nalandadarpan.com/wp-content/uploads/2026/11/Pan-Research-Centre-Islampur-1024x576.jpg", "mid": "https://nalandadarpan.com/wp-content/uploads/2026/11/Pan-Research-Centre-Islampur-768x432.jpg"}, {"url": "https://nalandadarpan.com/khesari-lal-yadav-program-stampede-shekhli-nalanda/", "title": "खेसारी लाल यादव के तिलक नाच कार्यक्रम में मची भगदड़, प्राथमिकी दर्ज", "img": "https://nalandadarpan.com/wp-content/uploads/2026/11/Khesari-Lal-Yadav-Programme-390x220.jpg", "date": "1 week पहले", "cat": "इस्लामपुर", "iso": "2026-11-17T17:15:47+05:30", "when": "17 नवंबर, 17:15", "big": "https://nalandadarpan.com/wp-content/uploads/2026/11/Khesari-Lal-Yadav-Programme-1024x576.jpg", "mid": "https://nalandadarpan.com/wp-content/uploads/2026/11/Khesari-Lal-Yadav-Programme-768x432.jpg"}, {"url": "https://nalandadarpan.com/rashtriya-lok-adalat-12-december-2026-nalanda-hilsa/", "title": "12 दिसंबर को राष्ट्रीय लोक अदालत, हिलसा और बिहारशरीफ में निःशुल्क निपटेंगे मुकदमे", "img": "https://nalandadarpan.com/wp-content/uploads/2026/11/National-Lok-Adalat-2026-390x220.jpg", "date": "1 week पहले", "cat": "इस्लामपुर", "iso": "2026-11-16T15:50:35+05:30", "when": "16 नवंबर, 15:50", "big": "https://nalandadarpan.com/wp-content/uploads/2026/11/National-Lok-Adalat-2026-1024x576.jpg", "mid": "https://nalandadarpan.com/wp-content/uploads/2026/11/National-Lok-Adalat-2026-768x432.jpg"}], "sections": [["https://nalandadarpan.com/nalanda/", "नालंदा"], ["https://nalandadarpan.com/bihar-sarif/", "बिहार शरीफ"], ["https://nalandadarpan.com/hilsa/", "हिलसा"], ["https://nalandadarpan.com/rajgir/", "राजगीर"], ["https://nalandadarpan.com/village-neighbourhood/", "गाँव-जवार"], ["https://nalandadarpan.com/search-news/", "खोज-खबर"], ["https://nalandadarpan.com/education/", "शिक्षा"], ["https://nalandadarpan.com/health/", "स्वास्थ्य"], ["https://nalandadarpan.com/media/", "मीडिया"], ["https://nalandadarpan.com/politics/", "राजनीति"], ["https://nalandadarpan.com/crime/", "अपराध"], ["https://nalandadarpan.com/turism/", "पर्यटन"]], "trust": [["https://nalandadarpan.com/about-us/", "About Us"], ["https://nalandadarpan.com/contact-us/", "Contact Us"], ["https://nalandadarpan.com/disclaimer/", "Disclaimer"], ["https://nalandadarpan.com/terms-and-conditions/", "Terms and Conditions"], ["https://nalandadarpan.com/editorial-policy/", "Editorial Policy"], ["https://nalandadarpan.com/fact-checking-policy/", "Fact-Checking Policy"], ["https://nalandadarpan.com/corrections-updates-policy/", "Corrections & Updates Policy"], ["https://nalandadarpan.com/user-community-guidelines/", "User Community Guidelines"], ["https://nalandadarpan.com/contributor-guidelines/", "Contributor Guidelines"], ["https://nalandadarpan.com/grievance-redressal-officer/", "Grievance Redressal Officer"]]};
+const esc = s => String(s || "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const img = (src, w, h, alt, eager) => `<img src="${esc(src)}" width="${w}" height="${h}" alt="${esc(alt)}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" onerror="this.onerror=null;this.src='${esc(src).replace(/-(1024x576|768x432)\./, '-390x220.')}'">`;
+document.getElementById("today").textContent = new Date("2026-11-26T12:00:00+05:30").toLocaleDateString("hi-IN", {weekday:"long", day:"numeric", month:"long", year:"numeric"});
+document.getElementById("menu").innerHTML = `<a class="on" href="https://nalandadarpan.com/">होम</a>` + D.sections.map(([u, l]) => `<a href="${esc(u)}">${esc(l)}</a>`).join("");
+const tk = D.ticker.map(s => `<span><b>●</b>${esc(s.title)}</span>`).join("");
+document.getElementById("run").innerHTML = tk + tk;
+const L = D.lead;
+const leadEl = document.getElementById("lead"); leadEl.href = L.url;
+leadEl.innerHTML = `<div class="pic">${img(L.big, 1024, 576, L.title, true)}</div><div class="txt"><span class="cat">${esc(L.cat)}</span><h1>${esc(L.title)}</h1><div class="meta">${esc(L.when)}</div></div>`;
+document.getElementById("latest").innerHTML = D.latest.map(s => `<a class="row" href="${esc(s.url)}">${img(s.img, 390, 220, s.title)}<div><h3>${esc(s.title)}</h3><div class="meta">${esc(s.cat)}${s.when ? " · " + esc(s.when) : ""}</div></div></a>`).join("");
+const card = s => `<a class="card" href="${esc(s.url)}"><div class="pic">${img(s.mid, 768, 432, s.title)}</div><div class="t"><span class="cat" style="align-self:flex-start">${esc(s.cat)}</span><h3>${esc(s.title)}</h3><div class="meta">${esc(s.when)}</div></div></a>`;
+if (D.rajgir.length) document.getElementById("rajgir").innerHTML = D.rajgir.map(card).join(""); else document.getElementById("rajgir-sec").remove();
+document.getElementById("more").innerHTML = D.more.map(card).join("");
+document.getElementById("trust").innerHTML = D.trust.map(([u, l]) => `<a href="${esc(u)}">${esc(l)}</a>`).join("");
+document.querySelectorAll(".pv .sw button").forEach(b => b.onclick = () => {
+  document.documentElement.dataset.theme = b.dataset.m;
+  document.querySelectorAll(".pv .sw button").forEach(x => x.classList.toggle("on", x === b));
+});
+</script>
+</body>
+</html>
